@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,134 +6,142 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ganamos VIP</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}
+(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
+fbq('init', '901147982849876');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1"/>
+</noscript>
+<!-- FIN META PIXEL -->
+
+<style>
 body{
-background: radial-gradient(circle at center,#7b2cff 0%, #3b0066 55%, #140022 100%);
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background: radial-gradient(circle at center, #7b1fa2 0%, #3b0054 100%);
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:center;
+justify-content:flex-start;
 min-height:100vh;
 text-align:center;
 color:white;
-padding:15px 12px;
 }
 
-/* LOGO MÁS GRANDE Y MÁS PEGADO */
+/* LOGO */
 .logo{
-width:360px;
-max-width:95%;
-margin-bottom:5px;
-filter: drop-shadow(0 0 35px #c266ff);
+width:230px;
+margin-top:40px;
+margin-bottom:20px;
+filter: drop-shadow(0 0 15px #b388ff);
 }
 
 /* PERRO */
 .dog{
-width:230px;
-max-width:85%;
-margin-bottom:10px;
+width:250px;
+margin-bottom:15px;
 }
 
-/* BOTÓN VIP */
+/* BOTON VIP */
 .vip-btn{
-display:inline-block;
-padding:12px 45px;
-background:#5c00a3;
-border-radius:40px;
-border:3px solid #ffd400;
+background:#6a1b9a;
+border:3px solid #ffd600;
 color:white;
+padding:14px 40px;
+border-radius:40px;
 font-weight:bold;
-font-size:17px;
-text-decoration:none;
-margin-bottom:18px;
-animation:glowVip 1.5s infinite alternate;
-}
-
-@keyframes glowVip{
-from{ box-shadow:0 0 12px #ffd400; }
-to{ box-shadow:0 0 40px #ffd400; }
+font-size:18px;
+box-shadow:0 0 20px #ffd600;
+margin-bottom:25px;
 }
 
 /* CARD */
 .card{
-background:linear-gradient(180deg,#8a2be2,#4b0082);
-padding:22px 18px;
-border-radius:22px;
-width:100%;
-max-width:380px;
-box-shadow:0 0 45px rgba(255,0,255,0.5);
+background:linear-gradient(180deg,#8e24aa,#4a0072);
+padding:30px 20px;
+border-radius:25px;
+width:90%;
+max-width:360px;
+box-shadow:0 0 40px rgba(186,104,200,0.8);
+margin-bottom:30px;
 }
 
-/* TITULO */
-.card h1{
-font-size:22px;
-margin-bottom:8px;
+.card h2{
+margin:0 0 10px;
+font-size:24px;
 }
 
-/* SUBTEXTO */
 .card p{
+margin:0 0 20px;
 font-size:14px;
-opacity:0.9;
-margin-bottom:15px;
 }
 
-/* BOTÓN WHATSAPP CON EFECTO FUERTE */
+/* BOTON WHATSAPP */
 .whatsapp-btn{
 display:inline-block;
-background:linear-gradient(90deg,#2cff71,#00c853);
-padding:18px 50px;
+background:linear-gradient(90deg,#00e676,#00c853);
+padding:18px 35px;
 border-radius:50px;
+color:white;
 font-weight:bold;
 font-size:18px;
 text-decoration:none;
-color:white;
-animation:glowWs 1.2s infinite alternate;
+box-shadow:0 0 25px #00ff6a;
+animation:pulse 1.5s infinite;
 }
 
-@keyframes glowWs{
-from{ 
-box-shadow:0 0 15px #00ff6a; 
-transform:scale(1);
-}
-to{ 
-box-shadow:0 0 60px #00ff6a; 
-transform:scale(1.03);
-}
+@keyframes pulse{
+0%{box-shadow:0 0 15px #00ff6a;}
+50%{box-shadow:0 0 35px #00ff6a;}
+100%{box-shadow:0 0 15px #00ff6a;}
 }
 
 .footer{
-margin-top:12px;
 font-size:12px;
-opacity:0.8;
+opacity:0.7;
+margin-bottom:20px;
 }
 </style>
 </head>
 
 <body>
 
-<img src="assets/logo.png" class="logo" alt="Ganamos">
-<img src="assets/dog.png" class="dog" alt="VIP">
+<img src="assets/logo.png" class="logo">
+<img src="assets/dog.png" class="dog">
 
-<a href="#" class="vip-btn">ACCESO VIP</a>
+<div class="vip-btn">ACCESO VIP</div>
 
 <div class="card">
-<h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
+<h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
 <p>Escribinos apretando el botón de abajo</p>
 
-<a href="https://www.linkify.com.ar/api/soporte?id=gxsbti" class="whatsapp-btn">
+<a href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
+class="whatsapp-btn"
+onclick="fbq('track', 'Lead');">
 WHATSAPP OFICIAL
 </a>
 
-<div class="footer">
+<p style="margin-top:15px;font-size:12px;">
 ATENCIÓN Y RETIROS LAS 24 HS
+</p>
 </div>
+
+<div class="footer">
+© 2025 el juego es solo +18. Operá con responsabilidad.
 </div>
 
 </body>
