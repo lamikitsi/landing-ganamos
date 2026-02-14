@@ -23,197 +23,231 @@ fbq('track', 'PageView');
 
 <style>
 :root{
---bgTop:#070b2a;
---bgMid:#2b0b4d;
---bgBot:#2a064a;
+  --bgTop:#070b2a;
+  --bgMid:#2b0b4d;
+  --bgBot:#2a064a;
 
---card: rgba(26, 8, 48, .82);
---cardBorder: rgba(255,255,255,.10);
+  --card: rgba(26, 8, 48, .82);
+  --cardBorder: rgba(255,255,255,.10);
 
---text:#fff;
---muted: rgba(255,255,255,.68);
+  --text:#fff;
+  --muted: rgba(255,255,255,.68);
 
---green1:#25D366;
---green2:#11a84f;
+  --green1:#25D366;
+  --green2:#11a84f;
 
---gold:#f4c76b;
+  --gold:#f4c76b;
+  --gold2:#d9a441;
 }
 
 *{ box-sizing:border-box; }
 
 body{
-margin:0;
-font-family: Arial, Helvetica, sans-serif;
-color:var(--text);
-min-height:100vh;
-display:flex;
-justify-content:center;
-background:
-radial-gradient(900px 600px at 50% 15%, rgba(135,75,255,.25) 0%, rgba(0,0,0,0) 60%),
-linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 50%, var(--bgBot) 100%);
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  background:
+    radial-gradient(900px 600px at 50% 15%, rgba(135,75,255,.25) 0%, rgba(0,0,0,0) 60%),
+    linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 50%, var(--bgBot) 100%);
 }
 
 .wrap{
-width:100%;
-max-width:520px;
-padding:22px 18px 40px;
-text-align:center;
+  width:100%;
+  max-width:520px;
+  padding:22px 18px 40px;
+  text-align:center;
 }
 
-/* ===== LOGO SIN CUADRO ===== */
+/* =========================
+   LOGO (blanco -> violeta)
+   ========================= */
 .logoPill{
-width:100%;
-max-width:520px;
-margin: 8px auto 30px;
-padding: 0;
-background: transparent;
-border: none;
-box-shadow: none;
+  width:100%;
+  max-width:520px;
+  margin: 8px auto 26px;
+  padding: 10px 12px;
+  border-radius: 26px;
+  /* Fondo violeta para que el blanco “tome” este color */
+  background: rgba(25, 10, 60, .35);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 18px 50px rgba(0,0,0,.55);
+  overflow:hidden; /* recorta bordes feos */
 }
 
 .logoPill img{
-width:100%;
-height:auto;
-display:block;
-margin:auto;
+  width:100%;
+  height:auto;
+  display:block;
+  margin:auto;
+
+  /* TRUCO: el blanco se mezcla con el violeta */
+  mix-blend-mode: multiply;
+  filter: contrast(1.05) saturate(1.08);
 }
 
 /* ===== PERRO ===== */
 .dog{
-margin: 10px 0 18px;
+  margin: 10px 0 18px;
 }
 .dog img{
-width:190px;
-max-width:65vw;
-height:auto;
-display:block;
-margin:0 auto;
-filter: drop-shadow(0 25px 40px rgba(0,0,0,.55));
+  width:190px;
+  max-width:65vw;
+  height:auto;
+  display:block;
+  margin:0 auto;
+  filter: drop-shadow(0 25px 40px rgba(0,0,0,.55));
 }
 
-/* ===== ACCESO VIP ===== */
+/* =========================
+   ACCESO VIP (titila)
+   ========================= */
 .vipBtn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-margin: 6px auto 24px;
-padding: 10px 24px;
-border-radius: 999px;
-border: 1px solid rgba(244,199,107,.55);
-color: var(--gold);
-background: rgba(0,0,0,.25);
-box-shadow: 0 12px 30px rgba(0,0,0,.45);
-font-weight: 900;
-letter-spacing: .6px;
-text-transform: uppercase;
-font-size: 14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin: 6px auto 24px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(244,199,107,.65);
+  color: var(--gold);
+  background: rgba(0,0,0,.25);
+  font-weight: 1000;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+  animation: vipGlow 1.2s infinite;
+  user-select:none;
+}
+
+@keyframes vipGlow{
+  0%{
+    transform: scale(1);
+    box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 18px rgba(244,199,107,.25);
+  }
+  50%{
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 42px rgba(244,199,107,.55);
+  }
+  100%{
+    transform: scale(1);
+    box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 18px rgba(244,199,107,.25);
+  }
 }
 
 /* ===== CARD ===== */
 .card{
-width:100%;
-margin: 0 auto;
-padding: 32px 22px 28px;
-border-radius: 30px;
-background: var(--card);
-border: 1px solid var(--cardBorder);
-box-shadow: 0 30px 70px rgba(0,0,0,.65);
-position:relative;
-overflow:hidden;
+  width:100%;
+  margin: 0 auto;
+  padding: 32px 22px 28px;
+  border-radius: 30px;
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  box-shadow: 0 30px 70px rgba(0,0,0,.65);
+  position:relative;
+  overflow:hidden;
 }
 
 .card::before{
-content:"";
-position:absolute;
-inset:-40px -60px auto -60px;
-height:180px;
-background: radial-gradient(circle at 50% 50%, rgba(168,85,247,.35) 0%, rgba(0,0,0,0) 70%);
-pointer-events:none;
+  content:"";
+  position:absolute;
+  inset:-40px -60px auto -60px;
+  height:180px;
+  background: radial-gradient(circle at 50% 50%, rgba(168,85,247,.35) 0%, rgba(0,0,0,0) 70%);
+  pointer-events:none;
 }
 
 /* ===== PEDÍ TU BONO ===== */
 .tag{
-display:inline-block;
-padding: 8px 18px;
-border-radius: 999px;
-background: rgba(37,211,102,.20);
-border: 1px solid rgba(37,211,102,.45);
-color:#b9ffd6;
-font-weight: 900;
-letter-spacing: .6px;
-text-transform: uppercase;
-font-size: 13px;
-margin-bottom: 18px;
-box-shadow: 0 10px 26px rgba(0,0,0,.35);
+  display:inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(37,211,102,.20);
+  border: 1px solid rgba(37,211,102,.45);
+  color:#b9ffd6;
+  font-weight: 1000;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
 }
 
 /* ===== TITULO ===== */
 .title{
-margin: 0;
-font-size: 36px;
-font-weight: 1000;
-letter-spacing: .4px;
-text-transform: uppercase;
-line-height: 1.05;
+  margin: 0;
+  font-size: 36px;
+  font-weight: 1000;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  line-height: 1.05;
 }
 
 .sub{
-margin: 18px 0 24px;
-font-size: 16px;
-color: var(--muted);
+  margin: 18px 0 24px;
+  font-size: 16px;
+  color: var(--muted);
 }
 
 /* ===== BOTÓN WHATSAPP ===== */
 .waBtn{
-width: min(420px, 100%);
-margin: 0 auto;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:12px;
+  width: min(420px, 100%);
+  margin: 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
 
-text-decoration:none;
-color:#fff;
-font-weight: 1000;
-font-size: 20px;
-padding: 18px 18px;
-border-radius: 999px;
+  text-decoration:none;
+  color:#fff;
+  font-weight: 1000;
+  font-size: 20px;
+  padding: 18px 18px;
+  border-radius: 999px;
 
-background: linear-gradient(180deg, var(--green1), var(--green2));
-border: 2px solid rgba(0,0,0,.25);
+  background: linear-gradient(180deg, var(--green1), var(--green2));
+  border: 2px solid rgba(0,0,0,.25);
 
-box-shadow:
-0 18px 40px rgba(0,0,0,.60),
-inset 0 10px 18px rgba(255,255,255,.18),
-inset 0 -12px 20px rgba(0,0,0,.30),
-0 0 0 2px rgba(37,211,102,.25);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.60),
+    inset 0 10px 18px rgba(255,255,255,.18),
+    inset 0 -12px 20px rgba(0,0,0,.30),
+    0 0 0 2px rgba(37,211,102,.25);
 
-animation: pulse 1.25s infinite;
+  animation: pulse 1.25s infinite;
 }
 
 .waBtn img{
-width: 34px;
-height: 34px;
+  width: 34px;
+  height: 34px;
 }
 
 @keyframes pulse{
-0%{ transform: scale(1); }
-50%{ transform: scale(1.04); }
-100%{ transform: scale(1); }
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.04); }
+  100%{ transform: scale(1); }
 }
 
 .mini{
-margin-top: 18px;
-font-size: 12px;
-color: rgba(255,255,255,.45);
-letter-spacing: .6px;
-text-transform: uppercase;
+  margin-top: 18px;
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .6px;
+  text-transform: uppercase;
 }
 
 .footer{
-margin-top: 22px;
-font-size: 12px;
-color: rgba(255,255,255,.35);
+  margin-top: 22px;
+  font-size: 12px;
+  color: rgba(255,255,255,.35);
+}
+
+@media (max-width:380px){
+  .title{ font-size: 30px; }
+  .dog img{ width:175px; }
 }
 </style>
 </head>
@@ -221,44 +255,48 @@ color: rgba(255,255,255,.35);
 <body>
 <div class="wrap">
 
-<div class="logoPill">
-<img src="assets/logo.png" alt="Ganamos.net">
-</div>
+  <!-- LOGO -->
+  <div class="logoPill">
+    <img src="assets/logo.png" alt="Ganamos.net">
+  </div>
 
-<div class="dog">
-<img src="assets/dog.png" alt="Ganamos VIP">
-</div>
+  <!-- PERRO -->
+  <div class="dog">
+    <img src="assets/dog.png" alt="Ganamos VIP">
+  </div>
 
-<div class="vipBtn">ACCESO VIP</div>
+  <!-- VIP -->
+  <div class="vipBtn">ACCESO VIP</div>
 
-<div class="card">
-<div class="tag">PEDÍ TU BONO</div>
-<h1 class="title">OBTENÉ TU BONO DE<br>BIENVENIDA</h1>
-<div class="sub">Escribinos apretando el botón de abajo</div>
+  <!-- CARD -->
+  <div class="card">
+    <div class="tag">PEDÍ TU BONO</div>
 
-<a class="waBtn" id="waBtn"
-href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20y%20pedir%20mi%20BONO%20DE%20BIENVENIDA%20✅"
-target="_blank" rel="noopener">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-WHATSAPP OFICIAL
-</a>
+    <h1 class="title">OBTENÉ TU BONO DE<br>BIENVENIDA</h1>
+    <div class="sub">Escribinos apretando el botón de abajo</div>
 
-<div class="mini">ATENCIÓN Y RETIROS LAS 24 HS</div>
-</div>
+    <a class="waBtn" id="waBtn"
+      href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20y%20pedir%20mi%20BONO%20DE%20BIENVENIDA%20✅"
+      target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="">
+      WHATSAPP OFICIAL
+    </a>
 
-<div class="footer">© 2025 el juego es solo +18. Operá con responsabilidad.</div>
+    <div class="mini">ATENCIÓN Y RETIROS LAS 24 HS</div>
+  </div>
+
+  <div class="footer">© 2025 el juego es solo +18. Operá con responsabilidad.</div>
 
 </div>
 
 <script>
 function trackLead(){
-if(window.fbq){
-fbq('track','Lead');
-fbq('trackCustom','WhatsAppClick');
-}
+  if(window.fbq){
+    fbq('track','Lead');
+    fbq('trackCustom','WhatsAppClick');
+  }
 }
 document.getElementById('waBtn').addEventListener('click', trackLead);
 </script>
-
 </body>
 </html>
