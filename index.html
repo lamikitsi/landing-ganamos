@@ -10,35 +10,43 @@
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  text-align:center;
   background: radial-gradient(circle at center,#7b00ff 0%, #2a004f 70%, #150028 100%);
   color:white;
+  display:flex;
+  justify-content:center;
 }
 
-/* LOGO GANAMOS MÁS GRANDE Y PEGADO */
+.container{
+  width:100%;
+  max-width:500px;
+  text-align:center;
+}
+
+/* LOGO */
 .logo{
-  width:450px; /* MÁS GRANDE */
+  width:420px;
   max-width:95%;
-  margin-top:10px;
-  margin-bottom:-15px; /* lo pega al perro */
-  filter: drop-shadow(0 0 40px #b266ff);
+  margin-top:20px;
+  margin-bottom:5px;
+  filter: drop-shadow(0 0 35px #b266ff);
 }
 
-/* PERRO */
+/* PERRO MÁS CHICO Y CENTRADO */
 .dog{
-  width:230px;
+  width:190px; /* MÁS CHICO */
   max-width:85%;
-  margin-top:0;
+  display:block;
+  margin:0 auto;
 }
 
-/* BOTÓN ACCESO VIP NEÓN VIOLETA */
+/* BOTÓN ACCESO VIP */
 .vip-btn{
   display:inline-block;
-  margin-top:18px;
-  padding:16px 55px;
-  font-size:20px;
+  margin-top:15px;
+  padding:14px 50px;
+  font-size:18px;
   font-weight:bold;
-  color:#ffffff;
+  color:white;
   background:#6a00c7;
   border-radius:50px;
   border:2px solid #b266ff;
@@ -65,7 +73,7 @@ body{
 }
 
 .card h2{
-  font-size:26px;
+  font-size:24px;
   margin:0;
 }
 
@@ -74,12 +82,12 @@ body{
   font-size:14px;
 }
 
-/* BOTÓN WHATSAPP EFECTO */
+/* WHATSAPP */
 .whatsapp{
   display:inline-block;
   margin-top:18px;
-  padding:22px 65px;
-  font-size:20px;
+  padding:20px 60px;
+  font-size:18px;
   font-weight:bold;
   color:white;
   background: linear-gradient(180deg,#36d058,#1ea34a);
@@ -104,10 +112,10 @@ body{
 
 <body>
 
+<div class="container">
+
 <img src="assets/logo.png" class="logo">
 <img src="assets/dog.png" class="dog">
-
-<br>
 
 <a href="#" class="vip-btn">ACCESO VIP</a>
 
@@ -121,6 +129,8 @@ body{
   </a>
 
   <div class="footer">ATENCIÓN Y RETIROS LAS 24 HS</div>
+</div>
+
 </div>
 
 </body>
