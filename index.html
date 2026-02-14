@@ -4,134 +4,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ganamos - Bono de Bienvenida</title>
 
 <style>
 body{
     margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background: radial-gradient(circle at center, #7b1cff 0%, #2a0045 40%, #120021 100%);
+    font-family: Arial, Helvetica, sans-serif;
     text-align:center;
+    background: radial-gradient(circle at center, #2b0050 0%, #140022 60%, #0b0015 100%);
     color:white;
-    overflow-x:hidden;
-}
-
-/* EFECTO AURA FONDO */
-body::before{
-    content:"";
-    position:fixed;
-    width:600px;
-    height:600px;
-    background:radial-gradient(circle,#a020f0,transparent 70%);
-    top:-200px;
-    left:50%;
-    transform:translateX(-50%);
-    filter:blur(120px);
-    z-index:-1;
 }
 
 /* LOGO */
 .logo{
-    margin-top:15px;
+    margin-top:5px;
+    margin-bottom:-25px;
 }
-
 .logo img{
-    width:280px;
-    filter: drop-shadow(0 0 15px #9d4dff);
+    width:330px;
+    filter: drop-shadow(0 0 25px #b14dff)
+            drop-shadow(0 0 45px #a020f0);
 }
 
 /* PERRO */
 .perro{
-    margin-top:-5px;
+    margin-top:-15px;
 }
-
 .perro img{
-    width:270px;
-    filter: drop-shadow(0 0 25px #a020f0);
+    width:240px;
 }
 
-/* BOTON VIP */
-.vip-btn{
+/* BOTON ACCESO VIP */
+.vip{
+    margin-top:10px;
+}
+.vip a{
     display:inline-block;
-    margin-top:12px;
-    padding:14px 45px;
+    padding:14px 40px;
     border-radius:40px;
-    border:2px solid #ffd700;
-    color:#ffd700;
     font-weight:bold;
     text-decoration:none;
-    font-size:16px;
-    background:rgba(0,0,0,0.4);
-    box-shadow:0 0 15px #ffd700, 0 0 30px #ffae00;
-    animation: vipglow 1.5s infinite alternate;
+    font-size:18px;
+    color:#ffd700;
+    border:2px solid #ffd700;
+    background:#3a006b;
+    box-shadow:0 0 15px #ffd700;
+    animation: brillo 2s infinite alternate;
 }
 
-@keyframes vipglow{
+@keyframes brillo{
     from{ box-shadow:0 0 10px #ffd700; }
-    to{ box-shadow:0 0 35px #ffae00; }
+    to{ box-shadow:0 0 30px #ffd700; }
 }
 
-/* CARD */
-.card{
-    background:linear-gradient(180deg,#6a0dad,#3d0066);
-    margin:20px;
-    padding:25px 20px;
+/* CAJA BONO */
+.bono{
+    margin:20px 15px;
+    padding:25px;
     border-radius:25px;
-    box-shadow:0 0 40px rgba(160,32,240,0.5);
+    background: linear-gradient(180deg,#5a008f,#2a004d);
+    box-shadow:0 0 30px #7b2cff;
 }
 
-.card h1{
-    font-size:23px;
-    margin-bottom:10px;
-    text-shadow:0 0 10px #ffffff;
+.bono h1{
+    font-size:26px;
+    margin:0 0 10px 0;
 }
 
-.card p{
-    color:#dcdcdc;
+.bono p{
+    opacity:0.8;
     margin-bottom:20px;
 }
 
 /* BOTON WHATSAPP */
-.whatsapp-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    background:#25d366;
-    padding:20px 35px;
+.whatsapp a{
+    display:inline-block;
+    padding:20px 50px;
     border-radius:50px;
-    text-decoration:none;
     font-weight:bold;
+    text-decoration:none;
+    font-size:20px;
     color:white;
-    font-size:19px;
-    box-shadow:0 10px 0 #128c7e,
-               0 0 25px #25d366,
-               0 0 50px #25d366;
-    animation: pulse 1.2s infinite;
+    background: linear-gradient(180deg,#32d058,#159c3a);
+    box-shadow:0 0 25px #00ff6a;
+    animation: glow 1.5s infinite alternate;
 }
 
-.whatsapp-btn img{
-    width:28px;
-    animation: blink 1s infinite;
-}
-
-@keyframes pulse{
-    0%{ transform:scale(1); }
-    50%{ transform:scale(1.06); }
-    100%{ transform:scale(1); }
-}
-
-@keyframes blink{
-    0%{ opacity:1; }
-    50%{ opacity:0.3; }
-    100%{ opacity:1; }
+@keyframes glow{
+    from{ box-shadow:0 0 15px #00ff6a; }
+    to{ box-shadow:0 0 35px #00ff6a; }
 }
 
 .footer{
-    font-size:12px;
-    margin-top:15px;
-    color:#cfcfcf;
+    margin-top:10px;
+    font-size:13px;
+    opacity:0.6;
 }
 </style>
 </head>
@@ -139,23 +106,28 @@ body::before{
 <body>
 
 <div class="logo">
-    <img src="assets/logo.png" alt="Ganamos">
+    <img src="assets/logo.png" alt="Ganamos Logo">
 </div>
 
 <div class="perro">
-    <img src="assets/dog.png" alt="VIP">
+    <img src="assets/dog.png" alt="Mascota VIP">
 </div>
 
-<a href="#" class="vip-btn">ACCESO VIP</a>
+<div class="vip">
+    <a href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida">
+        ACCESO VIP
+    </a>
+</div>
 
-<div class="card">
+<div class="bono">
     <h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
     <p>Escribinos apretando el botón de abajo</p>
 
-    <a href="https://www.linkify.com.ar/api/soporte?id=gxsbti" target="_blank" class="whatsapp-btn">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-        WHATSAPP OFICIAL
-    </a>
+    <div class="whatsapp">
+        <a href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida">
+            WHATSAPP OFICIAL
+        </a>
+    </div>
 
     <div class="footer">
         ATENCIÓN Y RETIROS LAS 24 HS
