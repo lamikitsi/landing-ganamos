@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,51 +15,50 @@ font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background: radial-gradient(circle at center,#7b2cff 0%, #3b0066 40%, #140022 100%);
+background: radial-gradient(circle at center,#7b2cff 0%, #3b0066 50%, #140022 100%);
 display:flex;
-justify-content:center;
-align-items:center;
 flex-direction:column;
+align-items:center;
+justify-content:center;
 min-height:100vh;
 text-align:center;
 color:white;
-padding:15px;
+padding:20px 15px;
 }
 
 /* LOGO MÁS GRANDE */
 .logo{
-width:300px;
-max-width:90%;
-margin-bottom:15px;
-filter: drop-shadow(0 0 30px #c266ff);
+width:340px;
+max-width:95%;
+margin-bottom:10px;
+filter: drop-shadow(0 0 40px #c266ff);
 }
 
 /* PERRO */
 .dog{
-width:240px;
-max-width:85%;
+width:250px;
+max-width:90%;
 margin-bottom:15px;
 }
 
-/* BOTÓN ACCESO VIP */
+/* BOTÓN ACCESO VIP CON EFECTO */
 .vip-btn{
 display:inline-block;
-padding:15px 55px;
+padding:15px 60px;
 background:#5c00a3;
 border-radius:40px;
 border:3px solid #ffd400;
 color:white;
 font-weight:bold;
-font-size:17px;
+font-size:18px;
 text-decoration:none;
-box-shadow:0 0 30px #ffd400;
 margin-bottom:25px;
-transition:0.3s;
+animation:glowVip 1.5s infinite alternate;
 }
 
-.vip-btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 50px #ffd400;
+@keyframes glowVip{
+from{ box-shadow:0 0 15px #ffd400; }
+to{ box-shadow:0 0 45px #ffd400; }
 }
 
 /* CARD */
@@ -71,7 +71,7 @@ max-width:400px;
 box-shadow:0 0 50px rgba(255,0,255,0.6);
 }
 
-/* TÍTULO */
+/* TITULO */
 .card h1{
 font-size:26px;
 margin-bottom:10px;
@@ -84,23 +84,22 @@ opacity:0.9;
 margin-bottom:20px;
 }
 
-/* BOTÓN WHATSAPP GRANDE CON EFECTO */
+/* BOTÓN WHATSAPP CON EFECTO */
 .whatsapp-btn{
 display:inline-block;
 background:linear-gradient(90deg,#2cff71,#00c853);
-padding:20px 50px;
+padding:20px 55px;
 border-radius:50px;
 font-weight:bold;
 font-size:20px;
 text-decoration:none;
 color:white;
-box-shadow:0 0 40px #00ff6a;
-transition:0.3s;
+animation:glowWs 1.5s infinite alternate;
 }
 
-.whatsapp-btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 65px #00ff6a;
+@keyframes glowWs{
+from{ box-shadow:0 0 20px #00ff6a; }
+to{ box-shadow:0 0 60px #00ff6a; }
 }
 
 .footer{
@@ -122,7 +121,6 @@ opacity:0.8;
 <h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
 <p>Escribinos apretando el botón de abajo</p>
 
-<!-- LINKIFY FUNCIONANDO -->
 <a href="https://www.linkify.com.ar/api/soporte?id=gxsbti" class="whatsapp-btn">
 WHATSAPP OFICIAL
 </a>
