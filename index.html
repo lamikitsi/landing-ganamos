@@ -31,7 +31,7 @@ fbq('track', 'PageView');
   --cardBorder: rgba(255,255,255,.10);
 
   --text:#fff;
-  --muted: rgba(255,255,255,.68);
+  --muted: rgba(255,255,255,.65);
 
   --green1:#25D366;
   --green2:#11a84f;
@@ -60,9 +60,7 @@ body{
   text-align:center;
 }
 
-/* =========================
-   LOGO
-   ========================= */
+/* LOGO */
 .logoPill{
   width:100%;
   max-width:520px;
@@ -80,15 +78,11 @@ body{
   height:auto;
   display:block;
   margin:auto;
-
-  /* Mezcla que mantiene brillo */
   mix-blend-mode: screen;
   filter: brightness(1.25) contrast(1.08) saturate(1.15);
 }
 
-/* =========================
-   PERRO
-   ========================= */
+/* PERRO */
 .dog{
   margin: 10px 0 18px;
 }
@@ -101,15 +95,13 @@ body{
   filter: drop-shadow(0 25px 40px rgba(0,0,0,.55));
 }
 
-/* =========================
-   ACCESO VIP (titila)
-   ========================= */
+/* ACCESO VIP */
 .vipBtn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   margin: 6px auto 24px;
-  padding: 10px 24px;
+  padding: 10px 26px;
   border-radius: 999px;
   border: 1px solid rgba(244,199,107,.65);
   color: var(--gold);
@@ -122,23 +114,12 @@ body{
 }
 
 @keyframes vipGlow{
-  0%{
-    transform: scale(1);
-    box-shadow: 0 0 12px rgba(244,199,107,.3);
-  }
-  50%{
-    transform: scale(1.05);
-    box-shadow: 0 0 35px rgba(244,199,107,.6);
-  }
-  100%{
-    transform: scale(1);
-    box-shadow: 0 0 12px rgba(244,199,107,.3);
-  }
+  0%{ transform: scale(1); box-shadow: 0 0 12px rgba(244,199,107,.3);}
+  50%{ transform: scale(1.05); box-shadow: 0 0 35px rgba(244,199,107,.6);}
+  100%{ transform: scale(1); box-shadow: 0 0 12px rgba(244,199,107,.3);}
 }
 
-/* =========================
-   CARD
-   ========================= */
+/* CARD */
 .card{
   width:100%;
   margin: 0 auto;
@@ -163,12 +144,13 @@ body{
   margin-bottom: 18px;
 }
 
+/* TÍTULO MÁS ELEGANTE */
 .title{
   margin: 0;
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 1000;
   text-transform: uppercase;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 
 .sub{
@@ -177,9 +159,7 @@ body{
   color: var(--muted);
 }
 
-/* =========================
-   WHATSAPP
-   ========================= */
+/* WHATSAPP */
 .waBtn{
   width:100%;
   display:flex;
@@ -237,8 +217,10 @@ body{
 
   <div class="card">
     <div class="tag">PEDÍ TU BONO</div>
-    <h1 class="title">OBTENÉ TU BONO DE<br>BIENVENIDA</h1>
-    <div class="sub">Escribinos apretando el botón de abajo</div>
+
+    <h1 class="title">ACTIVÁ TU<br>BONO DE BIENVENIDA</h1>
+
+    <div class="sub">Escribinos ahora y empezá a jugar en minutos</div>
 
     <a class="waBtn" id="waBtn"
       href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20y%20pedir%20mi%20BONO%20DE%20BIENVENIDA%20✅"
