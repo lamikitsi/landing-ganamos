@@ -27,7 +27,7 @@ fbq('track', 'PageView');
   --bgMid:#2b0b4d;
   --bgBot:#2a064a;
 
-  --card: rgba(26, 8, 48, .82);
+  --card: rgba(26, 8, 48, .85);
   --cardBorder: rgba(255,255,255,.10);
 
   --text:#fff;
@@ -37,7 +37,6 @@ fbq('track', 'PageView');
   --green2:#11a84f;
 
   --gold:#f4c76b;
-  --gold2:#d9a441;
 }
 
 *{ box-sizing:border-box; }
@@ -62,19 +61,18 @@ body{
 }
 
 /* =========================
-   LOGO (blanco -> violeta)
+   LOGO
    ========================= */
 .logoPill{
   width:100%;
   max-width:520px;
-  margin: 8px auto 26px;
-  padding: 10px 12px;
-  border-radius: 26px;
-  /* Fondo violeta para que el blanco “tome” este color */
-  background: rgba(25, 10, 60, .35);
+  margin: 8px auto 28px;
+  padding: 12px;
+  border-radius: 28px;
+  background: rgba(60,20,120,.35);
   border: 1px solid rgba(255,255,255,.10);
-  box-shadow: 0 18px 50px rgba(0,0,0,.55);
-  overflow:hidden; /* recorta bordes feos */
+  box-shadow: 0 18px 50px rgba(0,0,0,.55),
+              0 0 40px rgba(168,85,247,.25);
 }
 
 .logoPill img{
@@ -83,12 +81,14 @@ body{
   display:block;
   margin:auto;
 
-  /* TRUCO: el blanco se mezcla con el violeta */
-  mix-blend-mode: multiply;
-  filter: contrast(1.05) saturate(1.08);
+  /* Mezcla que mantiene brillo */
+  mix-blend-mode: screen;
+  filter: brightness(1.25) contrast(1.08) saturate(1.15);
 }
 
-/* ===== PERRO ===== */
+/* =========================
+   PERRO
+   ========================= */
 .dog{
   margin: 10px 0 18px;
 }
@@ -118,27 +118,27 @@ body{
   letter-spacing: .8px;
   text-transform: uppercase;
   font-size: 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.45);
   animation: vipGlow 1.2s infinite;
-  user-select:none;
 }
 
 @keyframes vipGlow{
   0%{
     transform: scale(1);
-    box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 18px rgba(244,199,107,.25);
+    box-shadow: 0 0 12px rgba(244,199,107,.3);
   }
   50%{
     transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 42px rgba(244,199,107,.55);
+    box-shadow: 0 0 35px rgba(244,199,107,.6);
   }
   100%{
     transform: scale(1);
-    box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 18px rgba(244,199,107,.25);
+    box-shadow: 0 0 12px rgba(244,199,107,.3);
   }
 }
 
-/* ===== CARD ===== */
+/* =========================
+   CARD
+   ========================= */
 .card{
   width:100%;
   margin: 0 auto;
@@ -147,20 +147,8 @@ body{
   background: var(--card);
   border: 1px solid var(--cardBorder);
   box-shadow: 0 30px 70px rgba(0,0,0,.65);
-  position:relative;
-  overflow:hidden;
 }
 
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-40px -60px auto -60px;
-  height:180px;
-  background: radial-gradient(circle at 50% 50%, rgba(168,85,247,.35) 0%, rgba(0,0,0,0) 70%);
-  pointer-events:none;
-}
-
-/* ===== PEDÍ TU BONO ===== */
 .tag{
   display:inline-block;
   padding: 8px 18px;
@@ -173,15 +161,12 @@ body{
   text-transform: uppercase;
   font-size: 13px;
   margin-bottom: 18px;
-  box-shadow: 0 10px 26px rgba(0,0,0,.35);
 }
 
-/* ===== TITULO ===== */
 .title{
   margin: 0;
   font-size: 36px;
   font-weight: 1000;
-  letter-spacing: .4px;
   text-transform: uppercase;
   line-height: 1.05;
 }
@@ -192,62 +177,47 @@ body{
   color: var(--muted);
 }
 
-/* ===== BOTÓN WHATSAPP ===== */
+/* =========================
+   WHATSAPP
+   ========================= */
 .waBtn{
-  width: min(420px, 100%);
-  margin: 0 auto;
+  width:100%;
   display:flex;
   align-items:center;
   justify-content:center;
   gap:12px;
-
   text-decoration:none;
   color:#fff;
-  font-weight: 1000;
-  font-size: 20px;
-  padding: 18px 18px;
-  border-radius: 999px;
-
-  background: linear-gradient(180deg, var(--green1), var(--green2));
-  border: 2px solid rgba(0,0,0,.25);
-
-  box-shadow:
-    0 18px 40px rgba(0,0,0,.60),
-    inset 0 10px 18px rgba(255,255,255,.18),
-    inset 0 -12px 20px rgba(0,0,0,.30),
-    0 0 0 2px rgba(37,211,102,.25);
-
-  animation: pulse 1.25s infinite;
+  font-weight:1000;
+  font-size:20px;
+  padding:18px;
+  border-radius:999px;
+  background: linear-gradient(180deg,var(--green1),var(--green2));
+  box-shadow:0 18px 40px rgba(0,0,0,.6);
+  animation:pulse 1.2s infinite;
 }
 
 .waBtn img{
-  width: 34px;
-  height: 34px;
+  width:34px;
 }
 
 @keyframes pulse{
-  0%{ transform: scale(1); }
-  50%{ transform: scale(1.04); }
-  100%{ transform: scale(1); }
+  0%{transform:scale(1);}
+  50%{transform:scale(1.04);}
+  100%{transform:scale(1);}
 }
 
 .mini{
-  margin-top: 18px;
-  font-size: 12px;
-  color: rgba(255,255,255,.45);
-  letter-spacing: .6px;
-  text-transform: uppercase;
+  margin-top:18px;
+  font-size:12px;
+  color:rgba(255,255,255,.45);
+  text-transform:uppercase;
 }
 
 .footer{
-  margin-top: 22px;
-  font-size: 12px;
-  color: rgba(255,255,255,.35);
-}
-
-@media (max-width:380px){
-  .title{ font-size: 30px; }
-  .dog img{ width:175px; }
+  margin-top:22px;
+  font-size:12px;
+  color:rgba(255,255,255,.35);
 }
 </style>
 </head>
@@ -255,30 +225,25 @@ body{
 <body>
 <div class="wrap">
 
-  <!-- LOGO -->
   <div class="logoPill">
     <img src="assets/logo.png" alt="Ganamos.net">
   </div>
 
-  <!-- PERRO -->
   <div class="dog">
     <img src="assets/dog.png" alt="Ganamos VIP">
   </div>
 
-  <!-- VIP -->
   <div class="vipBtn">ACCESO VIP</div>
 
-  <!-- CARD -->
   <div class="card">
     <div class="tag">PEDÍ TU BONO</div>
-
     <h1 class="title">OBTENÉ TU BONO DE<br>BIENVENIDA</h1>
     <div class="sub">Escribinos apretando el botón de abajo</div>
 
     <a class="waBtn" id="waBtn"
       href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20y%20pedir%20mi%20BONO%20DE%20BIENVENIDA%20✅"
-      target="_blank" rel="noopener">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="">
+      target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
       WHATSAPP OFICIAL
     </a>
 
@@ -293,7 +258,6 @@ body{
 function trackLead(){
   if(window.fbq){
     fbq('track','Lead');
-    fbq('trackCustom','WhatsAppClick');
   }
 }
 document.getElementById('waBtn').addEventListener('click', trackLead);
