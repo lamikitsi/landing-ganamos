@@ -2,38 +2,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ganamos VIP</title>
 
 <style>
-body{
+  body{
     margin:0;
     font-family: Arial, sans-serif;
     text-align:center;
     background: radial-gradient(circle at center,#6d00ff 0%, #2a004f 70%, #150028 100%);
-    color:white;
-}
+    color:#fff;
+  }
 
-/* LOGO GRANDE */
-.logo{
-    width:340px;
-    margin-top:15px;
-    margin-bottom:5px;
+  /* CONTENEDOR ARRIBA (fuerza columna) */
+  .top{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* LOGO GRANDE (SIEMPRE ARRIBA) */
+  .logo{
+    display:block;          /* <- CLAVE */
+    width:360px;
+    max-width:92vw;
+    margin:14px auto 6px auto;
     filter: drop-shadow(0 0 25px #a855ff);
-}
+  }
 
-/* PERRO MÁS CHICO */
-.dog{
+  /* PERRO DEBAJO DEL LOGO */
+  .dog{
+    display:block;          /* <- CLAVE */
     width:220px;
-    margin-top:5px;
-    margin-bottom:5px;
-}
+    max-width:70vw;
+    margin:6px auto 8px auto;
+  }
 
-/* BOTÓN VIP */
-.vip-btn{
+  /* BOTÓN VIP */
+  .vip-btn{
     display:inline-block;
-    margin-top:5px;
+    margin:6px 0 14px 0;
     padding:14px 45px;
     font-size:18px;
     font-weight:bold;
@@ -43,86 +52,77 @@ body{
     border:3px solid #ffd000;
     text-decoration:none;
     box-shadow:0 0 25px #ffd000;
-}
+  }
 
-/* TARJETA BONO */
-.card{
-    margin:20px 15px;
-    padding:25px 20px;
+  /* TARJETA BONO */
+  .card{
+    margin:16px 14px 22px 14px;
+    padding:24px 18px;
     background: linear-gradient(180deg,#6a00b8,#3a006b);
     border-radius:25px;
-    box-shadow:0 0 40px rgba(255,0,255,0.6);
-}
+    box-shadow:0 0 40px rgba(255,0,255,0.55);
+  }
 
-/* TITULO */
-.card h2{
+  .card h2{
     margin:0;
-    font-size:24px;
-}
+    font-size:26px;
+    letter-spacing:0.5px;
+  }
 
-/* TEXTO */
-.card p{
+  .card p{
+    margin:10px 0 0 0;
     font-size:14px;
     opacity:0.9;
-}
+  }
 
-/* BOTÓN WHATSAPP */
-.whatsapp{
+  /* BOTÓN WHATSAPP */
+  .whatsapp{
     display:inline-block;
-    margin-top:15px;
-    padding:20px 50px;
+    margin-top:16px;
+    padding:20px 52px;
     font-size:20px;
     font-weight:bold;
-    color:white;
+    color:#fff;
     background: linear-gradient(180deg,#34d058,#1ea34a);
     border-radius:50px;
     text-decoration:none;
     box-shadow:0 0 30px #00ff88;
     animation:pulse 1.5s infinite;
-}
+  }
 
-/* EFECTO WHATSAPP */
-@keyframes pulse{
+  @keyframes pulse{
     0%{box-shadow:0 0 20px #00ff88;}
     50%{box-shadow:0 0 45px #00ff88;}
     100%{box-shadow:0 0 20px #00ff88;}
-}
+  }
 
-.footer{
+  .footer{
     margin-top:10px;
     font-size:12px;
     opacity:0.8;
-}
+  }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO -->
-<img src="assets/logo.png" class="logo" alt="Ganamos">
+  <div class="top">
+    <img src="assets/logo.png" class="logo" alt="Ganamos" />
+    <img src="assets/dog.png" class="dog" alt="VIP" />
+    <a href="#" class="vip-btn">ACCESO VIP</a>
+  </div>
 
-<!-- PERRO ENTRE LOGO Y VIP -->
-<img src="assets/dog.png" class="dog" alt="VIP">
-
-<br>
-
-<!-- BOTÓN VIP -->
-<a href="#" class="vip-btn">ACCESO VIP</a>
-
-<!-- TARJETA BONO -->
-<div class="card">
+  <div class="card">
     <h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
     <p>Escribinos apretando el botón de abajo</p>
 
-    <a href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida" 
-       class="whatsapp">
-       WHATSAPP OFICIAL
+    <a class="whatsapp"
+       href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida">
+      WHATSAPP OFICIAL
     </a>
 
-    <div class="footer">
-        ATENCIÓN Y RETIROS LAS 24 HS
-    </div>
-</div>
+    <div class="footer">ATENCIÓN Y RETIROS LAS 24 HS</div>
+  </div>
 
 </body>
 </html>
