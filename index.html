@@ -2,270 +2,176 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ganamos</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ganamos</title>
 
-  <!-- Meta Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '901147982849876');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1" alt="" />
-  </noscript>
+fbq('init', '901147982849876');
+fbq('track', 'PageView');
+</script>
 
-  <style>
-    :root{
-      --bg1:#2d0066;
-      --bg2:#0a001a;
+<style>
+:root{
+--bg1:#2d0066;
+--bg2:#0a001a;
+--card: rgba(10,0,26,.45);
+--green1:#34d399;
+--green2:#16a34a;
+}
 
-      --card: rgba(10,0,26,.45);
-      --border: rgba(255,255,255,.10);
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background: radial-gradient(circle at center, var(--bg1) 0%, var(--bg2) 100%);
+min-height:100vh;
+color:white;
+display:flex;
+justify-content:center;
+}
 
-      --text:#ffffff;
-      --muted: rgba(255,255,255,.72);
+.container{
+width:100%;
+max-width:520px;
+padding:20px 18px 110px;
+text-align:center;
+}
 
-      --green1:#34d399;
-      --green2:#16a34a;
+/* LOGO SUPERIOR */
+.topLogo{
+margin-bottom:15px;
+}
+.topLogo img{
+width:100%;
+max-width:460px; /* más grande */
+display:block;
+margin:auto;
+}
 
-      --glowG: rgba(34,197,94,.55);
-    }
+/* PERRO MÁS CHICO */
+.hero img{
+width:160px;  /* mucho más chico */
+margin:10px 0 20px;
+}
 
-    *{ box-sizing:border-box; }
+/* CARD BONO */
+.card{
+background: var(--card);
+border-radius:24px;
+padding:28px 18px;
+box-shadow:0 20px 45px rgba(0,0,0,.6);
+}
 
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at center, var(--bg1) 0%, var(--bg2) 100%);
-      min-height:100vh;
-      color: var(--text);
-      display:flex;
-      justify-content:center;
-    }
+.bono{
+background:#22c55e;
+color:#000;
+font-weight:900;
+padding:6px 14px;
+border-radius:999px;
+display:inline-block;
+margin-bottom:18px;
+font-size:14px;
+}
 
-    .container{
-      width:100%;
-      max-width:520px;
-      padding:18px 18px 110px; /* espacio para el botón sticky */
-      text-align:center;
-    }
+.title{
+font-size:32px;
+font-weight:900;
+line-height:1.1;
+margin:0;
+}
 
-    /* ====== TOP LOGO BAR (tipo tu ejemplo) ====== */
-    .topLogoBar{
-      margin: 6px auto 14px;
-      padding: 12px 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--border);
-      box-shadow: 0 16px 40px rgba(0,0,0,.45);
-      backdrop-filter: blur(8px);
-    }
+.sub{
+margin-top:14px;
+opacity:.8;
+font-size:16px;
+}
 
-    /* Opción A: Logo como IMAGEN (recomendado) */
-    .topLogoImg{
-      width: 100%;
-      max-width: 430px;
-      height: auto;
-      display:block;
-      margin: 0 auto;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
-    }
+/* BOTÓN STICKY */
+.wa-sticky{
+position:fixed;
+left:14px;
+right:14px;
+bottom:14px;
+z-index:99;
+}
 
-    /* Opción B: Logo como TEXTO verde (si no usás imagen) */
-    .topLogoText{
-      font-weight: 1000;
-      letter-spacing: 3px;
-      font-size: 34px;
-      line-height: 1;
-      text-transform: uppercase;
-      color: #b7ffcf;
-      text-shadow:
-        0 0 12px var(--glowG),
-        0 0 24px rgba(34,197,94,.25);
-    }
+.wa-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+width:100%;
+text-decoration:none;
+color:white;
+font-weight:900;
+font-size:20px;
+padding:20px;
+border-radius:999px;
+background: linear-gradient(180deg,var(--green1),var(--green2));
+box-shadow:
+0 20px 40px rgba(0,0,0,.55),
+0 0 40px rgba(34,197,94,.7);
+animation:pulse 1.2s infinite;
+}
 
-    /* ====== Perro más chico ====== */
-    .hero{
-      margin: 6px 0 10px;
-      display:flex;
-      justify-content:center;
-    }
-    .hero img{
-      width: 220px;           /* más chico */
-      max-width: 70vw;
-      height:auto;
-      border-radius: 18px;
-      box-shadow: 0 18px 45px rgba(0,0,0,.55);
-    }
+.wa-icon{
+width:34px;
+}
 
-    /* ====== CARD BONO ====== */
-    .card{
-      margin-top: 14px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 26px 18px 22px;
-      box-shadow: 0 18px 45px rgba(0,0,0,.55);
-      backdrop-filter: blur(10px);
-    }
-
-    .title{
-      margin: 0;
-      font-size: 34px;
-      font-weight: 1000;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      line-height: 1.05;
-    }
-
-    .sub{
-      margin: 14px 0 0;
-      font-size: 16px;
-      color: var(--muted);
-    }
-
-    .miniNote{
-      margin: 14px 0 0;
-      font-size: 13px;
-      color: rgba(255,255,255,.55);
-      letter-spacing: .3px;
-      text-transform: uppercase;
-    }
-
-    /* ====== BOTÓN WHATSAPP STICKY GIGANTE ====== */
-    .wa-sticky{
-      position:fixed;
-      left:14px;
-      right:14px;
-      bottom:14px;
-      z-index:99;
-      display:flex;
-      justify-content:center;
-    }
-
-    .wa-btn{
-      width: min(520px, 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      text-decoration:none;
-      color:#fff;
-      font-weight:1000;
-      font-size:20px;
-      padding:20px 18px;
-      border-radius:999px;
-      background: linear-gradient(180deg,var(--green1) 0%,var(--green2) 100%);
-      border: 2px solid rgba(0,0,0,.25);
-      box-shadow:
-        0 20px 40px rgba(0,0,0,.55),
-        inset 0 10px 18px rgba(255,255,255,.22),
-        inset 0 -12px 20px rgba(0,0,0,.35),
-        0 0 0 2px rgba(34,197,94,.45);
-      animation: pulse 1.2s infinite;
-      user-select:none;
-      transform: translateZ(0);
-    }
-
-    .wa-btn:active{ transform: scale(.99); }
-
-    .wa-icon{
-      width: 34px;
-      height: 34px;
-      filter: drop-shadow(0 8px 10px rgba(0,0,0,.35));
-    }
-
-    @keyframes pulse{
-      0%{
-        transform:scale(1);
-        box-shadow:
-          0 20px 40px rgba(0,0,0,.55),
-          0 0 22px rgba(34,197,94,.35);
-      }
-      50%{
-        transform:scale(1.04);
-        box-shadow:
-          0 20px 40px rgba(0,0,0,.55),
-          0 0 60px rgba(34,197,94,.78);
-      }
-      100%{
-        transform:scale(1);
-        box-shadow:
-          0 20px 40px rgba(0,0,0,.55),
-          0 0 22px rgba(34,197,94,.35);
-      }
-    }
-
-    @media (max-width:380px){
-      .title{ font-size: 30px; }
-      .topLogoText{ font-size: 30px; }
-      .wa-btn{ font-size: 18px; }
-      .wa-icon{ width: 32px; height: 32px; }
-      .hero img{ width: 200px; }
-    }
-  </style>
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
 
-    <!-- TOP LOGO BAR -->
-    <div class="topLogoBar">
-      <!-- ✅ OPCIÓN 1 (RECOMENDADA): usa tu logo real en imagen -->
-      <!-- Poné tu archivo en /assets/logo.png -->
-      <img class="topLogoImg" src="assets/logo.png" alt="Ganamos" />
+<div class="container">
 
-      <!-- ✅ OPCIÓN 2: si no querés imagen, borrá la línea de arriba
-           y descomentá esta:
-      -->
-      <!-- <div class="topLogoText">LOGO</div> -->
-    </div>
+<div class="topLogo">
+<img src="assets/logo.png" alt="Ganamos">
+</div>
 
-    <!-- PERRO MÁS CHICO -->
-    <div class="hero">
-      <!-- usa tu imagen actual -->
-      <img src="assets/dog.png" alt="Ganamos VIP" />
-    </div>
+<div class="hero">
+<img src="assets/dog.png" alt="Ganamos VIP">
+</div>
 
-    <!-- CARD BONO -->
-    <div class="card">
-      <h1 class="title">OBTENÉ TU BONO DE<br>BIENVENIDA</h1>
-      <div class="sub">Escribinos apretando el botón de abajo</div>
-      <div class="miniNote">ATENCIÓN Y RETIROS LAS 24 HS</div>
-    </div>
+<div class="card">
+<div class="bono">BONO DE BIENVENIDA</div>
+<h1 class="title">OBTENÉ TU BONO AHORA</h1>
+<div class="sub">Escribinos tocando el botón de abajo</div>
+</div>
 
-  </div>
+</div>
 
-  <!-- BOTÓN STICKY GIGANTE ABAJO -->
-  <div class="wa-sticky">
-    <a class="wa-btn" id="waBtnSticky"
-       href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20en%20Ganamos%20✅%20y%20reclamar%20mi%20BONO%20DE%20BIENVENIDA"
-       target="_blank" rel="noopener">
-      <img class="wa-icon" alt="" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-      WHATSAPP OFICIAL
-    </a>
-  </div>
+<div class="wa-sticky">
+<a class="wa-btn" id="waBtnSticky"
+href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20y%20reclamar%20mi%20BONO"
+target="_blank">
+<img class="wa-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+WHATSAPP OFICIAL
+</a>
+</div>
 
-  <script>
-    // Lead al click del botón sticky
-    function trackLead(){
-      if (window.fbq){
-        fbq('track', 'Lead');
-        fbq('trackCustom', 'WhatsAppClick');
-      }
-    }
-    document.getElementById('waBtnSticky').addEventListener('click', trackLead);
-  </script>
+<script>
+function trackLead(){
+if(window.fbq){
+fbq('track','Lead');
+}
+}
+document.getElementById('waBtnSticky').addEventListener('click', trackLead);
+</script>
+
 </body>
 </html>
