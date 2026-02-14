@@ -9,103 +9,111 @@
 <style>
 body{
   margin:0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at center,#7b00ff 0%, #2a004f 70%, #150028 100%);
-  color:white;
-  display:flex;
-  justify-content:center;
-}
-
-.container{
-  width:100%;
-  max-width:420px;
+  font-family:Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at center,#6d00ff 0%,#2b004d 70%);
   text-align:center;
-  padding:10px 15px 20px 15px;
+  color:white;
 }
 
-/* LOGO MÁS GRANDE Y MÁS PEGADO */
+/* LOGO */
 .logo{
-  width:390px;
+  width:300px;
   max-width:95%;
-  margin-top:10px;
-  margin-bottom:-5px;
-  filter: drop-shadow(0 0 35px #b266ff);
-}
-
-/* PERRO MÁS CHICO Y CENTRADO */
-.dog{
-  width:170px;
-  max-width:85%;
+  margin:30px auto 5px auto; /* más pegado */
   display:block;
-  margin:0 auto;
 }
 
-/* BOTÓN ACCESO VIP ORIGINAL */
+/* PERRO */
+.dog{
+  width:190px; /* más grande */
+  max-width:90%;
+  display:block;
+  margin:-5px auto 5px auto; /* más arriba */
+}
+
+/* BOTÓN VIP */
 .vip-btn{
   display:inline-block;
-  margin-top:10px;
-  padding:14px 55px;
-  font-size:18px;
-  font-weight:bold;
-  color:white;
-  background:#5a00b5;
-  border-radius:50px;
+  padding:14px 45px;
+  background:#6d00ff;
   border:3px solid #ffd400;
+  border-radius:40px;
+  color:white;
+  font-weight:bold;
+  font-size:18px;
   text-decoration:none;
+  margin:10px auto 25px auto;
   animation: vipGlow 1.2s infinite alternate;
 }
 
 @keyframes vipGlow{
-  from{
-    box-shadow:0 0 10px #ffd400, 0 0 20px #ffd400;
+  0%{
+    box-shadow:
+      0 0 10px #ffd400,
+      0 0 25px #ffd400,
+      0 0 40px #ffea00;
   }
-  to{
-    box-shadow:0 0 35px #ffd400, 0 0 60px #ffea00;
+  100%{
+    box-shadow:
+      0 0 25px #ffd400,
+      0 0 55px #ffd400,
+      0 0 90px #ffea00;
   }
 }
 
-/* TARJETA MÁS COMPACTA */
+/* CARD */
 .card{
-  margin:20px 5px 0 5px;
-  padding:20px 15px;
-  background: linear-gradient(180deg,#7a00c2,#3a006b);
+  background: linear-gradient(180deg,#8a00ff,#5a0099);
+  padding:30px 20px;
   border-radius:25px;
-  box-shadow:0 0 50px rgba(255,0,255,0.6);
+  width:90%;
+  max-width:420px;
+  margin:0 auto 40px auto;
+  box-shadow:0 0 40px rgba(255,0,255,0.4);
 }
 
-.card h2{
-  font-size:22px;
-  margin:0;
+.card h1{
+  font-size:24px;
+  margin:0 0 10px 0;
 }
 
 .card p{
-  margin-top:8px;
-  font-size:13px;
+  font-size:14px;
+  opacity:0.9;
+  margin-bottom:20px;
 }
 
 /* WHATSAPP */
 .whatsapp{
   display:inline-block;
-  margin-top:15px;
-  padding:18px 55px;
-  font-size:17px;
-  font-weight:bold;
+  padding:16px 40px;
+  background:#2ecc71;
+  border-radius:40px;
   color:white;
-  background: linear-gradient(180deg,#36d058,#1ea34a);
-  border-radius:50px;
+  font-weight:bold;
+  font-size:16px;
   text-decoration:none;
-  animation: pulse 1.3s infinite;
+  animation: whatsGlow 1.5s infinite alternate;
 }
 
-@keyframes pulse{
-  0%{ box-shadow:0 0 20px #00ff88; }
-  50%{ box-shadow:0 0 45px #00ff88; }
-  100%{ box-shadow:0 0 20px #00ff88; }
+@keyframes whatsGlow{
+  0%{
+    box-shadow:
+      0 0 10px #2ecc71,
+      0 0 25px #2ecc71,
+      0 0 40px #00ff88;
+  }
+  100%{
+    box-shadow:
+      0 0 25px #2ecc71,
+      0 0 60px #2ecc71,
+      0 0 100px #00ff88;
+  }
 }
 
 .footer{
-  margin-top:10px;
   font-size:12px;
+  margin-top:15px;
   opacity:0.8;
 }
 </style>
@@ -113,25 +121,24 @@ body{
 
 <body>
 
-<div class="container">
-
 <img src="assets/logo.png" class="logo">
+
 <img src="assets/dog.png" class="dog">
 
 <a href="#" class="vip-btn">ACCESO VIP</a>
 
 <div class="card">
-  <h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
+  <h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
   <p>Escribinos apretando el botón de abajo</p>
 
-  <a class="whatsapp"
-  href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida">
-  WHATSAPP OFICIAL
+  <a href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida"
+     class="whatsapp">
+     WHATSAPP OFICIAL
   </a>
 
-  <div class="footer">ATENCIÓN Y RETIROS LAS 24 HS</div>
-</div>
-
+  <div class="footer">
+    ATENCIÓN Y RETIROS LAS 24 HS
+  </div>
 </div>
 
 </body>
