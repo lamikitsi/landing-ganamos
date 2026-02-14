@@ -1,103 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganamos - Bono VIP</title>
+<title>Ganamos.net - Bono VIP</title>
 
 <style>
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background: radial-gradient(circle at top,#5c1aa8 0%,#240046 60%,#120022 100%);
-    text-align:center;
-    color:white;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background: radial-gradient(circle at center, #6d00ff 0%, #1a0033 70%);
+text-align:center;
+color:white;
+overflow-x:hidden;
 }
 
 /* LOGO */
 .logo{
-    margin-top:-10px;
-    margin-bottom:-70px;
+margin-top:20px;
+margin-bottom:-30px; /* MÁS PEGADO AL PERRO */
 }
 
 .logo img{
-    width:430px;
-    max-width:95%;
-    filter: drop-shadow(0 0 35px #b14dff)
-            drop-shadow(0 0 70px #a020f0);
+width:340px; /* MÁS GRANDE */
+max-width:95%;
+filter: drop-shadow(0 0 25px #b400ff);
 }
 
 /* PERRO */
-.perro{
-    margin-top:-40px;
+.dog{
+margin-top:10px;
 }
 
-.perro img{
-    width:270px;
+.dog img{
+width:260px;
+max-width:90%;
 }
 
-/* ACCESO VIP */
+/* BOTÓN ACCESO VIP */
 .vip-btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:14px 45px;
-    border-radius:50px;
-    background:#3c006b;
-    border:3px solid #ffd700;
-    color:#ffd700;
-    font-weight:bold;
-    font-size:18px;
-    text-decoration:none;
-    box-shadow:0 0 20px #ffd700;
-}
-
-/* TARJETA */
-.card{
-    margin:30px 15px;
-    padding:25px 20px 30px;
-    border-radius:30px;
-    background:linear-gradient(180deg,#7b1fa2,#4a0072);
-    box-shadow:0 0 40px #a020f0;
-}
-
-/* TITULO */
-.card h1{
-    font-size:26px;
-    margin-bottom:10px;
-}
-
-/* TEXTO */
-.card p{
-    color:#ddd;
-    font-size:15px;
-}
-
-/* WHATSAPP */
-.whatsapp-btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:18px 40px;
-    border-radius:50px;
-    background:linear-gradient(180deg,#2ecc71,#27ae60);
-    color:white;
-    font-weight:bold;
-    font-size:18px;
-    text-decoration:none;
-    box-shadow:0 0 25px #2ecc71;
-    animation:pulse 1.5s infinite;
+display:inline-block;
+margin-top:15px;
+padding:14px 40px;
+border-radius:40px;
+background:#3c007a;
+border:3px solid #ffd000;
+color:#ffd000;
+font-weight:bold;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 0 20px #ffd000;
+animation: pulse 2s infinite;
 }
 
 @keyframes pulse{
-    0%{box-shadow:0 0 15px #2ecc71;}
-    50%{box-shadow:0 0 35px #2ecc71;}
-    100%{box-shadow:0 0 15px #2ecc71;}
+0%{box-shadow:0 0 15px #ffd000;}
+50%{box-shadow:0 0 30px #ffd000;}
+100%{box-shadow:0 0 15px #ffd000;}
+}
+
+/* CARD */
+.card{
+margin:30px 15px;
+padding:30px 20px;
+border-radius:25px;
+background:linear-gradient(180deg,#7a00cc,#3b0066);
+box-shadow:0 0 40px #b400ff;
+}
+
+.card h1{
+font-size:26px;
+margin-bottom:10px;
+}
+
+.card p{
+opacity:0.8;
+margin-bottom:25px;
+}
+
+/* BOTÓN WHATSAPP */
+.whatsapp-btn{
+display:inline-block;
+padding:18px 45px;
+border-radius:50px;
+background:linear-gradient(180deg,#38d16a,#1fa64b);
+color:white;
+font-weight:bold;
+font-size:20px;
+text-decoration:none;
+box-shadow:0 0 25px #38ff88;
+animation: vibrar 1.5s infinite;
+}
+
+@keyframes vibrar{
+0%{transform:translateX(0);}
+20%{transform:translateX(-3px);}
+40%{transform:translateX(3px);}
+60%{transform:translateX(-3px);}
+80%{transform:translateX(3px);}
+100%{transform:translateX(0);}
 }
 
 .footer{
-    margin-top:15px;
-    font-size:13px;
-    color:#ccc;
+margin-top:15px;
+font-size:12px;
+opacity:0.7;
 }
 </style>
 </head>
@@ -105,26 +112,27 @@ body{
 <body>
 
 <div class="logo">
-    <img src="assets/logo.png" alt="Ganamos">
+<img src="logo.png" alt="Ganamos">
 </div>
 
-<div class="perro">
-    <img src="assets/perro.png" alt="VIP">
+<div class="dog">
+<img src="perro.png" alt="VIP">
 </div>
 
 <a href="#" class="vip-btn">ACCESO VIP</a>
 
 <div class="card">
-    <h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
-    <p>Escribinos apretando el botón de abajo</p>
+<h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
+<p>Escribinos apretando el botón de abajo</p>
 
-    <a href="https://www.linkify.com.ar/api/soporte?id=gxsbti" class="whatsapp-btn">
-        WHATSAPP OFICIAL
-    </a>
+<a href="https://www.linkify.com.ar/api/soporte?id=gxsbtI" 
+class="whatsapp-btn">
+WHATSAPP OFICIAL
+</a>
 
-    <div class="footer">
-        ATENCIÓN Y RETIROS LAS 24 HS
-    </div>
+<div class="footer">
+ATENCIÓN Y RETIROS LAS 24 HS
+</div>
 </div>
 
 </body>
