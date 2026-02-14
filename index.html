@@ -1,11 +1,9 @@
-
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ganamos</title>
-  <meta name="description" content="Ganamos - Atención rápida por WhatsApp" />
 
   <!-- Meta Pixel -->
   <script>
@@ -35,6 +33,10 @@
       --text:#ffffff;
       --muted: rgba(255,255,255,.78);
       --muted2: rgba(255,255,255,.60);
+
+      --violet1:#a855f7;
+      --violet2:#4A00E0;
+
       --green1:#34d399;
       --green2:#16a34a;
     }
@@ -55,39 +57,102 @@
       padding:18px;
       width:100%;
       max-width:520px;
+      padding-bottom: 92px; /* espacio para el botón sticky mobile */
     }
 
-    .copy{
+    /* ====== GANAMOS GRANDE TITILANDO ====== */
+    .brandWrap{
+      margin: 8px 0 14px;
+      padding: 14px 12px;
       background: var(--card);
       border: 1px solid rgba(255,255,255,.10);
       border-radius: 18px;
-      padding: 14px;
-      margin-bottom:14px;
       box-shadow: 0 15px 35px rgba(0,0,0,.35);
+      position: relative;
+      overflow:hidden;
     }
 
-    .copy h1{
-      font-size: 22px;
-      margin: 0 0 8px;
-      font-weight: 900;
+    .brandTitle{
+      margin:0;
+      font-weight: 1000;
+      letter-spacing: 3px;
+      font-size: 44px;
+      line-height: 1;
+      text-transform: uppercase;
+      display:flex;
+      justify-content:center;
+      gap:4px;
+      flex-wrap:wrap;
     }
 
-    .copy p{
-      margin: 0;
+    /* cada letra titila con delay */
+    .brandTitle span{
+      display:inline-block;
+      background: linear-gradient(135deg, #fff, var(--violet1));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 14px rgba(168,85,247,.35);
+      animation: glow 1.2s infinite;
+    }
+    .brandTitle span:nth-child(1){ animation-delay: 0s; }
+    .brandTitle span:nth-child(2){ animation-delay: .08s; }
+    .brandTitle span:nth-child(3){ animation-delay: .16s; }
+    .brandTitle span:nth-child(4){ animation-delay: .24s; }
+    .brandTitle span:nth-child(5){ animation-delay: .32s; }
+    .brandTitle span:nth-child(6){ animation-delay: .40s; }
+    .brandTitle span:nth-child(7){ animation-delay: .48s; }
+
+    @keyframes glow{
+      0%   { transform: translateY(0); filter: brightness(1); text-shadow: 0 0 10px rgba(168,85,247,.25); }
+      50%  { transform: translateY(-1px); filter: brightness(1.35); text-shadow: 0 0 22px rgba(168,85,247,.65); }
+      100% { transform: translateY(0); filter: brightness(1); text-shadow: 0 0 10px rgba(168,85,247,.25); }
+    }
+
+    .brandSub{
+      margin:10px 0 0;
       font-size: 14px;
-      line-height: 1.35;
       color: var(--muted);
     }
 
-    .logo img,
+    /* ====== Icono WhatsApp grande arriba (opcional) ====== */
+    .waBigIcon{
+      width: 54px;
+      height: 54px;
+      margin: 10px auto 0;
+      border-radius: 16px;
+      background: rgba(37,211,102,.14);
+      border: 1px solid rgba(37,211,102,.25);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 12px 25px rgba(0,0,0,.35);
+    }
+    .waBigIcon img{
+      width: 34px;
+      height: 34px;
+    }
+
+    /* LOGO IMAGEN (si querés usarlo aparte) */
+    .logo img{
+      width:100%;
+      max-width:520px;
+      border-radius:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,.6);
+      margin-bottom:14px;
+      display:block;
+    }
+
+    /* IMAGEN PROMO */
     .promo img{
       width:100%;
       border-radius:20px;
-      box-shadow:0 20px 40px rgba(0,0,0,.6);
+      box-shadow:0 15px 35px rgba(0,0,0,.6);
       margin-bottom:18px;
       display:block;
     }
 
+    /* BOTON WHATSAPP PREMIUM */
     .wa-btn{
       display:flex;
       align-items:center;
@@ -108,17 +173,37 @@
         0 0 0 2px rgba(34,197,94,.4);
       animation: pulse 1.2s infinite;
       transition:0.2s;
+      user-select:none;
+    }
+
+    /* Icono WhatsApp grande en el botón */
+    .wa-icon{
+      width: 34px;
+      height: 34px;
     }
 
     .wa-btn:hover{ transform:scale(1.03); }
 
     @keyframes pulse{
-      0%{transform:scale(1);}
-      50%{transform:scale(1.04);}
-      100%{transform:scale(1);}
+      0%{
+        transform:scale(1);
+        box-shadow:
+          0 20px 40px rgba(0,0,0,.55),
+          0 0 20px rgba(34,197,94,.35);
+      }
+      50%{
+        transform:scale(1.04);
+        box-shadow:
+          0 20px 40px rgba(0,0,0,.55),
+          0 0 55px rgba(34,197,94,.75);
+      }
+      100%{
+        transform:scale(1);
+        box-shadow:
+          0 20px 40px rgba(0,0,0,.55),
+          0 0 20px rgba(34,197,94,.35);
+      }
     }
-
-    .wa-icon{ width:26px; }
 
     .note{
       margin-top: 10px;
@@ -126,17 +211,19 @@
       color: var(--muted2);
     }
 
-    .wa-sticky{ display:none; }
-    @media (max-width:520px){
-      .wa-sticky{
-        display:flex;
-        position:fixed;
-        left:14px;
-        right:14px;
-        bottom:14px;
-        z-index:99;
-      }
-      .container{ padding-bottom: 92px; }
+    /* Sticky mobile (botón fijo abajo) */
+    .wa-sticky{
+      position:fixed;
+      left:14px;
+      right:14px;
+      bottom:14px;
+      z-index:99;
+      display:flex;
+    }
+
+    @media (max-width:380px){
+      .brandTitle{ font-size: 38px; }
+      .wa-icon{ width: 32px; height: 32px; }
     }
   </style>
 </head>
@@ -145,23 +232,36 @@
 
   <div class="container">
 
-    <div class="copy">
-      <h1>Activación rápida</h1>
-      <p>Registrate y te asistimos por WhatsApp.</p>
+    <!-- GANAMOS GRANDE TITILANDO -->
+    <div class="brandWrap">
+      <h1 class="brandTitle" aria-label="Ganamos">
+        <span>G</span><span>A</span><span>N</span><span>A</span><span>M</span><span>O</span><span>S</span>
+      </h1>
+      <div class="brandSub">Activación rápida • Atención por WhatsApp</div>
+
+      <!-- Icono WhatsApp grande arriba (opcional) -->
+      <div class="waBigIcon">
+        <img alt="WhatsApp" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+      </div>
     </div>
 
+    <!-- LOGO imagen (opcional). Si NO querés imagen, borrá este bloque -->
+    <!--
     <div class="logo">
       <img src="assets/logo.png" alt="Ganamos">
     </div>
+    -->
 
+    <!-- IMAGEN PROMO (la que ya tenías) -->
     <div class="promo">
-      <img src="assets/dog.png" alt="Info">
+      <img src="assets/dog.png" alt="Promo">
     </div>
 
+    <!-- BOTON WHATSAPP (normal dentro de la página) -->
     <a class="wa-btn" id="waBtn"
        href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20en%20Ganamos%20✅"
        target="_blank" rel="noopener">
-      <img class="wa-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+      <img class="wa-icon" alt="" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
       HABLAR POR WHATSAPP
     </a>
 
@@ -171,23 +271,21 @@
 
   </div>
 
-  <!-- Sticky mobile -->
+  <!-- Botón fijo abajo (mobile y también sirve en desktop) -->
   <div class="wa-sticky">
     <a class="wa-btn" id="waBtnSticky"
        href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20en%20Ganamos%20✅"
        target="_blank" rel="noopener" style="width:100%;">
-      <img class="wa-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+      <img class="wa-icon" alt="" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
       HABLAR POR WHATSAPP
     </a>
   </div>
 
   <script>
+    // SOLO LEAD (clientes potenciales) al click
     function trackLead(){
-      if (window.fbq) {
-        fbq('track', 'Lead');
-      }
+      if (window.fbq) fbq('track', 'Lead');
     }
-
     document.getElementById('waBtn').addEventListener('click', trackLead);
     document.getElementById('waBtnSticky').addEventListener('click', trackLead);
   </script>
