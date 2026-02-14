@@ -1,138 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ganamos VIP</title>
 
 <style>
+  body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at top, #7b1fff 0%, #2a003f 60%, #12001f 100%);
+    color:#fff;
+    text-align:center;
+  }
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background: radial-gradient(circle at top, #7b1fff 0%, #2a003f 60%, #12001f 100%);
-color:white;
-text-align:center;
-}
+  /* LOGO GANAMOS (más grande y más pegado) */
+  .logo{ margin-top:20px; margin-bottom:-6px; }
+  .logo img{
+    width:360px;         /* MÁS GRANDE */
+    max-width:92%;
+    display:block;
+    margin:0 auto;
+    filter: drop-shadow(0 0 25px #b84dff);
+  }
 
-/* LOGO GANAMOS */
-.logo{
-margin-top:30px;
-margin-bottom:5px; /* MÁS PEGADO */
-}
+  /* PERRO */
+  .dog{ margin-top:0; }
+  .dog img{
+    width:280px;
+    max-width:88%;
+    display:block;
+    margin:0 auto;
+  }
 
-.logo img{
-width:320px; /* MÁS GRANDE */
-max-width:90%;
-filter: drop-shadow(0 0 25px #b84dff);
-}
+  /* BOTÓN ACCESO VIP */
+  .vip-btn{
+    margin-top:14px;
+    display:inline-block;
+    padding:16px 46px;
+    border-radius:40px;
+    font-weight:bold;
+    font-size:18px;
+    color:#ffd900;
+    background:#4b0082;
+    border:3px solid #ffd900;
+    box-shadow:0 0 25px #ffd900;
+    text-decoration:none;
+    transition:0.25s;
+  }
+  .vip-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 38px #ffd900;
+  }
 
-/* PERRO */
-.dog{
-margin-top:0;
-}
+  /* CARD */
+  .card{
+    margin:34px 15px 40px;
+    padding:34px 20px;
+    border-radius:30px;
+    background:linear-gradient(180deg,#6a00b8,#3c0066);
+    box-shadow:0 0 40px #a64dff;
+  }
+  .card h1{
+    font-size:28px;
+    margin:0 0 10px;
+    letter-spacing:0.5px;
+  }
+  .card p{
+    opacity:0.9;
+    margin:0 0 24px;
+    font-size:16px;
+  }
 
-.dog img{
-width:260px;
-max-width:85%;
-}
+  /* BOTÓN WHATSAPP */
+  .whatsapp{
+    display:inline-block;
+    padding:20px 52px;
+    border-radius:45px;
+    font-weight:bold;
+    font-size:18px;
+    color:#fff;
+    background:linear-gradient(180deg,#4cff6a,#00b83a);
+    box-shadow:0 0 30px #00ff6a;
+    text-decoration:none;
+    transition:0.25s;
+  }
+  .whatsapp:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 45px #00ff6a;
+  }
 
-/* BOTÓN ACCESO VIP */
-.vip-btn{
-margin-top:15px;
-display:inline-block;
-padding:16px 45px;
-border-radius:40px;
-font-weight:bold;
-font-size:18px;
-color:#ffd900;
-background:#4b0082;
-border:3px solid #ffd900;
-box-shadow:0 0 25px #ffd900;
-text-decoration:none;
-transition:0.3s;
-}
-
-.vip-btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 35px #ffd900;
-}
-
-/* CARD */
-.card{
-margin:40px 15px;
-padding:35px 20px;
-border-radius:30px;
-background:linear-gradient(180deg,#6a00b8,#3c0066);
-box-shadow:0 0 40px #a64dff;
-}
-
-.card h1{
-font-size:26px;
-margin-bottom:10px;
-}
-
-.card p{
-opacity:0.9;
-margin-bottom:25px;
-}
-
-/* BOTÓN WHATSAPP */
-.whatsapp{
-display:inline-block;
-padding:18px 45px;
-border-radius:40px;
-font-weight:bold;
-font-size:18px;
-color:white;
-background:linear-gradient(180deg,#4cff6a,#00b83a);
-box-shadow:0 0 25px #00ff6a;
-text-decoration:none;
-transition:0.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.05);
-box-shadow:0 0 40px #00ff6a;
-}
-
-.footer{
-margin-top:15px;
-font-size:14px;
-opacity:0.7;
-}
-
+  .footer{
+    margin-top:14px;
+    font-size:14px;
+    opacity:0.7;
+  }
 </style>
 </head>
+
 <body>
 
-<!-- LOGO -->
-<div class="logo">
-<img src="logo.png" alt="Ganamos">
-</div>
+  <!-- LOGO (ruta correcta en assets) -->
+  <div class="logo">
+    <img src="assets/logo.png" alt="Ganamos">
+  </div>
 
-<!-- PERRO -->
-<div class="dog">
-<img src="perro.png" alt="VIP">
-</div>
+  <!-- PERRO (ruta correcta en assets) -->
+  <div class="dog">
+    <img src="assets/dog.png" alt="VIP">
+  </div>
 
-<!-- BOTÓN ACCESO -->
-<a href="#" class="vip-btn">ACCESO VIP</a>
+  <!-- BOTÓN ACCESO -->
+  <a href="#" class="vip-btn">ACCESO VIP</a>
 
-<!-- CARD -->
-<div class="card">
-<h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
-<p>Escribinos apretando el botón de abajo</p>
+  <!-- CARD -->
+  <div class="card">
+    <h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
+    <p>Escribinos apretando el botón de abajo</p>
 
-<a href="https://www.linkify.com.ar/api/soporte?id=gxsbtI" class="whatsapp">
-WHATSAPP OFICIAL
-</a>
+    <a class="whatsapp" href="https://www.linkify.com.ar/api/soporte?id=gxsbtI">
+      WHATSAPP OFICIAL
+    </a>
 
-<div class="footer">
-ATENCIÓN Y RETIROS LAS 24 HS
-</div>
-
-</div>
+    <div class="footer">ATENCIÓN Y RETIROS LAS 24 HS</div>
+  </div>
 
 </body>
 </html>
