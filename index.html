@@ -1,148 +1,284 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganamos VIP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ganamos VIP</title>
 
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}
-(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+  <style>
+    :root{
+      --bg1:#20002b;
+      --bg2:#6a00ff;
+      --card:#6c2bd7;
+      --card2:#5a20c8;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.72);
+      --gold:#ffcc00;
+      --violet:#6a00ff;
+    }
 
-fbq('init', '901147982849876');
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1"/>
-</noscript>
-<!-- FIN META PIXEL -->
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 50% 30%, rgba(138,43,226,.55), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, #2a0040 0%, #3b0070 35%, #2b0050 100%);
+      display:flex;
+      justify-content:center;
+      padding:18px 14px 28px;
+    }
 
-<style>
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background: radial-gradient(circle at center, #7b1fa2 0%, #3b0054 100%);
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:flex-start;
-min-height:100vh;
-text-align:center;
-color:white;
-}
+    .wrap{
+      width:min(520px, 100%);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+    }
 
-/* LOGO */
-.logo{
-width:230px;
-margin-top:40px;
-margin-bottom:20px;
-filter: drop-shadow(0 0 15px #b388ff);
-}
+    /* LOGO */
+    .logo{
+      width:min(380px, 92vw);
+      margin-top:6px;
+      filter: drop-shadow(0 0 16px rgba(255,255,255,.12));
+    }
 
-/* PERRO */
-.dog{
-width:250px;
-margin-bottom:15px;
-}
+    /* IMAGEN PERRO */
+    .hero{
+      width:min(360px, 88vw);
+      border-radius: 12px;
+      overflow:hidden;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      background: rgba(0,0,0,.12);
+    }
+    .hero img{
+      width:100%;
+      display:block;
+    }
 
-/* BOTON VIP */
-.vip-btn{
-background:#6a1b9a;
-border:3px solid #ffd600;
-color:white;
-padding:14px 40px;
-border-radius:40px;
-font-weight:bold;
-font-size:18px;
-box-shadow:0 0 20px #ffd600;
-margin-bottom:25px;
-}
+    /* BOTÓN VIP */
+    .btn-vip{
+      width:min(340px, 86vw);
+      height:54px;
+      border-radius:999px;
+      border:3px solid var(--gold);
+      background: rgba(106,0,255,.35);
+      color:#fff;
+      font-weight:800;
+      letter-spacing:.6px;
+      font-size:18px;
+      cursor:pointer;
+      box-shadow:
+        0 0 18px rgba(255,204,0,.45),
+        0 0 42px rgba(255,204,0,.18);
+      transition: transform .18s ease, filter .18s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .btn-vip:hover{transform:scale(1.02); filter:brightness(1.06)}
+    .btn-vip::before{
+      content:"";
+      position:absolute;
+      inset:-35%;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.28) 45%, transparent 60%);
+      transform: translateX(-70%) rotate(10deg);
+      animation: shineVip 2.4s infinite;
+    }
+    @keyframes shineVip{
+      0%{transform: translateX(-75%) rotate(10deg); opacity:0}
+      12%{opacity:.28}
+      60%{opacity:.28}
+      100%{transform: translateX(75%) rotate(10deg); opacity:0}
+    }
 
-/* CARD */
-.card{
-background:linear-gradient(180deg,#8e24aa,#4a0072);
-padding:30px 20px;
-border-radius:25px;
-width:90%;
-max-width:360px;
-box-shadow:0 0 40px rgba(186,104,200,0.8);
-margin-bottom:30px;
-}
+    /* TARJETA */
+    .card{
+      width:100%;
+      border-radius:28px;
+      padding:22px 18px 18px;
+      background: linear-gradient(180deg, rgba(140,60,255,.65), rgba(70,10,170,.65));
+      box-shadow: 0 22px 70px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.10);
+      text-align:center;
+      margin-top:6px;
+    }
+    .title{
+      margin:0;
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:.4px;
+      line-height:1.05;
+      text-shadow: 0 10px 26px rgba(0,0,0,.28);
+    }
+    .subtitle{
+      margin:12px 0 18px;
+      font-size:18px;
+      color:var(--muted);
+    }
 
-.card h2{
-margin:0 0 10px;
-font-size:24px;
-}
+    /* BOTÓN WHATSAPP (GLOW + SHINE) */
+    .btn-whatsapp{
+      width: min(92vw, 560px);
+      height: 74px;
+      border: none;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing: .5px;
+      font-size: 22px;
+      color: #fff;
+      cursor: pointer;
 
-.card p{
-margin:0 0 20px;
-font-size:14px;
-}
+      background: linear-gradient(90deg, #19e36b, #1bdc88, #12c6ff);
+      box-shadow:
+        0 0 18px rgba(25,227,107,.60),
+        0 0 46px rgba(18,198,255,.25);
 
-/* BOTON WHATSAPP */
-.whatsapp-btn{
-display:inline-block;
-background:linear-gradient(90deg,#00e676,#00c853);
-padding:18px 35px;
-border-radius:50px;
-color:white;
-font-weight:bold;
-font-size:18px;
-text-decoration:none;
-box-shadow:0 0 25px #00ff6a;
-animation:pulse 1.5s infinite;
-}
+      position: relative;
+      overflow: hidden;
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .btn-whatsapp:hover{
+      transform: scale(1.02);
+      filter: brightness(1.06);
+    }
+    .btn-whatsapp::before{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.35) 45%, transparent 60%);
+      transform: translateX(-60%) rotate(10deg);
+      animation: shine 2.2s infinite;
+    }
+    @keyframes shine{
+      0%   { transform: translateX(-70%) rotate(10deg); opacity:0; }
+      10%  { opacity:.35; }
+      55%  { opacity:.35; }
+      100% { transform: translateX(70%) rotate(10deg); opacity:0; }
+    }
 
-@keyframes pulse{
-0%{box-shadow:0 0 15px #00ff6a;}
-50%{box-shadow:0 0 35px #00ff6a;}
-100%{box-shadow:0 0 15px #00ff6a;}
-}
+    .foot{
+      margin-top:12px;
+      font-size:13px;
+      color:rgba(255,255,255,.55);
+    }
 
-.footer{
-font-size:12px;
-opacity:0.7;
-margin-bottom:20px;
-}
-</style>
+    /* para que quede más junto en celular */
+    @media (max-width: 420px){
+      body{padding:14px 12px 22px}
+      .wrap{gap:12px}
+      .title{font-size:30px}
+      .btn-whatsapp{height:70px; font-size:21px}
+      .logo{width:min(360px, 92vw)}
+      .hero{width:min(340px, 88vw)}
+    }
+  </style>
+
+  <!-- Meta Pixel + helpers + CAPI -->
+  <script>
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+    fbq("init", "901147982849876");
+    fbq("track", "PageView");
+
+    function getCookie(name) {
+      const m = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+      return m ? decodeURIComponent(m[2]) : "";
+    }
+
+    function getFbc() {
+      const url = new URL(window.location.href);
+      const fbclid = url.searchParams.get("fbclid");
+      if (!fbclid) return "";
+      return `fb.1.${Date.now()}.${fbclid}`;
+    }
+
+    function genEventId() {
+      return "ev_" + Date.now() + "_" + Math.random().toString(16).slice(2);
+    }
+
+    async function sendCapiLead(eventId) {
+      const payload = {
+        event_name: "Lead",
+        event_id: eventId,
+        event_source_url: window.location.href,
+        fbp: getCookie("_fbp"),
+        fbc: getCookie("_fbc") || getFbc(),
+      };
+
+      return fetch("/api/capi", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).catch(() => {});
+    }
+
+    async function trackLeadAndGo(url) {
+      const eventId = genEventId();
+
+      // Browser
+      fbq("track", "Lead", {}, { eventID: eventId });
+
+      // Server (CAPI)
+      await sendCapiLead(eventId);
+
+      // Go
+      window.location.href = url;
+    }
+  </script>
 </head>
 
 <body>
+  <main class="wrap">
+    <!-- LOGO (poné tu logo real) -->
+    <img class="logo" src="https://landing-ganamos-neon.vercel.app/logo-ganamos.png" alt="GANAMOS.NET" />
 
-<img src="assets/logo.png" class="logo">
-<img src="assets/dog.png" class="dog">
+    <!-- IMAGEN PERRO (poné tu imagen real) -->
+    <div class="hero">
+      <img src="https://landing-ganamos-neon.vercel.app/dog.png" alt="VIP" />
+    </div>
 
-<div class="vip-btn">ACCESO VIP</div>
+    <!-- BOTÓN ACCESO VIP (si querés que también trackee, te lo ajusto) -->
+    <button class="btn-vip" type="button">ACCESO VIP</button>
 
-<div class="card">
-<h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
-<p>Escribinos apretando el botón de abajo</p>
+    <!-- CARD -->
+    <section class="card">
+      <h1 class="title">OBTENÉ TU BONO DE<br/>BIENVENIDA</h1>
+      <p class="subtitle">Escribinos apretando el botón de abajo</p>
 
-<a href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
-class="whatsapp-btn"
-onclick="fbq('track', 'Lead');">
-WHATSAPP OFICIAL
-</a>
+      <!-- LINKIFY (TU LINK) + TRACK LEAD -->
+      <button
+        class="btn-whatsapp"
+        type="button"
+        onclick="trackLeadAndGo('https://www.linkify.com.ar/api/soporte?id=gxsbti')"
+      >
+        WHATSAPP OFICIAL
+      </button>
 
-<p style="margin-top:15px;font-size:12px;">
-ATENCIÓN Y RETIROS LAS 24 HS
-</p>
-</div>
+      <div class="foot">ATENCIÓN Y RETIROS LAS 24 HS</div>
+    </section>
 
-<div class="footer">
-© 2025 el juego es solo +18. Operá con responsabilidad.
-</div>
-
+    <div class="foot">© 2026 el juego es solo +18. Operá con responsabilidad.</div>
+  </main>
 </body>
 </html>
