@@ -2,125 +2,195 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ganamos - Bono de Bienvenida</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganamos</title>
+  <meta name="description" content="Ganamos - Atención rápida por WhatsApp" />
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '901147982849876');
-fbq('track', 'PageView');
-</script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
-<style>
+    fbq('init', '901147982849876');
+    fbq('track', 'PageView');
+  </script>
 
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: radial-gradient(circle at center, #2d0066 0%, #0a001a 100%);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-}
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1" alt="" />
+  </noscript>
 
-.container{
-  text-align:center;
-  padding:20px;
-  width:100%;
-  max-width:520px;
-}
+  <style>
+    :root{
+      --bg1:#2d0066;
+      --bg2:#0a001a;
+      --card: rgba(10,0,26,.35);
+      --text:#ffffff;
+      --muted: rgba(255,255,255,.78);
+      --muted2: rgba(255,255,255,.60);
+      --green1:#34d399;
+      --green2:#16a34a;
+    }
 
-/* LOGO GRANDE */
-.logo img{
-  width:100%;
-  max-width:520px;
-  border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,.6);
-  margin-bottom:25px;
-}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at center, var(--bg1) 0%, var(--bg2) 100%);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      color: var(--text);
+    }
 
-/* IMAGEN PROMO */
-.promo img{
-  width:100%;
-  border-radius:20px;
-  box-shadow:0 15px 35px rgba(0,0,0,.6);
-  margin-bottom:30px;
-}
+    .container{
+      text-align:center;
+      padding:18px;
+      width:100%;
+      max-width:520px;
+    }
 
-/* BOTON WHATSAPP PREMIUM */
-.wa-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  text-decoration:none;
-  color:#fff;
-  font-weight:900;
-  font-size:22px;
-  padding:22px;
-  border-radius:999px;
-  background: linear-gradient(180deg,#34d399 0%,#16a34a 100%);
-  border:2px solid rgba(0,0,0,.25);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.55),
-    inset 0 8px 14px rgba(255,255,255,.25),
-    inset 0 -10px 18px rgba(0,0,0,.35),
-    0 0 0 2px rgba(34,197,94,.4);
-  animation: pulse 1.2s infinite;
-  transition:0.2s;
-}
+    .copy{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding: 14px;
+      margin-bottom:14px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.35);
+    }
 
-.wa-btn:hover{
-  transform:scale(1.05);
-}
+    .copy h1{
+      font-size: 22px;
+      margin: 0 0 8px;
+      font-weight: 900;
+    }
 
-/* EFECTO TITILAR */
-@keyframes pulse{
-  0%{transform:scale(1);box-shadow:0 20px 40px rgba(0,0,0,.55),0 0 20px rgba(34,197,94,.4);}
-  50%{transform:scale(1.05);box-shadow:0 20px 40px rgba(0,0,0,.55),0 0 50px rgba(34,197,94,.8);}
-  100%{transform:scale(1);box-shadow:0 20px 40px rgba(0,0,0,.55),0 0 20px rgba(34,197,94,.4);}
-}
+    .copy p{
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
 
-.wa-icon{
-  width:28px;
-}
+    .logo img,
+    .promo img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,.6);
+      margin-bottom:18px;
+      display:block;
+    }
 
-</style>
+    .wa-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      text-decoration:none;
+      color:#fff;
+      font-weight:900;
+      font-size:20px;
+      padding:20px;
+      border-radius:999px;
+      background: linear-gradient(180deg,var(--green1) 0%,var(--green2) 100%);
+      border:2px solid rgba(0,0,0,.25);
+      box-shadow:
+        0 20px 40px rgba(0,0,0,.55),
+        inset 0 8px 14px rgba(255,255,255,.25),
+        inset 0 -10px 18px rgba(0,0,0,.35),
+        0 0 0 2px rgba(34,197,94,.4);
+      animation: pulse 1.2s infinite;
+      transition:0.2s;
+    }
+
+    .wa-btn:hover{ transform:scale(1.03); }
+
+    @keyframes pulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.04);}
+      100%{transform:scale(1);}
+    }
+
+    .wa-icon{ width:26px; }
+
+    .note{
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    .wa-sticky{ display:none; }
+    @media (max-width:520px){
+      .wa-sticky{
+        display:flex;
+        position:fixed;
+        left:14px;
+        right:14px;
+        bottom:14px;
+        z-index:99;
+      }
+      .container{ padding-bottom: 92px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- LOGO -->
-  <div class="logo">
-    <img src="assets/logo.png" alt="Ganamos">
+    <div class="copy">
+      <h1>Activación rápida</h1>
+      <p>Registrate y te asistimos por WhatsApp.</p>
+    </div>
+
+    <div class="logo">
+      <img src="assets/logo.png" alt="Ganamos">
+    </div>
+
+    <div class="promo">
+      <img src="assets/dog.png" alt="Info">
+    </div>
+
+    <a class="wa-btn" id="waBtn"
+       href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20en%20Ganamos%20✅"
+       target="_blank" rel="noopener">
+      <img class="wa-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+      HABLAR POR WHATSAPP
+    </a>
+
+    <div class="note">
+      *Respondemos por orden de llegada.
+    </div>
+
   </div>
 
-  <!-- IMAGEN PROMO -->
-  <div class="promo">
-    <img src="assets/dog.png" alt="Promo">
+  <!-- Sticky mobile -->
+  <div class="wa-sticky">
+    <a class="wa-btn" id="waBtnSticky"
+       href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20en%20Ganamos%20✅"
+       target="_blank" rel="noopener" style="width:100%;">
+      <img class="wa-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+      HABLAR POR WHATSAPP
+    </a>
   </div>
 
-  <!-- BOTON WHATSAPP -->
-  <a class="wa-btn" 
-     href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida" 
-     target="_blank">
+  <script>
+    function trackLead(){
+      if (window.fbq) {
+        fbq('track', 'Lead');
+      }
+    }
 
-     <img class="wa-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-     WHATSAPP OFICIAL
-  </a>
-
-</div>
+    document.getElementById('waBtn').addEventListener('click', trackLead);
+    document.getElementById('waBtnSticky').addEventListener('click', trackLead);
+  </script>
 
 </body>
 </html>
