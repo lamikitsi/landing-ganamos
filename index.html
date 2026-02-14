@@ -1,275 +1,146 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ganamos VIP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganamos VIP</title>
 
-  <style>
-    :root{
-      --bg1:#120022;
-      --bg2:#2b0056;
-      --bg3:#3b0076;
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-      --purple:#5b19a8;
-      --purple2:#3b0b74;
+body{
+    font-family: Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at center, #6b00ff 0%, #2b0056 50%, #120022 100%);
+    color:white;
+    text-align:center;
+}
 
-      --gold:#ffd24d;
-      --gold2:#ffb300;
+.container{
+    width:100%;
+    max-width:420px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+}
 
-      --green:#18c964;
-      --green2:#14b85a;
+/* LOGO */
+.logo{
+    width:300px;
+    max-width:90%;
+    filter: drop-shadow(0 0 20px rgba(180,120,255,.7));
+}
 
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.75);
-    }
+/* PERRO */
+.dog{
+    width:260px;
+    max-width:85%;
+    filter: drop-shadow(0 20px 25px rgba(0,0,0,.6));
+}
 
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      display:flex;
-      justify-content:center;
-      background:
-        radial-gradient(circle at 50% 15%, rgba(190,120,255,.55) 0%, rgba(190,120,255,0) 45%),
-        radial-gradient(circle at 50% 60%, rgba(120,60,255,.35) 0%, rgba(120,60,255,0) 55%),
-        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, var(--bg3) 100%);
-    }
+/* BOTÓN VIP */
+.vip-btn{
+    padding:14px 40px;
+    border-radius:40px;
+    border:3px solid #ffd24d;
+    background:#4a008f;
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    box-shadow:0 0 20px rgba(255,210,77,.7);
+    animation:vipGlow 1.2s infinite;
+}
 
-    /* Contenedor principal */
-    .wrap{
-      width: min(520px, 92vw);
-      padding: 18px 0 22px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap: 10px;
-    }
+@keyframes vipGlow{
+    0%,100%{box-shadow:0 0 15px rgba(255,210,77,.6);}
+    50%{box-shadow:0 0 35px rgba(255,210,77,1);}
+}
 
-    /* Logo arriba (más grande y más pegado) */
-    .logo{
-      width: min(360px, 88vw);
-      height:auto;
-      display:block;
-      margin-top: 4px;
-      margin-bottom: 2px; /* lo acerca al perro */
-      filter:
-        drop-shadow(0 0 14px rgba(180,120,255,.55))
-        drop-shadow(0 0 26px rgba(120,60,255,.35));
-    }
+/* CARD */
+.card{
+    width:100%;
+    padding:25px 20px;
+    border-radius:25px;
+    background:linear-gradient(180deg,#7b2cff,#4b008f);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
 
-    /* Perro */
-    .dog{
-      width: min(310px, 78vw);
-      height:auto;
-      display:block;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      border-radius: 2px;
-      filter:
-        drop-shadow(0 18px 28px rgba(0,0,0,.55))
-        drop-shadow(0 0 18px rgba(160,90,255,.25));
-    }
+.card h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
 
-    /* Botón Acceso VIP */
-    .vip-btn{
-      margin-top: 2px;
-      margin-bottom: 12px;
-      padding: 14px 34px;
-      border-radius: 999px;
-      border: 3px solid var(--gold);
-      background: rgba(66,0,120,.65);
-      color: #fff;
-      font-weight: 800;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:
-        0 0 0 rgba(255,210,77,0),
-        0 0 22px rgba(255,210,77,.35);
-      animation: vipGlow 1.2s ease-in-out infinite;
-      user-select:none;
-    }
+.card p{
+    opacity:.8;
+    margin-bottom:20px;
+}
 
-    @keyframes vipGlow{
-      0%,100%{
-        box-shadow:
-          0 0 10px rgba(255,210,77,.35),
-          0 0 24px rgba(255,210,77,.25),
-          0 0 40px rgba(255,179,0,.18);
-        transform: translateY(0);
-      }
-      50%{
-        box-shadow:
-          0 0 16px rgba(255,210,77,.65),
-          0 0 36px rgba(255,210,77,.40),
-          0 0 62px rgba(255,179,0,.25);
-        transform: translateY(-1px);
-      }
-    }
+/* BOTÓN WHATSAPP */
+.whatsapp{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    padding:18px;
+    border-radius:40px;
+    font-weight:bold;
+    font-size:18px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(180deg,#25D366,#1ebe5d);
+    box-shadow:0 0 25px rgba(37,211,102,.8);
+    animation:waPulse 1.3s infinite;
+}
 
-    /* Tarjeta */
-    .card{
-      width: min(520px, 92vw);
-      padding: 26px 18px 22px;
-      border-radius: 28px;
-      background: linear-gradient(180deg, rgba(120,40,210,.65), rgba(70,10,140,.58));
-      box-shadow:
-        0 18px 45px rgba(0,0,0,.40),
-        inset 0 0 0 1px rgba(255,255,255,.08);
-      backdrop-filter: blur(6px);
-      text-align:center;
-    }
+@keyframes waPulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+}
 
-    .title{
-      margin:0;
-      font-size: clamp(28px, 6vw, 40px);
-      line-height:1.05;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-shadow: 0 10px 28px rgba(0,0,0,.45);
-      letter-spacing: .5px;
-    }
+.footer{
+    font-size:12px;
+    opacity:.6;
+    margin-top:8px;
+}
 
-    .subtitle{
-      margin: 10px 0 18px;
-      font-size: 16px;
-      color: var(--muted);
-    }
-
-    /* Botón WhatsApp grande + efecto */
-    .wa-btn{
-      width: min(420px, 86vw);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap: 12px;
-      padding: 18px 18px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, var(--green), var(--green2));
-      color:#fff;
-      font-weight: 900;
-      font-size: 20px;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-      text-decoration:none;
-      box-shadow:
-        0 14px 35px rgba(0,0,0,.35),
-        0 0 28px rgba(24,201,100,.45);
-      position:relative;
-      overflow:hidden;
-      user-select:none;
-      animation: waPulse 1.3s ease-in-out infinite;
-    }
-
-    /* brillo pasando */
-    .wa-btn::before{
-      content:"";
-      position:absolute;
-      top:-40%;
-      left:-55%;
-      width: 60%;
-      height: 180%;
-      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 100%);
-      transform: rotate(18deg);
-      animation: sweep 2.2s ease-in-out infinite;
-    }
-
-    @keyframes sweep{
-      0%{ left:-60%; opacity:.0; }
-      25%{ opacity:.35; }
-      55%{ left:110%; opacity:.0; }
-      100%{ left:110%; opacity:0; }
-    }
-
-    @keyframes waPulse{
-      0%,100%{
-        transform: scale(1);
-        box-shadow:
-          0 14px 35px rgba(0,0,0,.35),
-          0 0 24px rgba(24,201,100,.38);
-      }
-      50%{
-        transform: scale(1.03);
-        box-shadow:
-          0 16px 42px rgba(0,0,0,.38),
-          0 0 42px rgba(24,201,100,.62);
-      }
-    }
-
-    .wa-icon{
-      width: 28px;
-      height: 28px;
-      flex: 0 0 auto;
-      filter: drop-shadow(0 0 8px rgba(255,255,255,.25));
-      z-index:1;
-    }
-
-    .wa-text{ z-index:1; }
-
-    .foot{
-      margin-top: 14px;
-      font-size: 13px;
-      color: rgba(255,255,255,.55);
-      text-align:center;
-    }
-
-    /* Ajustes para que entre mejor en celu */
-    @media (max-height: 760px){
-      .wrap{ padding-top: 14px; gap: 8px; }
-      .logo{ margin-top: 2px; }
-      .dog{ width: min(290px, 76vw); }
-      .vip-btn{ margin-bottom: 10px; padding: 12px 30px; }
-      .card{ padding: 22px 16px 18px; border-radius: 24px; }
-      .wa-btn{ padding: 16px 16px; font-size: 19px; }
-    }
-  </style>
+</style>
 </head>
 
 <body>
-  <main class="wrap">
-    <!-- LOGO -->
-    <img class="logo" src="logo.png" alt="Ganamos" />
 
-    <!-- PERRO -->
-    <img class="dog" src="dog.png" alt="VIP" />
+<div class="container">
 
-    <!-- ACCESO VIP (si querés que también vaya a linkify, decime y lo conecto) -->
-    <a class="vip-btn" href="#" onclick="return false;">ACCESO VIP</a>
+    <img src="logo.png" class="logo" alt="Ganamos">
 
-    <!-- TARJETA -->
-    <section class="card">
-      <h1 class="title">OBTENÉ TU BONO DE<br>BIENVENIDA</h1>
-      <p class="subtitle">Escribinos apretando el botón de abajo</p>
+    <img src="dog.png" class="dog" alt="VIP">
 
-      <!-- BOTÓN WHATSAPP (LINKIFY) -->
-      <a class="wa-btn"
-         href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
-         target="_blank" rel="noopener">
-        <!-- ícono whatsapp en svg -->
-        <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
-          <path fill="white" d="M19.11 17.36c-.27-.14-1.58-.78-1.82-.87-.24-.09-.42-.14-.6.14-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.14-1.31-.79-.7-1.32-1.56-1.47-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.71.34-.24.27-.94.92-.94 2.24 0 1.32.96 2.59 1.1 2.77.14.18 1.88 2.87 4.55 4.02.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.24-.18-.51-.32z"/>
-          <path fill="white" d="M26.67 5.33A14.5 14.5 0 0 0 4.6 24.52L3 29l4.62-1.54A14.5 14.5 0 1 0 26.67 5.33zM16 27.5c-2.3 0-4.55-.62-6.52-1.8l-.47-.28-2.74.92.92-2.66-.3-.5A11.47 11.47 0 1 1 16 27.5z"/>
-        </svg>
-        <span class="wa-text">WHATSAPP OFICIAL</span>
-      </a>
+    <a href="#" class="vip-btn">ACCESO VIP</a>
 
-      <div class="foot">ATENCIÓN Y RETIROS LAS 24 HS</div>
-    </section>
+    <div class="card">
+        <h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
+        <p>Escribinos apretando el botón de abajo</p>
 
-    <div class="foot">© 2025 el juego es solo +18. Operá con responsabilidad.</div>
-  </main>
+        <!-- LINKIFY FUNCIONANDO -->
+        <a href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
+           target="_blank"
+           class="whatsapp">
+           WHATSAPP OFICIAL
+        </a>
 
-  <script>
-    // Si algún día querés cambiar el link sin tocar el HTML:
-    // window.LINKIFY_URL = "https://www.linkify.com.ar/api/soporte?id=XXXX";
-    // y reemplazar el href del botón por window.LINKIFY_URL desde acá.
-  </script>
+        <div class="footer">ATENCIÓN Y RETIROS LAS 24 HS</div>
+    </div>
+
+    <div class="footer">© 2025 el juego es solo +18. Operá con responsabilidad.</div>
+
+</div>
+
 </body>
 </html>
