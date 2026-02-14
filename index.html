@@ -1,277 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ganamos - Bono de Bienvenida</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganamos - Bono de Bienvenida</title>
 
-  <!-- =========================
-       META PIXEL (PEGÁ TU ID)
-       Reemplazá TU_PIXEL_ID por tu número
-  ========================== -->
-  <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return; n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
-      n.queue=[]; t=b.createElement(e); t.async=!0;
-      t.src=v; s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', 'TU_PIXEL_ID'); // <-- ACA TU ID
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/>
-  </noscript>
+fbq('init', '901147982849876');
+fbq('track', 'PageView');
+</script>
 
-  <style>
-    :root{
-      --bg1:#0b0a1a;
-      --bg2:#2a0c3f;
-      --card:#2b0a3a99;
-      --cardBorder:#6d2b8a55;
-      --text:#ffffff;
-      --muted:#bdb6c8;
-      --gold:#d1a11d;
-      --wa1:#1fd35f;
-      --wa2:#12b84b;
-      --waBorder:#0b6b2d;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-    }
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+background: radial-gradient(circle at center,#3a0a6b 0%,#140028 70%);
+color:white;
+}
 
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      min-height:100vh;
-      background:
-        radial-gradient(900px 600px at 50% 25%, rgba(118,46,190,.35), transparent 60%),
-        radial-gradient(900px 700px at 50% 85%, rgba(89,14,130,.55), transparent 60%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-      display:flex;
-      justify-content:center;
-    }
+/* CONTENEDOR */
+.container{
+padding:30px 20px;
+}
 
-    .wrap{
-      width:min(520px, 92vw);
-      padding:22px 0 30px;
-    }
+/* LOGO */
+.logo{
+width:min(420px,95vw);
+margin:0 auto -45px auto;
+display:block;
+filter: drop-shadow(0 15px 30px rgba(0,0,0,.6));
+}
 
-    /* ====== TOP: Logo pegado al perro ====== */
-    .top{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      margin-top:6px;
-    }
+/* PERRO */
+.dog{
+width:min(230px,65vw);
+display:block;
+margin:0 auto 15px auto;
+}
 
-    .logo{
-      width:min(360px, 88vw);          /* más grande */
-      height:auto;
-      display:block;
-      margin:0 0 -10px 0;              /* NEGATIVO = más pegado al perro */
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
-    }
+/* BOTON VIP */
+.vip-btn{
+display:inline-block;
+padding:10px 30px;
+border-radius:40px;
+border:2px solid #f1c40f;
+color:#f1c40f;
+font-weight:bold;
+margin-top:10px;
+animation: glowVip 1.5s infinite alternate;
+}
 
-    .dog{
-      width:min(220px, 62vw);
-      height:auto;
-      display:block;
-      margin:0 0 6px 0;
-      filter: drop-shadow(0 18px 40px rgba(0,0,0,.55));
-    }
+@keyframes glowVip{
+from{box-shadow:0 0 5px #f1c40f;}
+to{box-shadow:0 0 25px #f1c40f;}
+}
 
-    /* ====== VIP BUTTON (titila) ====== */
-    .vip{
-      margin:6px 0 16px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 22px;
-      border-radius:999px;
-      color:var(--gold);
-      text-decoration:none;
-      font-weight:800;
-      letter-spacing:.5px;
-      border:1px solid rgba(209,161,29,.55);
-      background: rgba(0,0,0,.25);
-      box-shadow: 0 8px 22px rgba(0,0,0,.35);
-      position:relative;
-      overflow:hidden;
-      transform: translateZ(0);
-      animation: vipPulse 1.15s infinite ease-in-out; /* TITILA */
-    }
+/* SECCION */
+.section{
+margin-top:40px;
+background:linear-gradient(180deg,#2d004f,#4b007d);
+padding:35px 20px;
+border-radius:20px;
+box-shadow:0 0 40px rgba(0,0,0,.5);
+}
 
-    .vip::after{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
-      transform: rotate(15deg) translateX(-120%);
-      animation: shine 1.8s infinite;
-    }
+/* TITULO */
+h1{
+font-size:28px;
+margin-bottom:10px;
+}
 
-    @keyframes vipPulse{
-      0%   { box-shadow: 0 8px 22px rgba(0,0,0,.35), 0 0 0 rgba(209,161,29,.0); transform: scale(1); }
-      50%  { box-shadow: 0 10px 26px rgba(0,0,0,.45), 0 0 18px rgba(209,161,29,.45); transform: scale(1.05); }
-      100% { box-shadow: 0 8px 22px rgba(0,0,0,.35), 0 0 0 rgba(209,161,29,.0); transform: scale(1); }
-    }
+/* SUB */
+.sub{
+color:#ccc;
+margin-bottom:25px;
+}
 
-    @keyframes shine{
-      0%   { transform: rotate(15deg) translateX(-140%); opacity:.0; }
-      25%  { opacity:.65; }
-      60%  { opacity:.0; }
-      100% { transform: rotate(15deg) translateX(140%); opacity:.0; }
-    }
+/* BOTON WHATSAPP */
+.whatsapp-btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+background:linear-gradient(180deg,#34d058,#1faa4b);
+padding:18px 40px;
+border-radius:50px;
+color:white;
+font-weight:bold;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 8px 0 #178a38, 0 0 20px rgba(52,208,88,.8);
+transition:.2s;
+animation:pulse 1.5s infinite;
+}
 
-    /* ====== CARD ====== */
-    .card{
-      margin:10px auto 0;
-      padding:22px 18px 18px;
-      border-radius:22px;
-      background: var(--card);
-      border:1px solid var(--cardBorder);
-      box-shadow: var(--shadow);
-    }
+.whatsapp-btn:active{
+transform:translateY(4px);
+box-shadow:0 4px 0 #178a38;
+}
 
-    h1{
-      margin:6px 0 10px;
-      text-align:center;
-      font-size: clamp(26px, 6.4vw, 36px);
-      line-height:1.08;
-      letter-spacing:.3px;
-    }
+@keyframes pulse{
+0%{box-shadow:0 8px 0 #178a38,0 0 10px rgba(52,208,88,.6);}
+50%{box-shadow:0 8px 0 #178a38,0 0 25px rgba(52,208,88,1);}
+100%{box-shadow:0 8px 0 #178a38,0 0 10px rgba(52,208,88,.6);}
+}
 
-    .sub{
-      text-align:center;
-      color:var(--muted);
-      margin:0 0 16px;
-      font-size: clamp(14px, 3.7vw, 16px);
-    }
-
-    /* ====== WhatsApp button (relieve + pulse) ====== */
-    .wa{
-      display:flex;
-      justify-content:center;
-      margin:14px 0 10px;
-    }
-
-    .wa a{
-      width:min(420px, 86vw);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      text-decoration:none;
-      padding:16px 18px;
-      border-radius:999px;
-      color:#fff;
-      font-weight:900;
-      letter-spacing:.6px;
-      background: linear-gradient(180deg, var(--wa1), var(--wa2));
-      border:3px solid rgba(255,255,255,.15);
-      outline:2px solid rgba(11,107,45,.55);
-      box-shadow:
-        0 14px 28px rgba(0,0,0,.45),
-        inset 0 2px 0 rgba(255,255,255,.35),
-        inset 0 -6px 0 rgba(0,0,0,.18);
-      transform: translateZ(0);
-      animation: waPulse 1.25s infinite ease-in-out;
-    }
-
-    @keyframes waPulse{
-      0%   { transform: scale(1); filter: brightness(1); }
-      50%  { transform: scale(1.03); filter: brightness(1.06); }
-      100% { transform: scale(1); filter: brightness(1); }
-    }
-
-    .wa .icon{
-      width:38px; height:38px; flex:0 0 38px;
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
-    }
-
-    .wa .txt{
-      text-align:center;
-      line-height:1.05;
-      font-size: clamp(16px, 4.3vw, 22px);
-    }
-    .wa .txt span{
-      display:block;
-      font-size: clamp(14px, 3.6vw, 20px);
-      margin-top:2px;
-    }
-
-    .foot{
-      text-align:center;
-      color:#a9a0ba;
-      font-size:13px;
-      margin-top:10px;
-      letter-spacing:.2px;
-    }
-
-    .legal{
-      text-align:center;
-      opacity:.6;
-      font-size:12px;
-      margin:22px 0 0;
-    }
-  </style>
+.footer{
+margin-top:25px;
+font-size:12px;
+color:#aaa;
+}
+</style>
 </head>
 
 <body>
-  <main class="wrap">
 
-    <section class="top">
-      <!-- LOGO (sin recuadro) -->
-      <img class="logo" src="assets/logo.png" alt="Ganamos" />
+<div class="container">
 
-      <!-- PERRO -->
-      <img class="dog" src="assets/dog.png" alt="Mascota" />
+<!-- LOGO -->
+<img src="assets/logo.png" class="logo">
 
-      <!-- ACCESO VIP (titila) -->
-      <a class="vip" href="#bono">ACCESO VIP</a>
-    </section>
+<!-- PERRO -->
+<img src="assets/dog.png" class="dog">
 
-    <section class="card" id="bono">
-      <h1>OBTENÉ TU BONO DE<br/>BIENVENIDA</h1>
-      <p class="sub">Escribinos apretando el botón de abajo</p>
+<div class="vip-btn">ACCESO VIP</div>
 
-      <div class="wa">
-        <!-- CAMBIÁ TU LINK DE WHATSAPP -->
-        <a href="https://wa.me/5492235330453?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20!!" target="_blank" rel="noopener">
-          <!-- Icono WhatsApp (SVG) -->
-          <svg class="icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <path fill="#fff" d="M16 2.7C8.8 2.7 3 8.4 3 15.6c0 2.5.7 4.8 2 6.8L3.7 29.3l7-1.8c1.9 1 4 1.5 6.3 1.5 7.2 0 13-5.8 13-13S23.2 2.7 16 2.7Zm0 23.6c-2.1 0-4-.6-5.7-1.6l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5 9.7 10 4.7 16 4.7s11 5 11 11-5 10.6-11 10.6Z"/>
-            <path fill="#fff" d="M22.1 18.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.9-1.7-2.2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.1.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5 0-.2-.3-.3-.6-.4Z"/>
-          </svg>
+<div class="section">
+<h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
+<div class="sub">Escribinos apretando el botón de abajo</div>
 
-          <div class="txt">
-            WHATSAPP
-            <span>OFFICIAL</span>
-          </div>
-        </a>
-      </div>
+<a class="whatsapp-btn" 
+href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida" 
+onclick="fbq('track','Contact');">
+WHATSAPP OFICIAL
+</a>
 
-      <div class="foot">ATENCIÓN Y RETIROS LAS 24 HS</div>
-    </section>
+<div class="footer">
+© 2025 el juego es solo +18. Operá con responsabilidad.
+</div>
 
-    <div class="legal">© 2025 el juego es solo +18. Operá con responsabilidad.</div>
-  </main>
+</div>
+</div>
 
-  <script>
-    // Evento de click WhatsApp (opcional)
-    document.querySelector('.wa a')?.addEventListener('click', () => {
-      if (window.fbq) fbq('track', 'Contact'); // o Lead si querés
-    });
-
-    // Evento VIP (opcional)
-    document.querySelector('.vip')?.addEventListener('click', () => {
-      if (window.fbq) fbq('track', 'ViewContent');
-    });
-  </script>
 </body>
 </html>
