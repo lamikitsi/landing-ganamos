@@ -2,158 +2,253 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ganamos - Bono de Bienvenida</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganamos - Bono de Bienvenida</title>
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '901147982849876');
-fbq('track', 'PageView');
-</script>
+    fbq('init', '901147982849876');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1"/>
+  </noscript>
 
-<style>
-:root{
---bg1:#0b0d2a;
---bg2:#2a0a44;
---bg3:#120526;
---green:#22c55e;
---green2:#16a34a;
---white:#f7f7ff;
---muted:rgba(255,255,255,.70);
---muted2:rgba(255,255,255,.45);
-}
+  <style>
+    :root{
+      --bg1:#0b0d2a; --bg2:#2a0a44; --bg3:#120526;
+      --green:#22c55e; --green2:#16a34a;
+      --white:#f7f7ff; --muted:rgba(255,255,255,.70); --muted2:rgba(255,255,255,.45);
+      --vio1:#6b2cff; --vio2:#b24dff;
+      --gold:#ffd36a;
+    }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-body{
-margin:0;
-font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-color:var(--white);
-background:
-radial-gradient(900px 600px at 50% 10%, rgba(155,77,255,.22), transparent 60%),
-radial-gradient(700px 500px at 50% 55%, rgba(107,44,255,.22), transparent 65%),
-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 100%);
-display:flex;
-justify-content:center;
-}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--white);
+      background:
+        radial-gradient(900px 600px at 50% 10%, rgba(178,77,255,.25), transparent 60%),
+        radial-gradient(700px 500px at 50% 55%, rgba(107,44,255,.22), transparent 65%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 100%);
+      display:flex;
+      justify-content:center;
+    }
 
-.wrap{
-width:min(520px, 100%);
-padding:22px 18px 26px;
-}
+    .wrap{width:min(520px, 100%); padding:22px 18px 26px;}
 
-.logo{
-display:flex;
-justify-content:center;
-margin-top:10px;
-}
+    /* TEXTO GIGANTE CON GLOW */
+    .brand{
+      text-align:center;
+      margin-top:8px;
+      font-weight:1000;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      font-size:56px;              /* <-- tamaño principal */
+      line-height:1;
+      background: linear-gradient(90deg, #ffffff, #e8d5ff, #ffffff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:
+        0 0 10px rgba(178,77,255,.65),
+        0 0 25px rgba(178,77,255,.45),
+        0 0 45px rgba(107,44,255,.40);
+      animation: glow 1.8s ease-in-out infinite alternate;
+    }
+    .brand span{
+      font-size:24px;
+      vertical-align:top;
+      margin-left:6px;
+      color:var(--gold);
+      text-shadow:
+        0 0 10px rgba(255,211,106,.45),
+        0 0 24px rgba(255,211,106,.25);
+    }
 
-.logo img{
-width:110%;
-max-width:600px;
-filter: drop-shadow(0 15px 35px rgba(0,0,0,.6));
-}
+    @keyframes glow{
+      from{
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,.55));
+        text-shadow:
+          0 0 8px rgba(178,77,255,.55),
+          0 0 18px rgba(178,77,255,.35),
+          0 0 30px rgba(107,44,255,.30);
+      }
+      to{
+        filter: drop-shadow(0 14px 18px rgba(0,0,0,.65));
+        text-shadow:
+          0 0 12px rgba(178,77,255,.75),
+          0 0 28px rgba(178,77,255,.50),
+          0 0 55px rgba(107,44,255,.45);
+      }
+    }
 
-.mascot{
-display:flex;
-justify-content:center;
-margin:20px 0;
-}
+    .mascot{display:flex; justify-content:center; margin:18px 0 14px;}
+    .mascot img{
+      width:190px;
+      height:auto;
+      filter: drop-shadow(0 20px 35px rgba(0,0,0,.6));
+    }
 
-.mascot img{
-width:190px;
-filter: drop-shadow(0 20px 35px rgba(0,0,0,.6));
-}
+    .vip{display:flex; justify-content:center; margin-bottom:18px;}
+    .vip a{
+      text-decoration:none;
+      color: var(--gold);
+      font-weight:800;
+      letter-spacing:.8px;
+      padding:10px 26px;
+      border-radius:999px;
+      border:1px solid rgba(255,211,106,.35);
+      background: rgba(0,0,0,.18);
+      box-shadow: 0 0 0 1px rgba(255,211,106,.10) inset, 0 10px 25px rgba(0,0,0,.35);
+    }
 
-.card{
-padding:35px 25px;
-border-radius:26px;
-background: rgba(10, 5, 30, .6);
-box-shadow:0 18px 55px rgba(0,0,0,.6);
-text-align:center;
-}
+    .card{
+      position:relative;
+      padding:34px 22px 28px;
+      border-radius:26px;
+      background: rgba(10, 5, 30, .58);
+      box-shadow: 0 18px 55px rgba(0,0,0,.60), 0 0 0 1px rgba(170,110,255,.22) inset;
+      overflow:hidden;
+      text-align:center;
+    }
 
-.title{
-font-weight:900;
-font-size:34px;
-margin-bottom:15px;
-text-transform:uppercase;
-}
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:28px;
+      background: radial-gradient(1200px 700px at 50% 0%,
+        rgba(178,77,255,.45), rgba(107,44,255,.18), transparent 70%);
+      filter: blur(12px);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .card:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:26px;
+      box-shadow: 0 0 0 1px rgba(178,77,255,.25) inset, 0 0 35px rgba(178,77,255,.15) inset;
+      pointer-events:none;
+    }
 
-.sub{
-color:var(--muted);
-margin-bottom:25px;
-font-size:18px;
-}
+    .title{
+      position:relative;
+      font-weight:1000;
+      letter-spacing:1px;
+      font-size:34px;
+      line-height:1.05;
+      margin:0 0 14px;
+      text-transform:uppercase;
+    }
 
-.wa-btn{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:12px;
-text-decoration:none;
-color:white;
-font-weight:900;
-font-size:22px;
-padding:22px;
-border-radius:20px;
-background: linear-gradient(180deg, var(--green) 0%, var(--green2) 100%);
-box-shadow:0 0 45px rgba(34,197,94,.6);
-}
+    .sub{
+      position:relative;
+      color:var(--muted);
+      font-size:18px;
+      margin:0 0 22px;
+    }
 
-.wa-btn:hover{
-transform:scale(1.03);
-transition:.2s;
-}
+    .wa-btn-wrap{position:relative; display:flex; justify-content:center; margin:10px 0 16px;}
+    .wa-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      width:min(420px, 100%);
+      text-decoration:none;
+      color:#fff;
+      font-weight:1000;
+      letter-spacing:.7px;
+      font-size:22px;
+      padding:20px 18px;
+      border-radius:20px;
+      background: linear-gradient(180deg, var(--green) 0%, var(--green2) 100%);
+      box-shadow:
+        0 16px 35px rgba(0,0,0,.45),
+        0 0 0 2px rgba(255,255,255,.10) inset,
+        0 0 45px rgba(34,197,94,.55);
+      position:relative;
+      overflow:hidden;
+      z-index:1;
+    }
+    .wa-btn:before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 45%),
+        radial-gradient(circle at 70% 70%, rgba(255,255,255,.12), transparent 50%);
+      transform: rotate(10deg);
+      opacity:.65;
+    }
+    .wa-btn:hover{transform:scale(1.02); transition:.15s}
+    .wa-text{position:relative; z-index:2; text-transform:uppercase; line-height:1.05;}
 
-.foot{
-margin-top:15px;
-font-size:14px;
-color:var(--muted2);
-text-transform:uppercase;
-}
+    .foot{
+      position:relative;
+      margin-top:10px;
+      font-size:14px;
+      color:var(--muted2);
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
 
-</style>
+    .legal{
+      text-align:center;
+      margin-top:18px;
+      color:rgba(255,255,255,.35);
+      font-size:12px;
+    }
+  </style>
 </head>
 
 <body>
-<main class="wrap">
+  <main class="wrap">
+    <!-- TEXTO ENORME -->
+    <div class="brand">GANAMOS<span>.NET</span></div>
 
-<div class="logo">
-<img src="assets/logo.png" alt="GANAMOS.NET">
-</div>
+    <div class="mascot">
+      <!-- Dejá tu perrito en assets/dog.png -->
+      <img src="assets/dog.png" alt="Mascota" />
+    </div>
 
-<div class="mascot">
-<img src="assets/dog.png" alt="Mascota">
-</div>
+    <div class="vip">
+      <a href="#" onclick="return false;">ACCESO VIP</a>
+    </div>
 
-<section class="card">
-<h1 class="title">OBTENÉ TU BONO DE BIENVENIDA</h1>
-<p class="sub">Escribinos apretando el botón de abajo</p>
+    <section class="card">
+      <h1 class="title">OBTENÉ TU BONO DE<br>BIENVENIDA</h1>
+      <p class="sub">Escribinos apretando el botón de abajo</p>
 
-<a class="wa-btn"
-href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida"
-onclick="fbq('track','Contact');"
-target="_blank">
+      <div class="wa-btn-wrap">
+        <a class="wa-btn"
+           href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida"
+           target="_blank" rel="noopener"
+           onclick="try{fbq('track','Lead');}catch(e){}">
+          <div class="wa-text">WHATSAPP<br>OFICIAL</div>
+        </a>
+      </div>
 
-WHATSAPP OFICIAL
+      <div class="foot">ATENCIÓN Y RETIROS LAS 24 HS</div>
+    </section>
 
-</a>
-
-<div class="foot">ATENCIÓN Y RETIROS LAS 24 HS</div>
-</section>
-
-</main>
+    <div class="legal">© 2025 • +18 • Operá con responsabilidad.</div>
+  </main>
 </body>
 </html>
