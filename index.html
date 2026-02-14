@@ -2,234 +2,222 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ganamos - Bono de Bienvenida</title>
 
-  <!-- ✅ Meta Pixel (dejalo si ya lo tenés) -->
-  <!-- Pegá tu Pixel arriba de </head>. Si ya lo pegaste, podés reemplazar este bloque por el tuyo. -->
+  <!-- =========================
+       META PIXEL (PEGÁ TU ID)
+       Reemplazá TU_PIXEL_ID por tu número
+  ========================== -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'TU_PIXEL_ID'); // <-- poné tu Pixel ID
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return; n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+      n.queue=[]; t=b.createElement(e); t.async=!0;
+      t.src=v; s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', 'TU_PIXEL_ID'); // <-- ACA TU ID
     fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"
-  /></noscript>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
 
   <style>
     :root{
-      --bg1:#0b0520;
-      --bg2:#2a0a45;
-      --card:#130827cc;
-      --stroke:#7a3cff55;
+      --bg1:#0b0a1a;
+      --bg2:#2a0c3f;
+      --card:#2b0a3a99;
+      --cardBorder:#6d2b8a55;
       --text:#ffffff;
-      --muted:#c9c3ffcc;
-      --gold:#d7b15a;
-      --wa1:#22c55e;
-      --wa2:#16a34a;
-      --waStroke:#0b3b1f;
+      --muted:#bdb6c8;
+      --gold:#d1a11d;
+      --wa1:#1fd35f;
+      --wa2:#12b84b;
+      --waBorder:#0b6b2d;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
     }
 
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       min-height:100vh;
       background:
-        radial-gradient(900px 600px at 50% 0%, #4b1f8a66 0%, transparent 55%),
-        radial-gradient(900px 600px at 50% 100%, #6a1fb866 0%, transparent 55%),
+        radial-gradient(900px 600px at 50% 25%, rgba(118,46,190,.35), transparent 60%),
+        radial-gradient(900px 700px at 50% 85%, rgba(89,14,130,.55), transparent 60%),
         linear-gradient(180deg, var(--bg1), var(--bg2));
       display:flex;
       justify-content:center;
     }
 
     .wrap{
-      width:min(520px, 94vw);
-      padding:18px 14px 28px;
+      width:min(520px, 92vw);
+      padding:22px 0 30px;
     }
 
-    /* ✅ LOGO SIN RECUADRO */
+    /* ====== TOP: Logo pegado al perro ====== */
     .top{
-      display:flex;
-      justify-content:center;
-      margin-top:8px;
-      margin-bottom:6px; /* pegado al perro */
-    }
-
-    .logo{
-      width:min(420px, 88vw);
-      height:auto;
-      display:block;
-      /* sin fondo / sin bordes */
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
-    }
-
-    /* ✅ PERRO */
-    .hero{
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:12px;
-      margin-top:2px;
+      margin-top:6px;
+    }
+
+    .logo{
+      width:min(360px, 88vw);          /* más grande */
+      height:auto;
+      display:block;
+      margin:0 0 -10px 0;              /* NEGATIVO = más pegado al perro */
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
     }
 
     .dog{
-      width:min(220px, 56vw);
+      width:min(220px, 62vw);
       height:auto;
       display:block;
-      filter: drop-shadow(0 14px 26px rgba(0,0,0,.6));
-      margin-top:2px;
+      margin:0 0 6px 0;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,.55));
     }
 
+    /* ====== VIP BUTTON (titila) ====== */
     .vip{
+      margin:6px 0 16px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:10px 18px;
+      padding:10px 22px;
       border-radius:999px;
       color:var(--gold);
-      border:1px solid #d7b15a55;
-      background: linear-gradient(180deg, #1a0b2f, #120721);
-      box-shadow: 0 10px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
-      font-weight:700;
-      letter-spacing:.5px;
       text-decoration:none;
-    }
-
-    /* ✅ CAJA PRINCIPAL */
-    .card{
-      margin:18px auto 0;
-      background: linear-gradient(180deg, rgba(26,10,56,.80), rgba(14,5,32,.80));
-      border:1px solid var(--stroke);
-      border-radius:26px;
-      padding:26px 18px 18px;
-      box-shadow: 0 18px 40px rgba(0,0,0,.45);
+      font-weight:800;
+      letter-spacing:.5px;
+      border:1px solid rgba(209,161,29,.55);
+      background: rgba(0,0,0,.25);
+      box-shadow: 0 8px 22px rgba(0,0,0,.35);
       position:relative;
       overflow:hidden;
+      transform: translateZ(0);
+      animation: vipPulse 1.15s infinite ease-in-out; /* TITILA */
     }
 
-    .card:before{
+    .vip::after{
       content:"";
       position:absolute;
       inset:-40%;
-      background: radial-gradient(circle at 50% 35%, rgba(150,80,255,.22) 0%, transparent 55%);
-      pointer-events:none;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+      transform: rotate(15deg) translateX(-120%);
+      animation: shine 1.8s infinite;
+    }
+
+    @keyframes vipPulse{
+      0%   { box-shadow: 0 8px 22px rgba(0,0,0,.35), 0 0 0 rgba(209,161,29,.0); transform: scale(1); }
+      50%  { box-shadow: 0 10px 26px rgba(0,0,0,.45), 0 0 18px rgba(209,161,29,.45); transform: scale(1.05); }
+      100% { box-shadow: 0 8px 22px rgba(0,0,0,.35), 0 0 0 rgba(209,161,29,.0); transform: scale(1); }
+    }
+
+    @keyframes shine{
+      0%   { transform: rotate(15deg) translateX(-140%); opacity:.0; }
+      25%  { opacity:.65; }
+      60%  { opacity:.0; }
+      100% { transform: rotate(15deg) translateX(140%); opacity:.0; }
+    }
+
+    /* ====== CARD ====== */
+    .card{
+      margin:10px auto 0;
+      padding:22px 18px 18px;
+      border-radius:22px;
+      background: var(--card);
+      border:1px solid var(--cardBorder);
+      box-shadow: var(--shadow);
     }
 
     h1{
-      margin:0;
+      margin:6px 0 10px;
       text-align:center;
-      font-size: clamp(28px, 5.8vw, 40px);
-      line-height:1.05;
-      letter-spacing:.6px;
-      position:relative;
-      z-index:1;
+      font-size: clamp(26px, 6.4vw, 36px);
+      line-height:1.08;
+      letter-spacing:.3px;
     }
 
     .sub{
-      margin:14px 0 18px;
       text-align:center;
       color:var(--muted);
-      font-size: clamp(14px, 3.5vw, 18px);
-      position:relative;
-      z-index:1;
+      margin:0 0 16px;
+      font-size: clamp(14px, 3.7vw, 16px);
     }
 
-    /* ✅ BOTÓN WHATSAPP: RELIEVE + TITILA */
-    .wa-wrap{
+    /* ====== WhatsApp button (relieve + pulse) ====== */
+    .wa{
       display:flex;
       justify-content:center;
-      position:relative;
-      z-index:1;
+      margin:14px 0 10px;
     }
 
-    .wa{
+    .wa a{
       width:min(420px, 86vw);
       display:flex;
       align-items:center;
       justify-content:center;
       gap:14px;
-      padding:18px 18px;
-      border-radius:999px;
       text-decoration:none;
-      color:white;
-      font-weight:900;
-      letter-spacing:1px;
-      text-transform:uppercase;
-
-      background: linear-gradient(180deg, var(--wa1), var(--wa2));
-      border:2px solid rgba(255,255,255,.18);
-      box-shadow:
-        0 18px 30px rgba(0,0,0,.45),           /* sombra externa */
-        inset 0 3px 0 rgba(255,255,255,.25),   /* brillo arriba */
-        inset 0 -6px 0 rgba(0,0,0,.18);        /* sombra abajo */
-      position:relative;
-      isolation:isolate;
-
-      animation: pulse 1.35s ease-in-out infinite;
-    }
-
-    .wa:before{
-      content:"";
-      position:absolute;
-      inset:-8px;
+      padding:16px 18px;
       border-radius:999px;
-      border:2px solid rgba(34,197,94,.35);
-      box-shadow: 0 0 0 0 rgba(34,197,94,.25);
-      z-index:-1;
-      animation: ring 1.35s ease-in-out infinite;
-    }
-
-    .wa:active{
-      transform: translateY(1px);
+      color:#fff;
+      font-weight:900;
+      letter-spacing:.6px;
+      background: linear-gradient(180deg, var(--wa1), var(--wa2));
+      border:3px solid rgba(255,255,255,.15);
+      outline:2px solid rgba(11,107,45,.55);
       box-shadow:
-        0 12px 22px rgba(0,0,0,.45),
-        inset 0 2px 0 rgba(255,255,255,.20),
-        inset 0 -4px 0 rgba(0,0,0,.20);
+        0 14px 28px rgba(0,0,0,.45),
+        inset 0 2px 0 rgba(255,255,255,.35),
+        inset 0 -6px 0 rgba(0,0,0,.18);
+      transform: translateZ(0);
+      animation: waPulse 1.25s infinite ease-in-out;
     }
 
-    .wa svg{flex:0 0 auto}
+    @keyframes waPulse{
+      0%   { transform: scale(1); filter: brightness(1); }
+      50%  { transform: scale(1.03); filter: brightness(1.06); }
+      100% { transform: scale(1); filter: brightness(1); }
+    }
+
+    .wa .icon{
+      width:38px; height:38px; flex:0 0 38px;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
+    }
+
     .wa .txt{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
+      text-align:center;
       line-height:1.05;
-      font-size: clamp(18px, 4.6vw, 28px);
+      font-size: clamp(16px, 4.3vw, 22px);
+    }
+    .wa .txt span{
+      display:block;
+      font-size: clamp(14px, 3.6vw, 20px);
+      margin-top:2px;
     }
 
-    .footer-note{
-      margin-top:14px;
+    .foot{
       text-align:center;
-      font-size:14px;
-      color:#a79cffcc;
-      letter-spacing:.4px;
-      position:relative;
-      z-index:1;
+      color:#a9a0ba;
+      font-size:13px;
+      margin-top:10px;
+      letter-spacing:.2px;
     }
 
     .legal{
-      margin-top:22px;
       text-align:center;
+      opacity:.6;
       font-size:12px;
-      color:#b8b2ff88;
-    }
-
-    @keyframes pulse{
-      0%,100%{ transform: translateY(0) scale(1); filter:brightness(1); }
-      50%{ transform: translateY(-1px) scale(1.015); filter:brightness(1.08); }
-    }
-    @keyframes ring{
-      0%{ box-shadow: 0 0 0 0 rgba(34,197,94,.25); opacity:.95; }
-      70%{ box-shadow: 0 0 0 18px rgba(34,197,94,0); opacity:.6; }
-      100%{ box-shadow: 0 0 0 0 rgba(34,197,94,0); opacity:.0; }
+      margin:22px 0 0;
     }
   </style>
 </head>
@@ -237,45 +225,53 @@
 <body>
   <main class="wrap">
 
-    <!-- ✅ LOGO ARRIBA (SIN RECUADRO) -->
-    <div class="top">
+    <section class="top">
+      <!-- LOGO (sin recuadro) -->
       <img class="logo" src="assets/logo.png" alt="Ganamos" />
-    </div>
 
-    <!-- ✅ PERRO + VIP -->
-    <section class="hero">
-      <!-- Si tu perro está en assets, ponelo acá. Si no, podés borrar esta imagen o cambiar el src -->
+      <!-- PERRO -->
       <img class="dog" src="assets/dog.png" alt="Mascota" />
+
+      <!-- ACCESO VIP (titila) -->
       <a class="vip" href="#bono">ACCESO VIP</a>
     </section>
 
-    <!-- ✅ CAJA -->
-    <section id="bono" class="card">
+    <section class="card" id="bono">
       <h1>OBTENÉ TU BONO DE<br/>BIENVENIDA</h1>
       <p class="sub">Escribinos apretando el botón de abajo</p>
 
-      <div class="wa-wrap">
-        <!-- ✅ Poné tu número y mensaje -->
-        <a class="wa"
-           href="https://wa.me/5492235330453?text=Hola%20quiero%20mi%20bono%20de%20bienvenida"
-           target="_blank" rel="noopener">
-          <!-- icono whatsapp -->
-          <svg width="42" height="42" viewBox="0 0 32 32" aria-hidden="true">
-            <path fill="white" d="M19.11 17.24c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.85 1.04-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.57-1.47-1.83-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.99-.22-.53-.45-.46-.6-.46h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.31.95 2.58 1.08 2.76.14.18 1.87 2.86 4.53 4.01.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.57-.64 1.79-1.26.22-.62.22-1.15.16-1.26-.07-.11-.24-.18-.51-.31z"/>
-            <path fill="white" d="M16 3C8.83 3 3 8.61 3 15.52c0 2.44.76 4.71 2.07 6.6L4 29l7.07-1.86c1.83.98 3.93 1.54 6.18 1.54 7.17 0 13-5.61 13-12.52C30.25 8.61 24.42 3 16 3zm0 23.02c-2.1 0-4.03-.6-5.66-1.63l-.4-.25-4.2 1.1 1.12-4.02-.27-.41c-1.17-1.74-1.86-3.82-1.86-6.06C4.73 9.94 9.78 5.35 16 5.35c6.22 0 11.27 4.59 11.27 10.23 0 5.64-5.05 10.44-11.27 10.44z"/>
+      <div class="wa">
+        <!-- CAMBIÁ TU LINK DE WHATSAPP -->
+        <a href="https://wa.me/5492235330453?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20!!" target="_blank" rel="noopener">
+          <!-- Icono WhatsApp (SVG) -->
+          <svg class="icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path fill="#fff" d="M16 2.7C8.8 2.7 3 8.4 3 15.6c0 2.5.7 4.8 2 6.8L3.7 29.3l7-1.8c1.9 1 4 1.5 6.3 1.5 7.2 0 13-5.8 13-13S23.2 2.7 16 2.7Zm0 23.6c-2.1 0-4-.6-5.7-1.6l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5 9.7 10 4.7 16 4.7s11 5 11 11-5 10.6-11 10.6Z"/>
+            <path fill="#fff" d="M22.1 18.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.9-1.7-2.2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.1.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5 0-.2-.3-.3-.6-.4Z"/>
           </svg>
 
-          <span class="txt">
-            <span>WHATSAPP</span>
+          <div class="txt">
+            WHATSAPP
             <span>OFFICIAL</span>
-          </span>
+          </div>
         </a>
       </div>
 
-      <div class="footer-note">ATENCIÓN Y RETIROS LAS 24 HS</div>
+      <div class="foot">ATENCIÓN Y RETIROS LAS 24 HS</div>
     </section>
 
     <div class="legal">© 2025 el juego es solo +18. Operá con responsabilidad.</div>
   </main>
+
+  <script>
+    // Evento de click WhatsApp (opcional)
+    document.querySelector('.wa a')?.addEventListener('click', () => {
+      if (window.fbq) fbq('track', 'Contact'); // o Lead si querés
+    });
+
+    // Evento VIP (opcional)
+    document.querySelector('.vip')?.addEventListener('click', () => {
+      if (window.fbq) fbq('track', 'ViewContent');
+    });
+  </script>
 </body>
 </html>
