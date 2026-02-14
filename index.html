@@ -1,12 +1,13 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ganamos - Bono de Bienvenida</title>
 
-<!-- Meta Pixel -->
+<!-- PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,111 +17,89 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-
 fbq('init', '901147982849876');
 fbq('track', 'PageView');
 </script>
 
 <style>
+
 body{
 margin:0;
-font-family: Arial, sans-serif;
-background:linear-gradient(180deg,#0b0d2a,#2a0a44,#120526);
-display:flex;
-justify-content:center;
-color:white;
-}
-
-.wrap{
-width:100%;
-max-width:600px;
-padding:20px;
+font-family:Arial, Helvetica, sans-serif;
+background: radial-gradient(circle at center, #4b0082, #0d0026);
 text-align:center;
-}
-
-/* LOGO GRANDE */
-.logo img{
-width:130%;        /* <-- tamaño grande */
-max-width:750px;
-margin-top:10px;
-filter: drop-shadow(0 20px 40px rgba(0,0,0,.7));
-}
-
-/* PERRO */
-.mascot img{
-width:200px;
-margin:20px 0;
-filter: drop-shadow(0 20px 40px rgba(0,0,0,.6));
-}
-
-/* CARD */
-.card{
-background:rgba(0,0,0,.4);
-padding:30px;
-border-radius:25px;
-}
-
-.title{
-font-size:32px;
-font-weight:900;
-margin-bottom:15px;
-}
-
-.sub{
-opacity:.8;
-margin-bottom:25px;
-}
-
-.btn{
-display:inline-block;
-background:#25D366;
 color:white;
-padding:20px 40px;
-border-radius:15px;
+}
+
+/* LOGO */
+.logo{
+margin-top:40px;
+}
+
+.logo img{
+width:420px;
+max-width:90%;
+}
+
+/* TEXTO */
+h1{
+font-size:34px;
+margin-top:20px;
+}
+
+p{
+font-size:20px;
+margin:20px;
+}
+
+/* BOTÓN WHATSAPP */
+.btn-whatsapp{
+display:inline-block;
+margin-top:30px;
+padding:22px 60px;
+font-size:26px;
 font-weight:bold;
-font-size:22px;
+color:white;
 text-decoration:none;
-box-shadow:0 0 40px rgba(37,211,102,.6);
+border-radius:60px;
+background:linear-gradient(145deg,#39d353,#128C7E);
+box-shadow:
+0 8px 20px rgba(0,0,0,0.6),
+inset 0 -6px 12px rgba(0,0,0,0.4),
+inset 0 6px 12px rgba(255,255,255,0.2);
+animation:pulse 1.2s infinite;
+transition:0.3s;
 }
 
-.btn:hover{
+.btn-whatsapp:hover{
 transform:scale(1.05);
-transition:.2s;
 }
 
-.foot{
-margin-top:15px;
-font-size:14px;
-opacity:.6;
+/* EFECTO TITILAR */
+@keyframes pulse{
+0%{transform:scale(1);box-shadow:0 0 10px #25D366;}
+50%{transform:scale(1.08);box-shadow:0 0 30px #25D366;}
+100%{transform:scale(1);box-shadow:0 0 10px #25D366;}
 }
+
 </style>
 </head>
 
 <body>
-<div class="wrap">
 
 <div class="logo">
-<img src="assets/logo.png" alt="GANAMOS.NET">
+<img src="assets/logo.png" alt="Ganamos">
 </div>
 
-<div class="mascot">
-<img src="assets/dog.png" alt="Mascota">
-</div>
+<h1>🎁 SUPER BONO DE BIENVENIDA</h1>
 
-<div class="card">
-<div class="title">OBTENÉ TU BONO DE BIENVENIDA</div>
-<div class="sub">Escribinos tocando el botón</div>
+<p>Registrate ahora y recibí tu bono exclusivo</p>
 
-<a class="btn"
+<a class="btn-whatsapp"
 href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono"
-onclick="fbq('track','Lead');"
 target="_blank">
 WHATSAPP OFICIAL
 </a>
 
-<div class="foot">ATENCIÓN Y RETIROS LAS 24 HS</div>
-</div>
-
-</div>
 </body>
 </html>
