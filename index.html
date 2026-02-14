@@ -1,248 +1,281 @@
-
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ganamos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganamos - Bono de Bienvenida</title>
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+  <!-- ✅ Meta Pixel (dejalo si ya lo tenés) -->
+  <!-- Pegá tu Pixel arriba de </head>. Si ya lo pegaste, podés reemplazar este bloque por el tuyo. -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'TU_PIXEL_ID'); // <-- poné tu Pixel ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"
+  /></noscript>
 
-fbq('init', '901147982849876');
-fbq('track', 'PageView');
-</script>
+  <style>
+    :root{
+      --bg1:#0b0520;
+      --bg2:#2a0a45;
+      --card:#130827cc;
+      --stroke:#7a3cff55;
+      --text:#ffffff;
+      --muted:#c9c3ffcc;
+      --gold:#d7b15a;
+      --wa1:#22c55e;
+      --wa2:#16a34a;
+      --waStroke:#0b3b1f;
+    }
 
-<style>
-:root{
-  --bgTop:#070b2a;
-  --bgMid:#2b0b4d;
-  --bgBot:#2a064a;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      background:
+        radial-gradient(900px 600px at 50% 0%, #4b1f8a66 0%, transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, #6a1fb866 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:flex;
+      justify-content:center;
+    }
 
-  --card: rgba(26, 8, 48, .85);
-  --cardBorder: rgba(255,255,255,.10);
+    .wrap{
+      width:min(520px, 94vw);
+      padding:18px 14px 28px;
+    }
 
-  --text:#fff;
-  --muted: rgba(255,255,255,.65);
+    /* ✅ LOGO SIN RECUADRO */
+    .top{
+      display:flex;
+      justify-content:center;
+      margin-top:8px;
+      margin-bottom:6px; /* pegado al perro */
+    }
 
-  --green1:#25D366;
-  --green2:#11a84f;
+    .logo{
+      width:min(420px, 88vw);
+      height:auto;
+      display:block;
+      /* sin fondo / sin bordes */
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
+    }
 
-  --gold:#f4c76b;
-}
+    /* ✅ PERRO */
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      margin-top:2px;
+    }
 
-*{ box-sizing:border-box; }
+    .dog{
+      width:min(220px, 56vw);
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 14px 26px rgba(0,0,0,.6));
+      margin-top:2px;
+    }
 
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  color:var(--text);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  background:
-    radial-gradient(900px 600px at 50% 15%, rgba(135,75,255,.25) 0%, rgba(0,0,0,0) 60%),
-    linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 50%, var(--bgBot) 100%);
-}
+    .vip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 18px;
+      border-radius:999px;
+      color:var(--gold);
+      border:1px solid #d7b15a55;
+      background: linear-gradient(180deg, #1a0b2f, #120721);
+      box-shadow: 0 10px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+      font-weight:700;
+      letter-spacing:.5px;
+      text-decoration:none;
+    }
 
-.wrap{
-  width:100%;
-  max-width:520px;
-  padding:22px 18px 40px;
-  text-align:center;
-}
+    /* ✅ CAJA PRINCIPAL */
+    .card{
+      margin:18px auto 0;
+      background: linear-gradient(180deg, rgba(26,10,56,.80), rgba(14,5,32,.80));
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      padding:26px 18px 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.45);
+      position:relative;
+      overflow:hidden;
+    }
 
-/* LOGO */
-.logoPill{
-  width:100%;
-  max-width:520px;
-  margin: 8px auto 28px;
-  padding: 12px;
-  border-radius: 28px;
-  background: rgba(60,20,120,.35);
-  border: 1px solid rgba(255,255,255,.10);
-  box-shadow: 0 18px 50px rgba(0,0,0,.55),
-              0 0 40px rgba(168,85,247,.25);
-}
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: radial-gradient(circle at 50% 35%, rgba(150,80,255,.22) 0%, transparent 55%);
+      pointer-events:none;
+    }
 
-.logoPill img{
-  width:100%;
-  height:auto;
-  display:block;
-  margin:auto;
-  mix-blend-mode: screen;
-  filter: brightness(1.25) contrast(1.08) saturate(1.15);
-}
+    h1{
+      margin:0;
+      text-align:center;
+      font-size: clamp(28px, 5.8vw, 40px);
+      line-height:1.05;
+      letter-spacing:.6px;
+      position:relative;
+      z-index:1;
+    }
 
-/* PERRO */
-.dog{
-  margin: 10px 0 18px;
-}
-.dog img{
-  width:190px;
-  max-width:65vw;
-  height:auto;
-  display:block;
-  margin:0 auto;
-  filter: drop-shadow(0 25px 40px rgba(0,0,0,.55));
-}
+    .sub{
+      margin:14px 0 18px;
+      text-align:center;
+      color:var(--muted);
+      font-size: clamp(14px, 3.5vw, 18px);
+      position:relative;
+      z-index:1;
+    }
 
-/* ACCESO VIP */
-.vipBtn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  margin: 6px auto 24px;
-  padding: 10px 26px;
-  border-radius: 999px;
-  border: 1px solid rgba(244,199,107,.65);
-  color: var(--gold);
-  background: rgba(0,0,0,.25);
-  font-weight: 1000;
-  letter-spacing: .8px;
-  text-transform: uppercase;
-  font-size: 14px;
-  animation: vipGlow 1.2s infinite;
-}
+    /* ✅ BOTÓN WHATSAPP: RELIEVE + TITILA */
+    .wa-wrap{
+      display:flex;
+      justify-content:center;
+      position:relative;
+      z-index:1;
+    }
 
-@keyframes vipGlow{
-  0%{ transform: scale(1); box-shadow: 0 0 12px rgba(244,199,107,.3);}
-  50%{ transform: scale(1.05); box-shadow: 0 0 35px rgba(244,199,107,.6);}
-  100%{ transform: scale(1); box-shadow: 0 0 12px rgba(244,199,107,.3);}
-}
+    .wa{
+      width:min(420px, 86vw);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      padding:18px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      color:white;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
 
-/* CARD */
-.card{
-  width:100%;
-  margin: 0 auto;
-  padding: 32px 22px 28px;
-  border-radius: 30px;
-  background: var(--card);
-  border: 1px solid var(--cardBorder);
-  box-shadow: 0 30px 70px rgba(0,0,0,.65);
-}
+      background: linear-gradient(180deg, var(--wa1), var(--wa2));
+      border:2px solid rgba(255,255,255,.18);
+      box-shadow:
+        0 18px 30px rgba(0,0,0,.45),           /* sombra externa */
+        inset 0 3px 0 rgba(255,255,255,.25),   /* brillo arriba */
+        inset 0 -6px 0 rgba(0,0,0,.18);        /* sombra abajo */
+      position:relative;
+      isolation:isolate;
 
-.tag{
-  display:inline-block;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: rgba(37,211,102,.20);
-  border: 1px solid rgba(37,211,102,.45);
-  color:#b9ffd6;
-  font-weight: 1000;
-  letter-spacing: .6px;
-  text-transform: uppercase;
-  font-size: 13px;
-  margin-bottom: 18px;
-}
+      animation: pulse 1.35s ease-in-out infinite;
+    }
 
-/* TÍTULO MÁS ELEGANTE */
-.title{
-  margin: 0;
-  font-size: 34px;
-  font-weight: 1000;
-  text-transform: uppercase;
-  line-height: 1.1;
-}
+    .wa:before{
+      content:"";
+      position:absolute;
+      inset:-8px;
+      border-radius:999px;
+      border:2px solid rgba(34,197,94,.35);
+      box-shadow: 0 0 0 0 rgba(34,197,94,.25);
+      z-index:-1;
+      animation: ring 1.35s ease-in-out infinite;
+    }
 
-.sub{
-  margin: 18px 0 24px;
-  font-size: 16px;
-  color: var(--muted);
-}
+    .wa:active{
+      transform: translateY(1px);
+      box-shadow:
+        0 12px 22px rgba(0,0,0,.45),
+        inset 0 2px 0 rgba(255,255,255,.20),
+        inset 0 -4px 0 rgba(0,0,0,.20);
+    }
 
-/* WHATSAPP */
-.waBtn{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  text-decoration:none;
-  color:#fff;
-  font-weight:1000;
-  font-size:20px;
-  padding:18px;
-  border-radius:999px;
-  background: linear-gradient(180deg,var(--green1),var(--green2));
-  box-shadow:0 18px 40px rgba(0,0,0,.6);
-  animation:pulse 1.2s infinite;
-}
+    .wa svg{flex:0 0 auto}
+    .wa .txt{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      line-height:1.05;
+      font-size: clamp(18px, 4.6vw, 28px);
+    }
 
-.waBtn img{
-  width:34px;
-}
+    .footer-note{
+      margin-top:14px;
+      text-align:center;
+      font-size:14px;
+      color:#a79cffcc;
+      letter-spacing:.4px;
+      position:relative;
+      z-index:1;
+    }
 
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.04);}
-  100%{transform:scale(1);}
-}
+    .legal{
+      margin-top:22px;
+      text-align:center;
+      font-size:12px;
+      color:#b8b2ff88;
+    }
 
-.mini{
-  margin-top:18px;
-  font-size:12px;
-  color:rgba(255,255,255,.45);
-  text-transform:uppercase;
-}
-
-.footer{
-  margin-top:22px;
-  font-size:12px;
-  color:rgba(255,255,255,.35);
-}
-</style>
+    @keyframes pulse{
+      0%,100%{ transform: translateY(0) scale(1); filter:brightness(1); }
+      50%{ transform: translateY(-1px) scale(1.015); filter:brightness(1.08); }
+    }
+    @keyframes ring{
+      0%{ box-shadow: 0 0 0 0 rgba(34,197,94,.25); opacity:.95; }
+      70%{ box-shadow: 0 0 0 18px rgba(34,197,94,0); opacity:.6; }
+      100%{ box-shadow: 0 0 0 0 rgba(34,197,94,0); opacity:.0; }
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
+  <main class="wrap">
 
-  <div class="logoPill">
-    <img src="assets/logo.png" alt="Ganamos.net">
-  </div>
+    <!-- ✅ LOGO ARRIBA (SIN RECUADRO) -->
+    <div class="top">
+      <img class="logo" src="assets/logo.png" alt="Ganamos" />
+    </div>
 
-  <div class="dog">
-    <img src="assets/dog.png" alt="Ganamos VIP">
-  </div>
+    <!-- ✅ PERRO + VIP -->
+    <section class="hero">
+      <!-- Si tu perro está en assets, ponelo acá. Si no, podés borrar esta imagen o cambiar el src -->
+      <img class="dog" src="assets/dog.png" alt="Mascota" />
+      <a class="vip" href="#bono">ACCESO VIP</a>
+    </section>
 
-  <div class="vipBtn">ACCESO VIP</div>
+    <!-- ✅ CAJA -->
+    <section id="bono" class="card">
+      <h1>OBTENÉ TU BONO DE<br/>BIENVENIDA</h1>
+      <p class="sub">Escribinos apretando el botón de abajo</p>
 
-  <div class="card">
-    <div class="tag">PEDÍ TU BONO</div>
+      <div class="wa-wrap">
+        <!-- ✅ Poné tu número y mensaje -->
+        <a class="wa"
+           href="https://wa.me/5492235330453?text=Hola%20quiero%20mi%20bono%20de%20bienvenida"
+           target="_blank" rel="noopener">
+          <!-- icono whatsapp -->
+          <svg width="42" height="42" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="white" d="M19.11 17.24c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.85 1.04-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.57-1.47-1.83-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.99-.22-.53-.45-.46-.6-.46h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.31.95 2.58 1.08 2.76.14.18 1.87 2.86 4.53 4.01.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.57-.64 1.79-1.26.22-.62.22-1.15.16-1.26-.07-.11-.24-.18-.51-.31z"/>
+            <path fill="white" d="M16 3C8.83 3 3 8.61 3 15.52c0 2.44.76 4.71 2.07 6.6L4 29l7.07-1.86c1.83.98 3.93 1.54 6.18 1.54 7.17 0 13-5.61 13-12.52C30.25 8.61 24.42 3 16 3zm0 23.02c-2.1 0-4.03-.6-5.66-1.63l-.4-.25-4.2 1.1 1.12-4.02-.27-.41c-1.17-1.74-1.86-3.82-1.86-6.06C4.73 9.94 9.78 5.35 16 5.35c6.22 0 11.27 4.59 11.27 10.23 0 5.64-5.05 10.44-11.27 10.44z"/>
+          </svg>
 
-    <h1 class="title">ACTIVÁ TU<br>BONO DE BIENVENIDA</h1>
+          <span class="txt">
+            <span>WHATSAPP</span>
+            <span>OFFICIAL</span>
+          </span>
+        </a>
+      </div>
 
-    <div class="sub">Escribinos ahora y empezá a jugar en minutos</div>
+      <div class="footer-note">ATENCIÓN Y RETIROS LAS 24 HS</div>
+    </section>
 
-    <a class="waBtn" id="waBtn"
-      href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20y%20pedir%20mi%20BONO%20DE%20BIENVENIDA%20✅"
-      target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-      WHATSAPP OFICIAL
-    </a>
-
-    <div class="mini">ATENCIÓN Y RETIROS LAS 24 HS</div>
-  </div>
-
-  <div class="footer">© 2025 el juego es solo +18. Operá con responsabilidad.</div>
-
-</div>
-
-<script>
-function trackLead(){
-  if(window.fbq){
-    fbq('track','Lead');
-  }
-}
-document.getElementById('waBtn').addEventListener('click', trackLead);
-</script>
+    <div class="legal">© 2025 el juego es solo +18. Operá con responsabilidad.</div>
+  </main>
 </body>
 </html>
