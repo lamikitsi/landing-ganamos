@@ -4,101 +4,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganamos - Bono de Bienvenida</title>
+<title>Ganamos - Bono VIP</title>
 
 <style>
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at top,#5c1aa8 0%,#240046 60%,#120022 100%);
     text-align:center;
-    background: radial-gradient(circle at center, #2b0050 0%, #140022 60%, #0b0015 100%);
     color:white;
 }
 
 /* LOGO */
 .logo{
-    margin-top:5px;
-    margin-bottom:-25px;
+    margin-top:-10px;
+    margin-bottom:-70px;
 }
+
 .logo img{
-    width:330px;
-    filter: drop-shadow(0 0 25px #b14dff)
-            drop-shadow(0 0 45px #a020f0);
+    width:430px;
+    max-width:95%;
+    filter: drop-shadow(0 0 35px #b14dff)
+            drop-shadow(0 0 70px #a020f0);
 }
 
 /* PERRO */
 .perro{
-    margin-top:-15px;
+    margin-top:-40px;
 }
+
 .perro img{
-    width:240px;
+    width:270px;
 }
 
-/* BOTON ACCESO VIP */
-.vip{
-    margin-top:10px;
-}
-.vip a{
+/* ACCESO VIP */
+.vip-btn{
     display:inline-block;
-    padding:14px 40px;
-    border-radius:40px;
-    font-weight:bold;
-    text-decoration:none;
-    font-size:18px;
-    color:#ffd700;
-    border:2px solid #ffd700;
-    background:#3a006b;
-    box-shadow:0 0 15px #ffd700;
-    animation: brillo 2s infinite alternate;
-}
-
-@keyframes brillo{
-    from{ box-shadow:0 0 10px #ffd700; }
-    to{ box-shadow:0 0 30px #ffd700; }
-}
-
-/* CAJA BONO */
-.bono{
-    margin:20px 15px;
-    padding:25px;
-    border-radius:25px;
-    background: linear-gradient(180deg,#5a008f,#2a004d);
-    box-shadow:0 0 30px #7b2cff;
-}
-
-.bono h1{
-    font-size:26px;
-    margin:0 0 10px 0;
-}
-
-.bono p{
-    opacity:0.8;
-    margin-bottom:20px;
-}
-
-/* BOTON WHATSAPP */
-.whatsapp a{
-    display:inline-block;
-    padding:20px 50px;
+    margin-top:15px;
+    padding:14px 45px;
     border-radius:50px;
+    background:#3c006b;
+    border:3px solid #ffd700;
+    color:#ffd700;
     font-weight:bold;
+    font-size:18px;
     text-decoration:none;
-    font-size:20px;
-    color:white;
-    background: linear-gradient(180deg,#32d058,#159c3a);
-    box-shadow:0 0 25px #00ff6a;
-    animation: glow 1.5s infinite alternate;
+    box-shadow:0 0 20px #ffd700;
 }
 
-@keyframes glow{
-    from{ box-shadow:0 0 15px #00ff6a; }
-    to{ box-shadow:0 0 35px #00ff6a; }
+/* TARJETA */
+.card{
+    margin:30px 15px;
+    padding:25px 20px 30px;
+    border-radius:30px;
+    background:linear-gradient(180deg,#7b1fa2,#4a0072);
+    box-shadow:0 0 40px #a020f0;
+}
+
+/* TITULO */
+.card h1{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+/* TEXTO */
+.card p{
+    color:#ddd;
+    font-size:15px;
+}
+
+/* WHATSAPP */
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:18px 40px;
+    border-radius:50px;
+    background:linear-gradient(180deg,#2ecc71,#27ae60);
+    color:white;
+    font-weight:bold;
+    font-size:18px;
+    text-decoration:none;
+    box-shadow:0 0 25px #2ecc71;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{box-shadow:0 0 15px #2ecc71;}
+    50%{box-shadow:0 0 35px #2ecc71;}
+    100%{box-shadow:0 0 15px #2ecc71;}
 }
 
 .footer{
-    margin-top:10px;
+    margin-top:15px;
     font-size:13px;
-    opacity:0.6;
+    color:#ccc;
 }
 </style>
 </head>
@@ -106,28 +105,22 @@ body{
 <body>
 
 <div class="logo">
-    <img src="assets/logo.png" alt="Ganamos Logo">
+    <img src="assets/logo.png" alt="Ganamos">
 </div>
 
 <div class="perro">
-    <img src="assets/dog.png" alt="Mascota VIP">
+    <img src="assets/perro.png" alt="VIP">
 </div>
 
-<div class="vip">
-    <a href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida">
-        ACCESO VIP
-    </a>
-</div>
+<a href="#" class="vip-btn">ACCESO VIP</a>
 
-<div class="bono">
+<div class="card">
     <h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
     <p>Escribinos apretando el botón de abajo</p>
 
-    <div class="whatsapp">
-        <a href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida">
-            WHATSAPP OFICIAL
-        </a>
-    </div>
+    <a href="https://www.linkify.com.ar/api/soporte?id=gxsbti" class="whatsapp-btn">
+        WHATSAPP OFICIAL
+    </a>
 
     <div class="footer">
         ATENCIÓN Y RETIROS LAS 24 HS
