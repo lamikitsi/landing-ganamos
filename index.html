@@ -18,76 +18,77 @@ body{
 
 .container{
   width:100%;
-  max-width:500px;
+  max-width:420px;
   text-align:center;
+  padding:10px 15px 20px 15px;
 }
 
-/* LOGO */
+/* LOGO MÁS GRANDE Y MÁS PEGADO */
 .logo{
-  width:420px;
+  width:390px;
   max-width:95%;
-  margin-top:20px;
-  margin-bottom:5px;
+  margin-top:10px;
+  margin-bottom:-5px;
   filter: drop-shadow(0 0 35px #b266ff);
 }
 
 /* PERRO MÁS CHICO Y CENTRADO */
 .dog{
-  width:190px; /* MÁS CHICO */
+  width:170px;
   max-width:85%;
   display:block;
   margin:0 auto;
 }
 
-/* BOTÓN ACCESO VIP */
+/* BOTÓN ACCESO VIP ORIGINAL */
 .vip-btn{
   display:inline-block;
-  margin-top:15px;
-  padding:14px 50px;
+  margin-top:10px;
+  padding:14px 55px;
   font-size:18px;
   font-weight:bold;
   color:white;
-  background:#6a00c7;
+  background:#5a00b5;
   border-radius:50px;
-  border:2px solid #b266ff;
+  border:3px solid #ffd400;
   text-decoration:none;
-  animation: neonVip 1.2s infinite alternate;
+  animation: vipGlow 1.2s infinite alternate;
 }
 
-@keyframes neonVip{
+@keyframes vipGlow{
   from{
-    box-shadow:0 0 10px #b266ff, 0 0 20px #b266ff;
+    box-shadow:0 0 10px #ffd400, 0 0 20px #ffd400;
   }
   to{
-    box-shadow:0 0 30px #b266ff, 0 0 60px #b266ff;
+    box-shadow:0 0 35px #ffd400, 0 0 60px #ffea00;
   }
 }
 
-/* TARJETA */
+/* TARJETA MÁS COMPACTA */
 .card{
-  margin:35px 15px;
-  padding:25px 15px;
+  margin:20px 5px 0 5px;
+  padding:20px 15px;
   background: linear-gradient(180deg,#7a00c2,#3a006b);
-  border-radius:30px;
+  border-radius:25px;
   box-shadow:0 0 50px rgba(255,0,255,0.6);
 }
 
 .card h2{
-  font-size:24px;
+  font-size:22px;
   margin:0;
 }
 
 .card p{
-  margin-top:10px;
-  font-size:14px;
+  margin-top:8px;
+  font-size:13px;
 }
 
 /* WHATSAPP */
 .whatsapp{
   display:inline-block;
-  margin-top:18px;
-  padding:20px 60px;
-  font-size:18px;
+  margin-top:15px;
+  padding:18px 55px;
+  font-size:17px;
   font-weight:bold;
   color:white;
   background: linear-gradient(180deg,#36d058,#1ea34a);
@@ -103,7 +104,7 @@ body{
 }
 
 .footer{
-  margin-top:12px;
+  margin-top:10px;
   font-size:12px;
   opacity:0.8;
 }
