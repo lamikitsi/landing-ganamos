@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -19,7 +20,6 @@
     fbq('init', '901147982849876');
     fbq('track', 'PageView');
   </script>
-
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1" alt="" />
@@ -29,189 +29,121 @@
     :root{
       --bg1:#2d0066;
       --bg2:#0a001a;
-      --card: rgba(10,0,26,.35);
-      --text:#ffffff;
-      --muted: rgba(255,255,255,.78);
-      --muted2: rgba(255,255,255,.60);
 
-      --violet1:#a855f7;
-      --violet2:#4A00E0;
+      --card: rgba(10,0,26,.45);
+      --border: rgba(255,255,255,.10);
+
+      --text:#ffffff;
+      --muted: rgba(255,255,255,.72);
 
       --green1:#34d399;
       --green2:#16a34a;
+
+      --glowG: rgba(34,197,94,.55);
     }
+
+    *{ box-sizing:border-box; }
 
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
       background: radial-gradient(circle at center, var(--bg1) 0%, var(--bg2) 100%);
-      display:flex;
-      justify-content:center;
-      align-items:center;
       min-height:100vh;
       color: var(--text);
+      display:flex;
+      justify-content:center;
     }
 
     .container{
-      text-align:center;
-      padding:18px;
       width:100%;
       max-width:520px;
-      padding-bottom: 92px; /* espacio para el botón sticky mobile */
+      padding:18px 18px 110px; /* espacio para el botón sticky */
+      text-align:center;
     }
 
-    /* ====== GANAMOS GRANDE TITILANDO ====== */
-    .brandWrap{
-      margin: 8px 0 14px;
-      padding: 14px 12px;
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,.10);
+    /* ====== TOP LOGO BAR (tipo tu ejemplo) ====== */
+    .topLogoBar{
+      margin: 6px auto 14px;
+      padding: 12px 14px;
       border-radius: 18px;
-      box-shadow: 0 15px 35px rgba(0,0,0,.35);
-      position: relative;
-      overflow:hidden;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0,0,0,.45);
+      backdrop-filter: blur(8px);
     }
 
-    .brandTitle{
-      margin:0;
+    /* Opción A: Logo como IMAGEN (recomendado) */
+    .topLogoImg{
+      width: 100%;
+      max-width: 430px;
+      height: auto;
+      display:block;
+      margin: 0 auto;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+    }
+
+    /* Opción B: Logo como TEXTO verde (si no usás imagen) */
+    .topLogoText{
       font-weight: 1000;
       letter-spacing: 3px;
-      font-size: 44px;
+      font-size: 34px;
       line-height: 1;
       text-transform: uppercase;
+      color: #b7ffcf;
+      text-shadow:
+        0 0 12px var(--glowG),
+        0 0 24px rgba(34,197,94,.25);
+    }
+
+    /* ====== Perro más chico ====== */
+    .hero{
+      margin: 6px 0 10px;
       display:flex;
       justify-content:center;
-      gap:4px;
-      flex-wrap:wrap;
+    }
+    .hero img{
+      width: 220px;           /* más chico */
+      max-width: 70vw;
+      height:auto;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.55);
     }
 
-    /* cada letra titila con delay */
-    .brandTitle span{
-      display:inline-block;
-      background: linear-gradient(135deg, #fff, var(--violet1));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 14px rgba(168,85,247,.35);
-      animation: glow 1.2s infinite;
-    }
-    .brandTitle span:nth-child(1){ animation-delay: 0s; }
-    .brandTitle span:nth-child(2){ animation-delay: .08s; }
-    .brandTitle span:nth-child(3){ animation-delay: .16s; }
-    .brandTitle span:nth-child(4){ animation-delay: .24s; }
-    .brandTitle span:nth-child(5){ animation-delay: .32s; }
-    .brandTitle span:nth-child(6){ animation-delay: .40s; }
-    .brandTitle span:nth-child(7){ animation-delay: .48s; }
-
-    @keyframes glow{
-      0%   { transform: translateY(0); filter: brightness(1); text-shadow: 0 0 10px rgba(168,85,247,.25); }
-      50%  { transform: translateY(-1px); filter: brightness(1.35); text-shadow: 0 0 22px rgba(168,85,247,.65); }
-      100% { transform: translateY(0); filter: brightness(1); text-shadow: 0 0 10px rgba(168,85,247,.25); }
+    /* ====== CARD BONO ====== */
+    .card{
+      margin-top: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px 18px 22px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
     }
 
-    .brandSub{
-      margin:10px 0 0;
-      font-size: 14px;
+    .title{
+      margin: 0;
+      font-size: 34px;
+      font-weight: 1000;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .sub{
+      margin: 14px 0 0;
+      font-size: 16px;
       color: var(--muted);
     }
 
-    /* ====== Icono WhatsApp grande arriba (opcional) ====== */
-    .waBigIcon{
-      width: 54px;
-      height: 54px;
-      margin: 10px auto 0;
-      border-radius: 16px;
-      background: rgba(37,211,102,.14);
-      border: 1px solid rgba(37,211,102,.25);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow: 0 12px 25px rgba(0,0,0,.35);
-    }
-    .waBigIcon img{
-      width: 34px;
-      height: 34px;
+    .miniNote{
+      margin: 14px 0 0;
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+      letter-spacing: .3px;
+      text-transform: uppercase;
     }
 
-    /* LOGO IMAGEN (si querés usarlo aparte) */
-    .logo img{
-      width:100%;
-      max-width:520px;
-      border-radius:20px;
-      box-shadow:0 20px 40px rgba(0,0,0,.6);
-      margin-bottom:14px;
-      display:block;
-    }
-
-    /* IMAGEN PROMO */
-    .promo img{
-      width:100%;
-      border-radius:20px;
-      box-shadow:0 15px 35px rgba(0,0,0,.6);
-      margin-bottom:18px;
-      display:block;
-    }
-
-    /* BOTON WHATSAPP PREMIUM */
-    .wa-btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      text-decoration:none;
-      color:#fff;
-      font-weight:900;
-      font-size:20px;
-      padding:20px;
-      border-radius:999px;
-      background: linear-gradient(180deg,var(--green1) 0%,var(--green2) 100%);
-      border:2px solid rgba(0,0,0,.25);
-      box-shadow:
-        0 20px 40px rgba(0,0,0,.55),
-        inset 0 8px 14px rgba(255,255,255,.25),
-        inset 0 -10px 18px rgba(0,0,0,.35),
-        0 0 0 2px rgba(34,197,94,.4);
-      animation: pulse 1.2s infinite;
-      transition:0.2s;
-      user-select:none;
-    }
-
-    /* Icono WhatsApp grande en el botón */
-    .wa-icon{
-      width: 34px;
-      height: 34px;
-    }
-
-    .wa-btn:hover{ transform:scale(1.03); }
-
-    @keyframes pulse{
-      0%{
-        transform:scale(1);
-        box-shadow:
-          0 20px 40px rgba(0,0,0,.55),
-          0 0 20px rgba(34,197,94,.35);
-      }
-      50%{
-        transform:scale(1.04);
-        box-shadow:
-          0 20px 40px rgba(0,0,0,.55),
-          0 0 55px rgba(34,197,94,.75);
-      }
-      100%{
-        transform:scale(1);
-        box-shadow:
-          0 20px 40px rgba(0,0,0,.55),
-          0 0 20px rgba(34,197,94,.35);
-      }
-    }
-
-    .note{
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--muted2);
-    }
-
-    /* Sticky mobile (botón fijo abajo) */
+    /* ====== BOTÓN WHATSAPP STICKY GIGANTE ====== */
     .wa-sticky{
       position:fixed;
       left:14px;
@@ -219,76 +151,121 @@
       bottom:14px;
       z-index:99;
       display:flex;
+      justify-content:center;
+    }
+
+    .wa-btn{
+      width: min(520px, 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      text-decoration:none;
+      color:#fff;
+      font-weight:1000;
+      font-size:20px;
+      padding:20px 18px;
+      border-radius:999px;
+      background: linear-gradient(180deg,var(--green1) 0%,var(--green2) 100%);
+      border: 2px solid rgba(0,0,0,.25);
+      box-shadow:
+        0 20px 40px rgba(0,0,0,.55),
+        inset 0 10px 18px rgba(255,255,255,.22),
+        inset 0 -12px 20px rgba(0,0,0,.35),
+        0 0 0 2px rgba(34,197,94,.45);
+      animation: pulse 1.2s infinite;
+      user-select:none;
+      transform: translateZ(0);
+    }
+
+    .wa-btn:active{ transform: scale(.99); }
+
+    .wa-icon{
+      width: 34px;
+      height: 34px;
+      filter: drop-shadow(0 8px 10px rgba(0,0,0,.35));
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+        box-shadow:
+          0 20px 40px rgba(0,0,0,.55),
+          0 0 22px rgba(34,197,94,.35);
+      }
+      50%{
+        transform:scale(1.04);
+        box-shadow:
+          0 20px 40px rgba(0,0,0,.55),
+          0 0 60px rgba(34,197,94,.78);
+      }
+      100%{
+        transform:scale(1);
+        box-shadow:
+          0 20px 40px rgba(0,0,0,.55),
+          0 0 22px rgba(34,197,94,.35);
+      }
     }
 
     @media (max-width:380px){
-      .brandTitle{ font-size: 38px; }
+      .title{ font-size: 30px; }
+      .topLogoText{ font-size: 30px; }
+      .wa-btn{ font-size: 18px; }
       .wa-icon{ width: 32px; height: 32px; }
+      .hero img{ width: 200px; }
     }
   </style>
 </head>
 
 <body>
-
   <div class="container">
 
-    <!-- GANAMOS GRANDE TITILANDO -->
-    <div class="brandWrap">
-      <h1 class="brandTitle" aria-label="Ganamos">
-        <span>G</span><span>A</span><span>N</span><span>A</span><span>M</span><span>O</span><span>S</span>
-      </h1>
-      <div class="brandSub">Activación rápida • Atención por WhatsApp</div>
+    <!-- TOP LOGO BAR -->
+    <div class="topLogoBar">
+      <!-- ✅ OPCIÓN 1 (RECOMENDADA): usa tu logo real en imagen -->
+      <!-- Poné tu archivo en /assets/logo.png -->
+      <img class="topLogoImg" src="assets/logo.png" alt="Ganamos" />
 
-      <!-- Icono WhatsApp grande arriba (opcional) -->
-      <div class="waBigIcon">
-        <img alt="WhatsApp" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-      </div>
+      <!-- ✅ OPCIÓN 2: si no querés imagen, borrá la línea de arriba
+           y descomentá esta:
+      -->
+      <!-- <div class="topLogoText">LOGO</div> -->
     </div>
 
-    <!-- LOGO imagen (opcional). Si NO querés imagen, borrá este bloque -->
-    <!--
-    <div class="logo">
-      <img src="assets/logo.png" alt="Ganamos">
-    </div>
-    -->
-
-    <!-- IMAGEN PROMO (la que ya tenías) -->
-    <div class="promo">
-      <img src="assets/dog.png" alt="Promo">
+    <!-- PERRO MÁS CHICO -->
+    <div class="hero">
+      <!-- usa tu imagen actual -->
+      <img src="assets/dog.png" alt="Ganamos VIP" />
     </div>
 
-    <!-- BOTON WHATSAPP (normal dentro de la página) -->
-    <a class="wa-btn" id="waBtn"
-       href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20en%20Ganamos%20✅"
-       target="_blank" rel="noopener">
-      <img class="wa-icon" alt="" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-      HABLAR POR WHATSAPP
-    </a>
-
-    <div class="note">
-      *Respondemos por orden de llegada.
+    <!-- CARD BONO -->
+    <div class="card">
+      <h1 class="title">OBTENÉ TU BONO DE<br>BIENVENIDA</h1>
+      <div class="sub">Escribinos apretando el botón de abajo</div>
+      <div class="miniNote">ATENCIÓN Y RETIROS LAS 24 HS</div>
     </div>
 
   </div>
 
-  <!-- Botón fijo abajo (mobile y también sirve en desktop) -->
+  <!-- BOTÓN STICKY GIGANTE ABAJO -->
   <div class="wa-sticky">
     <a class="wa-btn" id="waBtnSticky"
-       href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20en%20Ganamos%20✅"
-       target="_blank" rel="noopener" style="width:100%;">
+       href="https://wa.me/5492235178618?text=Hola%20quiero%20activar%20mi%20cuenta%20en%20Ganamos%20✅%20y%20reclamar%20mi%20BONO%20DE%20BIENVENIDA"
+       target="_blank" rel="noopener">
       <img class="wa-icon" alt="" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-      HABLAR POR WHATSAPP
+      WHATSAPP OFICIAL
     </a>
   </div>
 
   <script>
-    // SOLO LEAD (clientes potenciales) al click
+    // Lead al click del botón sticky
     function trackLead(){
-      if (window.fbq) fbq('track', 'Lead');
+      if (window.fbq){
+        fbq('track', 'Lead');
+        fbq('trackCustom', 'WhatsAppClick');
+      }
     }
-    document.getElementById('waBtn').addEventListener('click', trackLead);
     document.getElementById('waBtnSticky').addEventListener('click', trackLead);
   </script>
-
 </body>
 </html>
