@@ -7,139 +7,132 @@
 <title>Ganamos VIP</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
 
 body{
-background: radial-gradient(circle at center, #7a1fff 0%, #2a0050 60%, #140028 100%);
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:radial-gradient(circle at center,#6d1bb5 0%, #2a004a 80%);
 text-align:center;
 color:white;
-padding:15px;
-}
-
-.container{
-width:100%;
-max-width:420px;
 }
 
 /* LOGO */
 .logo{
-width:85%;
-max-width:320px;
-margin:0 auto 5px auto;
-display:block;
-filter: drop-shadow(0 0 20px #a855f7);
+width:300px;
+margin-top:25px;
+margin-bottom:5px;
 }
 
 /* PERRO */
 .dog{
-width:70%;
-max-width:240px;
-margin:5px auto 5px auto;
-display:block;
+width:230px;
+margin-top:-5px;
+margin-bottom:10px;
 }
 
-/* BOTON VIP */
+/* BOTON ACCESO VIP */
 .vip-btn{
 display:inline-block;
-margin-top:5px;
-padding:12px 35px;
+padding:14px 35px;
 border-radius:40px;
-background:#4c00a8;
+background:#4b0082;
+border:3px solid gold;
 color:white;
 font-weight:bold;
-font-size:16px;
-border:3px solid #ffd700;
-box-shadow:0 0 15px #ffd700, 0 0 35px #ffcc00;
-animation:glow 2s infinite alternate;
+font-size:17px;
 text-decoration:none;
+box-shadow:0 0 15px gold;
+animation:vipGlow 1.8s infinite alternate;
+margin-bottom:25px;
 }
 
-@keyframes glow{
-from{ box-shadow:0 0 10px #ffd700; }
-to{ box-shadow:0 0 25px #ffcc00; }
+@keyframes vipGlow{
+from{
+box-shadow:0 0 15px gold;
+}
+to{
+box-shadow:0 0 30px gold,0 0 50px orange;
+}
 }
 
-/* CAJA BONO */
-.bonus-box{
-margin-top:15px;
-padding:25px 20px;
+/* CARD */
+.card{
+background:linear-gradient(180deg,#7a1fd0,#3d006b);
+margin:0 20px 40px;
+padding:30px 20px;
 border-radius:25px;
-background: linear-gradient(180deg,#7a1fff,#3b006b);
-box-shadow:0 0 40px rgba(255,0,255,0.4);
+box-shadow:0 0 40px rgba(255,0,255,0.5);
 }
 
-.bonus-box h2{
-font-size:22px;
-margin-bottom:8px;
+/* TITULO */
+.card h1{
+font-size:26px;
+margin-bottom:10px;
 }
 
-.bonus-box p{
-font-size:14px;
+/* SUB */
+.card p{
 opacity:0.9;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 /* BOTON WHATSAPP */
 .whatsapp-btn{
 display:block;
 width:100%;
-padding:16px;
-border-radius:40px;
-background:linear-gradient(90deg,#2ecc71,#1abc9c);
+padding:20px;
+border-radius:50px;
+background:linear-gradient(90deg,#25d366,#1ebe5d);
 color:white;
-font-size:17px;
+font-size:20px;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 0 20px #2ecc71;
+box-shadow:0 0 25px #25d366, 0 0 45px #1ebe5d;
+animation:whatsGlow 1.8s infinite alternate;
 transition:0.3s;
+}
+
+@keyframes whatsGlow{
+from{
+box-shadow:0 0 20px #25d366;
+}
+to{
+box-shadow:0 0 45px #25d366, 0 0 70px #1ebe5d;
+}
 }
 
 .whatsapp-btn:hover{
 transform:scale(1.05);
-box-shadow:0 0 30px #2ecc71;
 }
 
 .footer{
-margin-top:10px;
+margin-top:15px;
 font-size:12px;
 opacity:0.8;
 }
+
 </style>
 </head>
 
 <body>
-
-<div class="container">
 
 <img src="assets/logo.png" class="logo">
 <img src="assets/dog.png" class="dog">
 
 <a href="#" class="vip-btn">ACCESO VIP</a>
 
-<div class="bonus-box">
-<h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
+<div class="card">
+<h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
 <p>Escribinos apretando el botón de abajo</p>
 
-<!-- LINKIFY ACTIVO ACA -->
-<a href="https://www.linkify.com.ar/api/soporte?id=gxsbti" class="whatsapp-btn">
+<a href="https://wa.me/5492235178618?text=Hola%20vengo%20por%20el%20bono%20de%20bienvenida" 
+class="whatsapp-btn">
 WHATSAPP OFICIAL
 </a>
 
 <div class="footer">
 ATENCIÓN Y RETIROS LAS 24 HS
 </div>
-
-</div>
-
 </div>
 
 </body>
