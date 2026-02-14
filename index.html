@@ -15,72 +15,70 @@ body{
   color:white;
 }
 
-/* LOGO */
+/* LOGO GANAMOS */
 .logo{
-  width:300px;
+  width:340px;              /* MÁS GRANDE */
   max-width:95%;
-  margin:30px auto 5px auto; /* más pegado */
+  margin:25px auto -10px;   /* MÁS PEGADO AL PERRO */
   display:block;
 }
 
 /* PERRO */
 .dog{
-  width:190px; /* más grande */
+  width:180px;
   max-width:90%;
   display:block;
-  margin:-5px auto 5px auto; /* más arriba */
+  margin:0 auto 5px auto;
 }
 
 /* BOTÓN VIP */
 .vip-btn{
   display:inline-block;
-  padding:14px 45px;
+  padding:12px 38px;       /* MÁS CHICO */
   background:#6d00ff;
   border:3px solid #ffd400;
   border-radius:40px;
   color:white;
   font-weight:bold;
-  font-size:18px;
+  font-size:16px;
   text-decoration:none;
-  margin:10px auto 25px auto;
-  animation: vipGlow 1.2s infinite alternate;
+  margin:8px auto 20px auto;
+  animation: vipGlow 1.4s infinite alternate;
 }
 
 @keyframes vipGlow{
   0%{
     box-shadow:
-      0 0 10px #ffd400,
-      0 0 25px #ffd400,
-      0 0 40px #ffea00;
+      0 0 8px #ffd400,
+      0 0 20px #ffd400;
   }
   100%{
     box-shadow:
-      0 0 25px #ffd400,
-      0 0 55px #ffd400,
-      0 0 90px #ffea00;
+      0 0 20px #ffd400,
+      0 0 40px #ffea00;
   }
 }
 
 /* CARD */
 .card{
   background: linear-gradient(180deg,#8a00ff,#5a0099);
-  padding:30px 20px;
+  padding:28px 18px;
   border-radius:25px;
   width:90%;
   max-width:420px;
   margin:0 auto 40px auto;
-  box-shadow:0 0 40px rgba(255,0,255,0.4);
+  box-shadow:0 0 35px rgba(255,0,255,0.4);
 }
 
 .card h1{
-  font-size:24px;
+  font-size:22px;
   margin:0 0 10px 0;
 }
 
 .card p{
   font-size:14px;
   opacity:0.9;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
 /* WHATSAPP */
@@ -100,14 +98,12 @@ body{
   0%{
     box-shadow:
       0 0 10px #2ecc71,
-      0 0 25px #2ecc71,
-      0 0 40px #00ff88;
+      0 0 25px #2ecc71;
   }
   100%{
     box-shadow:
       0 0 25px #2ecc71,
-      0 0 60px #2ecc71,
-      0 0 100px #00ff88;
+      0 0 60px #00ff88;
   }
 }
 
@@ -122,7 +118,6 @@ body{
 <body>
 
 <img src="assets/logo.png" class="logo">
-
 <img src="assets/dog.png" class="dog">
 
 <a href="#" class="vip-btn">ACCESO VIP</a>
