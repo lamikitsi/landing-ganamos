@@ -1,200 +1,126 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ganamos VIP - Bono de Bienvenida</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganamos VIP</title>
 
-  <!-- ✅ META PIXEL (TU PIXEL) -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '901147982849876'); // ✅ TU PIXEL ID
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1"/>
-  </noscript>
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-  <style>
-    :root{
-      --bg1:#12072a;
-      --bg2:#3a0f6a;
-      --card1:#3b0a6b;
-      --card2:#7d2de2;
-      --gold:#ffb000;
-      --btnGreen1:#2fe36d;
-      --btnGreen2:#25c85d;
-      --white:#ffffff;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--white);
-      min-height:100vh;
-      background:
-        radial-gradient(1200px 600px at 50% 30%, rgba(140,60,255,.35), transparent 60%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:22px 16px 40px;
-    }
-    .wrap{
-      width:min(440px, 100%);
-      text-align:center;
-    }
-    .logo{
-      width:min(320px, 78%);
-      height:auto;
-      margin:6px auto 18px;
-      display:block;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
-    }
+fbq('init', '901147982849876'); 
+fbq('track', 'PageView');
+</script>
 
-    .hero-img{
-      width:min(260px, 72%);
-      aspect-ratio: 1 / 1;
-      object-fit:cover;
-      border-radius:10px;
-      margin:8px auto 18px;
-      display:block;
-      box-shadow: 0 18px 40px rgba(0,0,0,.45);
-    }
+<style>
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background: radial-gradient(circle at top, #2a0a5e, #0f1024);
+color:white;
+text-align:center;
+}
 
-    .btn-vip{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 26px;
-      border-radius:999px;
-      border:2px solid var(--gold);
-      color:var(--gold);
-      background:rgba(0,0,0,.20);
-      font-weight:800;
-      letter-spacing:.5px;
-      text-transform:uppercase;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-      cursor:pointer;
-      user-select:none;
-      transition: transform .08s ease;
-    }
-    .btn-vip:active{ transform: scale(.98); }
+.container{
+max-width:420px;
+margin:auto;
+padding:20px;
+}
 
-    .card{
-      margin:18px auto 0;
-      padding:22px 18px 18px;
-      border-radius:22px;
-      background: linear-gradient(180deg, rgba(130,65,255,.55), rgba(40,0,70,.55));
-      box-shadow: 0 20px 55px rgba(0,0,0,.45);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(8px);
-    }
-    .card h1{
-      margin:0 0 10px;
-      font-size:28px;
-      line-height:1.15;
-      font-weight:900;
-      letter-spacing:.4px;
-      text-transform:uppercase;
-    }
-    .card p{
-      margin:0 0 14px;
-      opacity:.95;
-      font-size:15px;
-    }
+.logo{
+width:260px;
+margin-top:20px;
+}
 
-    .btn-wa{
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:16px 16px;
-      border-radius:999px;
-      border:0;
-      cursor:pointer;
-      color:#0b2a16;
-      font-weight:900;
-      letter-spacing:.5px;
-      text-transform:uppercase;
-      background: linear-gradient(90deg, var(--btnGreen1), var(--btnGreen2));
-      box-shadow: 0 16px 30px rgba(0,0,0,.35);
-      transition: transform .08s ease, filter .12s ease;
-    }
-    .btn-wa:active{ transform: scale(.99); }
-    .btn-wa:hover{ filter:brightness(1.03); }
+.dog{
+width:280px;
+margin-top:20px;
+border-radius:20px;
+}
 
-    .small{
-      margin-top:10px;
-      font-size:12px;
-      letter-spacing:.6px;
-      opacity:.92;
-      text-transform:uppercase;
-    }
+.vip-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 40px;
+border:2px solid orange;
+border-radius:40px;
+color:orange;
+font-weight:bold;
+text-decoration:none;
+}
 
-    /* Ajustes para pantallas chicas */
-    @media (max-width:360px){
-      .card h1{font-size:24px}
-    }
-  </style>
+.card{
+margin-top:30px;
+padding:30px 20px;
+background: linear-gradient(180deg,#4b2bb7,#1a1c4a);
+border-radius:25px;
+box-shadow:0 0 40px rgba(0,0,0,0.6);
+}
+
+.card h2{
+margin:0;
+font-size:26px;
+}
+
+.card p{
+margin:10px 0 20px;
+}
+
+.whatsapp-btn{
+display:block;
+background:linear-gradient(90deg,#2ed573,#7bed9f);
+padding:15px;
+border-radius:40px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+}
+
+.small{
+margin-top:15px;
+font-size:13px;
+opacity:0.8;
+}
+</style>
 </head>
 
 <body>
-  <main class="wrap">
-    <!-- ✅ LOGO -->
-    <img class="logo" src="Activos/logo.png" alt="Ganamos.net" />
 
-    <!-- ✅ IMAGEN PERRO -->
-    <img class="hero-img" src="Activos/dog.png" alt="Ganamos VIP" />
+<div class="container">
 
-    <!-- ✅ BOTON ACCESO VIP -->
-    <button class="btn-vip" id="vipBtn" type="button">ACCESO VIP</button>
+<img src="Activos/logo.png" class="logo" alt="Ganamos.net">
 
-    <!-- ✅ TARJETA BONO + WHATSAPP -->
-    <section class="card" aria-label="Bono de bienvenida">
-      <h1>OBTENÉ TU BONO DE BIENVENIDA</h1>
-      <p>Escribinos apretando el botón de abajo</p>
+<img src="Activos/dog.png" class="dog" alt="Ganamos VIP">
 
-      <!-- ✅ WHATSAPP (LINKIFY) -->
-      <button class="btn-wa" id="waBtn" type="button">
-        WHATSAPP OFICIAL
-      </button>
+<a href="https://www.linkify.com.ar/api/soporte?id=gxsbti" class="vip-btn">
+ACCESO VIP
+</a>
 
-      <div class="small">ATENCIÓN Y RETIROS LAS 24 HS</div>
-    </section>
-  </main>
+<div class="card">
+<h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
+<p>Escribinos apretando el botón de abajo</p>
 
-  <script>
-    // ✅ TU LINKIFY
-    const LINKIFY_URL = "https://www.linkify.com.ar/api/soporte?id=gxsbti";
+<a href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
+class="whatsapp-btn"
+onclick="fbq('track','Contact');">
+WHATSAPP OFICIAL
+</a>
 
-    // Botón WhatsApp: dispara Lead y abre Linkify
-    document.getElementById("waBtn").addEventListener("click", function () {
-      try {
-        fbq("track", "Lead");
-        fbq("track", "Contact");
-      } catch(e) {}
+<div class="small">
+ATENCIÓN Y RETIROS LAS 24 HS
+</div>
+</div>
 
-      // abre linkify (misma pestaña para que funcione bien en móvil)
-      window.location.href = LINKIFY_URL;
-    });
+</div>
 
-    // Botón Acceso VIP (opcional: evento)
-    document.getElementById("vipBtn").addEventListener("click", function () {
-      try { fbq("track", "ViewContent"); } catch(e) {}
-      // si querés que este botón también vaya a Linkify, descomentá:
-      // window.location.href = LINKIFY_URL;
-    });
-  </script>
 </body>
 </html>
