@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ganamos VIP</title>
 
-  <!-- ✅ META PIXEL (tu Pixel ID ya puesto) -->
+  <!-- ✅ META PIXEL -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -26,12 +26,7 @@
 
   <style>
     :root{
-      --bg1:#12002a;
-      --bg2:#3b007a;
-      --card:#3a0a73cc;
-      --gold:#ffb100;
-      --green:#37d35f;
-      --text:#ffffff;
+      --bg1:#12002a; --bg2:#3b007a; --gold:#ffb100; --text:#ffffff;
     }
     *{box-sizing:border-box}
     body{
@@ -47,11 +42,7 @@
         linear-gradient(180deg, var(--bg1), var(--bg2));
       padding:24px 12px;
     }
-    .wrap{
-      width:100%;
-      max-width:430px;
-      text-align:center;
-    }
+    .wrap{width:100%; max-width:430px; text-align:center;}
     .logo{
       width:min(320px, 86vw);
       margin:0 auto 18px;
@@ -74,12 +65,8 @@
       text-decoration:none;
       font-weight:800;
       letter-spacing:.6px;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
-      transition: transform .08s ease;
       margin-bottom:18px;
     }
-    .btn-vip:active{ transform: scale(.98); }
-
     .card{
       background: linear-gradient(180deg, rgba(80,0,180,.35), rgba(20,0,60,.35));
       border: 1px solid rgba(255,255,255,.10);
@@ -95,11 +82,7 @@
       margin:0 0 10px;
       text-transform:uppercase;
     }
-    .sub{
-      margin:0 0 16px;
-      opacity:.9;
-      font-size:14px;
-    }
+    .sub{margin:0 0 16px; opacity:.9; font-size:14px;}
     .btn-wa{
       width:100%;
       display:block;
@@ -110,9 +93,8 @@
       font-weight:900;
       text-decoration:none;
       letter-spacing:.4px;
-      border: none;
-      box-shadow: 0 16px 35px rgba(0,0,0,.35);
       text-transform:uppercase;
+      box-shadow: 0 16px 35px rgba(0,0,0,.35);
     }
     .fine{
       margin:12px 0 0;
@@ -121,20 +103,20 @@
       opacity:.85;
       text-transform:uppercase;
     }
+    .imgDebug{
+      font-size:12px; opacity:.75; margin:8px 0 0;
+      word-break:break-word;
+    }
   </style>
 </head>
 
 <body>
   <main class="wrap">
 
-    <!-- ✅ IMPORTANTE: rutas EXACTAS a tu carpeta Activos -->
-    <img class="logo" src="./Activos/logo.png" alt="Ganamos.net"
-         onerror="this.style.display='none'">
+    <!-- 👇 NO TOQUES ESTO: el JS elige la ruta correcta -->
+    <img id="logoImg" class="logo" alt="Ganamos.net">
+    <img id="dogImg" class="hero" alt="Ganamos VIP">
 
-    <img class="hero" src="./Activos/dog.png" alt="Ganamos VIP"
-         onerror="this.style.display='none'">
-
-    <!-- Acceso VIP (usa el mismo Linkify, si querés otro link me lo pasás y lo cambio) -->
     <a class="btn-vip" href="https://www.linkify.com.ar/api/soporte?id=gxsbti" target="_blank" rel="noopener">
       ACCESO VIP
     </a>
@@ -150,15 +132,68 @@
       </a>
 
       <p class="fine">ATENCIÓN Y RETIROS LAS 24 HS</p>
+      <div id="imgDebug" class="imgDebug"></div>
     </section>
 
   </main>
 
   <script>
-    // ✅ Evento Lead cuando hacen click en WhatsApp
+    // ✅ Lead al click
     document.getElementById('btnWhatsApp').addEventListener('click', function () {
       if (window.fbq) fbq('track', 'Lead');
     });
+
+    // ✅ Auto-detecta rutas reales de imágenes (Activos/activos/assets)
+    async function firstWorkingUrl(urls){
+      for (const u of urls){
+        try{
+          const r = await fetch(u, { method:'HEAD', cache:'no-store' });
+          if (r.ok) return u;
+        }catch(e){}
+      }
+      return null;
+    }
+
+    (async () => {
+      const base = location.origin;
+
+      const logoCandidates = [
+        base + '/Activos/logo.png',
+        base + '/activos/logo.png',
+        base + '/assets/logo.png',
+        base + '/Activos/logo.PNG',
+        base + '/activos/logo.PNG'
+      ];
+      const dogCandidates = [
+        base + '/Activos/dog.png',
+        base + '/activos/dog.png',
+        base + '/assets/dog.png',
+        base + '/Activos/dog.PNG',
+        base + '/activos/dog.PNG'
+      ];
+
+      const logoOk = await firstWorkingUrl(logoCandidates);
+      const dogOk  = await firstWorkingUrl(dogCandidates);
+
+      const debug = [];
+      if (logoOk){
+        document.getElementById('logoImg').src = logoOk;
+        debug.push('✅ Logo: ' + logoOk);
+      } else {
+        debug.push('❌ No encuentro logo.png (revisá carpeta y nombre exacto)');
+        document.getElementById('logoImg').style.display = 'none';
+      }
+
+      if (dogOk){
+        document.getElementById('dogImg').src = dogOk;
+        debug.push('✅ Dog: ' + dogOk);
+      } else {
+        debug.push('❌ No encuentro dog.png (revisá carpeta y nombre exacto)');
+        document.getElementById('dogImg').style.display = 'none';
+      }
+
+      document.getElementById('imgDebug').textContent = debug.join(' | ');
+    })();
   </script>
 </body>
 </html>
