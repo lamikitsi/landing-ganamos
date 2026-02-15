@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,111 +16,97 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '901147982498976'); 
+fbq('init', '901147982849876'); 
 fbq('track', 'PageView');
 </script>
+<!-- FIN META PIXEL -->
 
 <style>
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background: radial-gradient(circle at top,#5c1bb3,#2d0066);
+background:linear-gradient(180deg,#2b0057,#6a00b8);
 text-align:center;
 color:white;
 }
 
 .logo{
-margin-top:30px;
-}
-
-.logo img{
 width:220px;
-}
-
-.card{
 margin-top:40px;
 }
 
-.card img{
-width:280px;
+.dog{
+width:250px;
+margin-top:30px;
 border-radius:20px;
 }
 
-.boton-vip{
+.vip-btn{
 margin-top:20px;
-display:inline-block;
-padding:15px 40px;
-border-radius:40px;
-background:#3b0d85;
+padding:12px 30px;
+border-radius:30px;
+background:#4b0082;
 border:3px solid gold;
 color:white;
 font-weight:bold;
-text-decoration:none;
+font-size:18px;
+display:inline-block;
 }
 
 .box{
 margin:40px auto;
 width:90%;
-max-width:420px;
-background:linear-gradient(180deg,#7a2cff,#4b0fb1);
+max-width:400px;
+background:linear-gradient(180deg,#7b00ff,#4b0082);
 padding:30px;
 border-radius:25px;
-box-shadow:0 0 30px rgba(255,255,255,0.2);
+box-shadow:0 0 25px rgba(0,0,0,0.4);
 }
 
-.whatsapp{
-display:block;
+.whatsapp-btn{
 margin-top:20px;
-padding:18px;
-border-radius:40px;
-background:linear-gradient(90deg,#25D366,#1ebe5d);
-color:white;
+background:linear-gradient(90deg,#00c853,#00e676);
+padding:15px;
+border-radius:30px;
 font-size:20px;
 font-weight:bold;
+color:white;
 text-decoration:none;
-box-shadow:0 0 20px rgba(0,255,100,0.6);
+display:block;
+}
+
+.small{
+margin-top:10px;
+font-size:14px;
+opacity:0.8;
 }
 </style>
 </head>
 
 <body>
 
-<div class="logo">
-<img src="https://i.postimg.cc/QCj8WqkY/ganamos-logo.png">
-</div>
+<img src="/Activos/logo.png" class="logo">
 
-<div class="card">
-<img src="https://i.postimg.cc/DZp5N4JY/perro-violeta.png">
-</div>
+<br>
 
-<a class="boton-vip">ACCESO VIP</a>
+<img src="/Activos/dog.png" class="dog">
+
+<br>
+
+<div class="vip-btn">ACCESO VIP</div>
 
 <div class="box">
 <h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
 <p>Escribinos apretando el botón de abajo</p>
 
-<a 
-href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida"
-class="whatsapp"
-onclick="enviarEvento()"
->
+<a href="https://wa.me/542235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida"
+class="whatsapp-btn"
+onclick="fbq('track','Lead');">
 WHATSAPP OFICIAL
 </a>
 
-<p style="margin-top:10px;font-size:14px;">
-ATENCIÓN Y RETIROS LAS 24 HS
-</p>
+<div class="small">ATENCIÓN Y RETIROS LAS 24 HS</div>
 </div>
-
-<script>
-function enviarEvento(){
-fbq('track','Lead');
-
-fetch('/api/capi', {
-method:'POST'
-});
-}
-</script>
 
 </body>
 </html>
