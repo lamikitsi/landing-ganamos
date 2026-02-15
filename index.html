@@ -6,94 +6,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ganamos VIP</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+<!-- PIXEL META -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
+fbq('init', '901147982849876'); 
+fbq('track', 'PageView');
+</script>
+
+<style>
 body{
-    background: radial-gradient(circle at center, #5e17eb 0%, #2b0a63 60%, #1a0638 100%);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background: radial-gradient(circle at center, #4b1bbd 0%, #1c0c3f 100%);
+color:white;
+text-align:center;
 }
 
 .container{
-    text-align:center;
-    width:90%;
-    max-width:420px;
+padding:40px 20px;
+max-width:400px;
+margin:auto;
 }
 
 .logo{
-    width:240px;
-    margin-bottom:25px;
+width:260px;
+margin-bottom:30px;
 }
 
 .dog{
-    width:260px;
-    margin-bottom:25px;
+width:260px;
+border-radius:15px;
+margin-bottom:20px;
 }
 
 .vip-btn{
-    display:inline-block;
-    padding:12px 40px;
-    border-radius:40px;
-    border:2px solid #ffcc00;
-    color:#ffcc00;
-    font-weight:bold;
-    text-decoration:none;
-    margin-bottom:30px;
-    transition:0.3s;
+display:inline-block;
+padding:12px 35px;
+border:2px solid #ffae00;
+border-radius:30px;
+color:#ffae00;
+font-weight:bold;
+text-decoration:none;
+margin-bottom:30px;
 }
 
-.vip-btn:hover{
-    background:#ffcc00;
-    color:#2b0a63;
+.box{
+background:linear-gradient(180deg,#3b4df3,#6d32c9);
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-.card{
-    background: linear-gradient(180deg,#3c00a0,#6a00ff);
-    padding:35px 25px;
-    border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+.box h2{
+margin:0;
+font-size:22px;
 }
 
-.card h2{
-    color:white;
-    font-size:22px;
-    margin-bottom:10px;
+.box p{
+font-size:14px;
+margin:10px 0 20px 0;
 }
 
-.card p{
-    color:#ddd;
-    font-size:14px;
-    margin-bottom:20px;
+.whatsapp{
+display:block;
+background:linear-gradient(90deg,#37d067,#6dff5a);
+padding:15px;
+border-radius:30px;
+color:white;
+font-weight:bold;
+text-decoration:none;
 }
 
-.whatsapp-btn{
-    display:block;
-    background:linear-gradient(90deg,#00c853,#64dd17);
-    padding:15px;
-    border-radius:40px;
-    color:white;
-    font-weight:bold;
-    text-decoration:none;
-    font-size:16px;
-    margin-bottom:15px;
-    transition:0.3s;
-}
-
-.whatsapp-btn:hover{
-    transform:scale(1.05);
-}
-
-.footer-text{
-    color:#ddd;
-    font-size:12px;
+.small{
+margin-top:10px;
+font-size:12px;
+opacity:0.8;
 }
 </style>
 </head>
@@ -102,27 +97,23 @@ body{
 
 <div class="container">
 
-<img src="/Activos/logo.png" class="logo" alt="Ganamos">
+<img src="Activos/logo.png" class="logo" alt="Ganamos">
 
-<img src="/Activos/dog.png" class="dog" alt="VIP">
+<img src="Activos/dog.png" class="dog" alt="VIP">
 
-<a href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida" 
-   class="vip-btn">
-   ACCESO VIP
+<a href="#" class="vip-btn">ACCESO VIP</a>
+
+<div class="box">
+<h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
+<p>Escribinos apretando el botón de abajo</p>
+
+<a href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20VIP"
+class="whatsapp"
+onclick="fbq('track','Lead');">
+WHATSAPP OFICIAL
 </a>
 
-<div class="card">
-    <h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
-    <p>Escribinos apretando el botón de abajo</p>
-
-    <a href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida" 
-       class="whatsapp-btn">
-       WHATSAPP OFICIAL
-    </a>
-
-    <div class="footer-text">
-        ATENCIÓN Y RETIROS LAS 24 HS
-    </div>
+<div class="small">ATENCIÓN Y RETIROS LAS 24 HS</div>
 </div>
 
 </div>
