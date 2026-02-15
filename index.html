@@ -1,126 +1,164 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganamos VIP</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganamos VIP</title>
 
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+  <!-- ✅ META PIXEL (tu Pixel ID ya puesto) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '901147982849876');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1"/>
+  </noscript>
 
-fbq('init', '901147982849876'); 
-fbq('track', 'PageView');
-</script>
+  <style>
+    :root{
+      --bg1:#12002a;
+      --bg2:#3b007a;
+      --card:#3a0a73cc;
+      --gold:#ffb100;
+      --green:#37d35f;
+      --text:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        radial-gradient(900px 500px at 50% 35%, rgba(120,0,255,.35), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      padding:24px 12px;
+    }
+    .wrap{
+      width:100%;
+      max-width:430px;
+      text-align:center;
+    }
+    .logo{
+      width:min(320px, 86vw);
+      margin:0 auto 18px;
+      display:block;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
+    }
+    .hero{
+      width:min(280px, 78vw);
+      margin:10px auto 16px;
+      border-radius:18px;
+      display:block;
+      box-shadow: 0 18px 45px rgba(0,0,0,.35);
+    }
+    .btn-vip{
+      display:inline-block;
+      padding:12px 28px;
+      border-radius:999px;
+      border:2px solid var(--gold);
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.6px;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition: transform .08s ease;
+      margin-bottom:18px;
+    }
+    .btn-vip:active{ transform: scale(.98); }
 
-<style>
-body{
-margin:0;
-font-family: Arial, sans-serif;
-background: radial-gradient(circle at top, #2a0a5e, #0f1024);
-color:white;
-text-align:center;
-}
-
-.container{
-max-width:420px;
-margin:auto;
-padding:20px;
-}
-
-.logo{
-width:260px;
-margin-top:20px;
-}
-
-.dog{
-width:280px;
-margin-top:20px;
-border-radius:20px;
-}
-
-.vip-btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 40px;
-border:2px solid orange;
-border-radius:40px;
-color:orange;
-font-weight:bold;
-text-decoration:none;
-}
-
-.card{
-margin-top:30px;
-padding:30px 20px;
-background: linear-gradient(180deg,#4b2bb7,#1a1c4a);
-border-radius:25px;
-box-shadow:0 0 40px rgba(0,0,0,0.6);
-}
-
-.card h2{
-margin:0;
-font-size:26px;
-}
-
-.card p{
-margin:10px 0 20px;
-}
-
-.whatsapp-btn{
-display:block;
-background:linear-gradient(90deg,#2ed573,#7bed9f);
-padding:15px;
-border-radius:40px;
-color:black;
-font-weight:bold;
-text-decoration:none;
-}
-
-.small{
-margin-top:15px;
-font-size:13px;
-opacity:0.8;
-}
-</style>
+    .card{
+      background: linear-gradient(180deg, rgba(80,0,180,.35), rgba(20,0,60,.35));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius:22px;
+      padding:22px 18px 18px;
+      box-shadow: 0 22px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px);
+    }
+    .title{
+      font-size:28px;
+      line-height:1.1;
+      font-weight:900;
+      margin:0 0 10px;
+      text-transform:uppercase;
+    }
+    .sub{
+      margin:0 0 16px;
+      opacity:.9;
+      font-size:14px;
+    }
+    .btn-wa{
+      width:100%;
+      display:block;
+      padding:16px 18px;
+      border-radius:999px;
+      background: linear-gradient(90deg, #21c94c, #65ff7e);
+      color:#083d16;
+      font-weight:900;
+      text-decoration:none;
+      letter-spacing:.4px;
+      border: none;
+      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      text-transform:uppercase;
+    }
+    .fine{
+      margin:12px 0 0;
+      font-size:12px;
+      letter-spacing:.6px;
+      opacity:.85;
+      text-transform:uppercase;
+    }
+  </style>
 </head>
 
 <body>
+  <main class="wrap">
 
-<div class="container">
+    <!-- ✅ IMPORTANTE: rutas EXACTAS a tu carpeta Activos -->
+    <img class="logo" src="./Activos/logo.png" alt="Ganamos.net"
+         onerror="this.style.display='none'">
 
-<img src="Activos/logo.png" class="logo" alt="Ganamos.net">
+    <img class="hero" src="./Activos/dog.png" alt="Ganamos VIP"
+         onerror="this.style.display='none'">
 
-<img src="Activos/dog.png" class="dog" alt="Ganamos VIP">
+    <!-- Acceso VIP (usa el mismo Linkify, si querés otro link me lo pasás y lo cambio) -->
+    <a class="btn-vip" href="https://www.linkify.com.ar/api/soporte?id=gxsbti" target="_blank" rel="noopener">
+      ACCESO VIP
+    </a>
 
-<a href="https://www.linkify.com.ar/api/soporte?id=gxsbti" class="vip-btn">
-ACCESO VIP
-</a>
+    <section class="card">
+      <h1 class="title">OBTENÉ TU BONO DE BIENVENIDA</h1>
+      <p class="sub">Escribinos apretando el botón de abajo</p>
 
-<div class="card">
-<h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
-<p>Escribinos apretando el botón de abajo</p>
+      <a id="btnWhatsApp" class="btn-wa"
+         href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
+         target="_blank" rel="noopener">
+        WHATSAPP OFICIAL
+      </a>
 
-<a href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
-class="whatsapp-btn"
-onclick="fbq('track','Contact');">
-WHATSAPP OFICIAL
-</a>
+      <p class="fine">ATENCIÓN Y RETIROS LAS 24 HS</p>
+    </section>
 
-<div class="small">
-ATENCIÓN Y RETIROS LAS 24 HS
-</div>
-</div>
+  </main>
 
-</div>
-
+  <script>
+    // ✅ Evento Lead cuando hacen click en WhatsApp
+    document.getElementById('btnWhatsApp').addEventListener('click', function () {
+      if (window.fbq) fbq('track', 'Lead');
+    });
+  </script>
 </body>
 </html>
