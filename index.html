@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,14 +8,14 @@
 
 <!-- META PIXEL -->
 <script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '901147982849876');
 fbq('track', 'PageView');
@@ -23,59 +24,57 @@ fbq('track', 'PageView');
 <style>
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background: radial-gradient(circle at top, #6a00ff, #1b0033);
+font-family:Arial, sans-serif;
+background:linear-gradient(180deg,#1b0033,#4b0082);
 text-align:center;
 color:white;
 }
 
+.container{
+padding:40px 20px;
+}
+
 .logo{
-width:260px;
-margin-top:40px;
+width:250px;
+margin-bottom:30px;
 }
 
 .dog{
 width:300px;
-margin:30px 0;
+max-width:90%;
+border-radius:20px;
 }
 
 .vip-btn{
 display:inline-block;
-padding:14px 40px;
-border:3px solid #ffcc00;
-border-radius:40px;
+margin-top:20px;
+padding:12px 40px;
+border:2px solid #ffcc00;
+border-radius:30px;
 color:white;
-font-weight:bold;
 text-decoration:none;
-margin-bottom:40px;
+font-weight:bold;
 }
 
 .card{
-background: linear-gradient(180deg,#5f00ff,#220044);
-padding:40px 20px;
+margin-top:40px;
+background:linear-gradient(180deg,#3f00ff,#6a00ff);
+padding:30px;
 border-radius:25px;
-width:90%;
-max-width:400px;
-margin:0 auto 50px;
 box-shadow:0 15px 40px rgba(0,0,0,0.5);
 }
 
-.card h2{
-margin:0 0 10px;
-}
-
-.card p{
-margin:0 0 20px;
-}
-
-.whatsapp{
+.whatsapp-btn{
 display:block;
-background: linear-gradient(90deg,#00c851,#00ff88);
-padding:18px;
+margin:20px auto 10px;
+padding:15px;
+width:80%;
+max-width:400px;
+background:linear-gradient(90deg,#3cff00,#00c853);
 border-radius:40px;
+text-decoration:none;
 color:white;
 font-weight:bold;
-text-decoration:none;
 font-size:18px;
 }
 </style>
@@ -83,22 +82,28 @@ font-size:18px;
 
 <body>
 
+<div class="container">
+
 <img src="Activos/logo.png" class="logo">
+<br>
 <img src="Activos/dog.png" class="dog">
 
+<br>
 <a href="#" class="vip-btn">ACCESO VIP</a>
 
 <div class="card">
 <h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
 <p>Escribinos apretando el botón de abajo</p>
 
-<a href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida"
-class="whatsapp"
+<a href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20VIP" 
+class="whatsapp-btn"
 onclick="fbq('track','Lead');">
 WHATSAPP OFICIAL
 </a>
 
-<p style="margin-top:15px;font-size:14px;">ATENCIÓN Y RETIROS LAS 24 HS</p>
+<p>ATENCIÓN Y RETIROS LAS 24 HS</p>
+</div>
+
 </div>
 
 </body>
