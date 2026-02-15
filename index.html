@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gana Hoy</title>
+<title>Ganamos VIP</title>
 
-<!-- Meta Pixel -->
+<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,80 +17,109 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '901147982849876');
+fbq('init', '901147982498976'); 
 fbq('track', 'PageView');
 </script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=901147982849876&ev=PageView&noscript=1"/>
-</noscript>
-<!-- Fin Pixel -->
 
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#2b0052,#5f00a5);
-color:white;
+font-family:Arial, Helvetica, sans-serif;
+background: radial-gradient(circle at top,#5c1bb3,#2d0066);
 text-align:center;
-padding:40px 20px;
+color:white;
 }
 
-h1{
-font-size:32px;
-margin-bottom:15px;
+.logo{
+margin-top:30px;
 }
 
-p{
-font-size:18px;
-margin-bottom:30px;
+.logo img{
+width:220px;
 }
 
-.boton{
+.card{
+margin-top:40px;
+}
+
+.card img{
+width:280px;
+border-radius:20px;
+}
+
+.boton-vip{
+margin-top:20px;
 display:inline-block;
-padding:18px 30px;
-background:#25D366;
+padding:15px 40px;
+border-radius:40px;
+background:#3b0d85;
+border:3px solid gold;
+color:white;
+font-weight:bold;
+text-decoration:none;
+}
+
+.box{
+margin:40px auto;
+width:90%;
+max-width:420px;
+background:linear-gradient(180deg,#7a2cff,#4b0fb1);
+padding:30px;
+border-radius:25px;
+box-shadow:0 0 30px rgba(255,255,255,0.2);
+}
+
+.whatsapp{
+display:block;
+margin-top:20px;
+padding:18px;
+border-radius:40px;
+background:linear-gradient(90deg,#25D366,#1ebe5d);
 color:white;
 font-size:20px;
-border-radius:10px;
-text-decoration:none;
 font-weight:bold;
-box-shadow:0 0 15px #25D366;
-animation:brillo 1.5s infinite alternate;
-}
-
-@keyframes brillo{
-from{box-shadow:0 0 10px #25D366;}
-to{box-shadow:0 0 25px #25D366;}
+text-decoration:none;
+box-shadow:0 0 20px rgba(0,255,100,0.6);
 }
 </style>
-
 </head>
+
 <body>
 
-<h1>🎁 Súper Bono de Bienvenida</h1>
-<p>Activá tu cuenta y recibí tu bonus ahora mismo.</p>
+<div class="logo">
+<img src="https://i.postimg.cc/QCj8WqkY/ganamos-logo.png">
+</div>
 
-<a href="https://wa.me/5492235330453"
-   onclick="dispararLead()"
-   target="_blank"
-   class="boton">
-   QUIERO MI BONUS AHORA
+<div class="card">
+<img src="https://i.postimg.cc/DZp5N4JY/perro-violeta.png">
+</div>
+
+<a class="boton-vip">ACCESO VIP</a>
+
+<div class="box">
+<h2>OBTENÉ TU BONO DE BIENVENIDA</h2>
+<p>Escribinos apretando el botón de abajo</p>
+
+<a 
+href="https://wa.me/5492235178618?text=Hola%20quiero%20mi%20bono%20de%20bienvenida"
+class="whatsapp"
+onclick="enviarEvento()"
+>
+WHATSAPP OFICIAL
 </a>
 
+<p style="margin-top:10px;font-size:14px;">
+ATENCIÓN Y RETIROS LAS 24 HS
+</p>
+</div>
+
 <script>
-function dispararLead() {
+function enviarEvento(){
+fbq('track','Lead');
 
-  // Disparo Pixel Navegador
-  fbq('track', 'Lead');
-
-  // Disparo Conversion API
-  fetch('/api/capi', {
-    method: 'POST'
-  })
-  .then(response => response.json())
-  .then(data => console.log('Lead enviado correctamente:', data))
-  .catch(error => console.error('Error enviando Lead:', error));
+fetch('/api/capi', {
+method:'POST'
+});
 }
 </script>
 
