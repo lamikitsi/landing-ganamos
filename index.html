@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tío Rico VIP</title>
 
-<!-- Pixel Meta -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -21,168 +20,45 @@ fbq('track', 'PageView');
 </script>
 
 <style>
-:root{
-  --bg1:#3b0000;
-  --bg2:#090000;
-  --card1:#d90000;
-  --card2:#ffcc00;
-  --yellow:#ffdd00;
-  --white:#ffffff;
-  --green1:#00ff5a;
-  --green2:#00b83f;
-}
-
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
   background:
-    radial-gradient(circle at top, rgba(255,221,0,.28), transparent 35%),
-    radial-gradient(circle at bottom, rgba(255,0,0,.35), transparent 40%),
-    linear-gradient(180deg, var(--bg1), var(--bg2));
-  color:#fff;
+    radial-gradient(circle at top, rgba(255,215,0,.18), transparent 32%),
+    radial-gradient(circle at bottom, rgba(255,0,0,.35), transparent 45%),
+    linear-gradient(180deg,#170000,#000);
+  color:white;
   min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
 }
 
 .container{
+  width:min(390px,92vw);
   text-align:center;
-  width:min(380px, 92vw);
-  padding: 15px 0;
 }
 
 .logo{
-  width: 350px;
-  max-width: 96%;
-  display: block;
-  margin: 0 auto 5px auto;
-  filter: drop-shadow(0 0 18px rgba(255,0,0,.9));
-  animation: floaty 2.4s ease-in-out infinite;
+  width:360px;
+  max-width:96%;
+  display:block;
+  margin:0 auto 18px auto;
+  filter:drop-shadow(0 0 20px rgba(255,0,0,.9));
 }
 
 .vip-btn{
-  display: inline-block;
-  margin: 8px auto 18px auto;
-  padding: 10px 26px;
-  border-radius: 30px;
-  border: 2px solid var(--yellow);
-  color: var(--yellow);
-  font-weight: 900;
-  background: rgba(120,0,0,.55);
-  box-shadow: 0 0 18px rgba(255,221,0,.35);
+  display:inline-block;
+  margin:0 auto 18px;
+  padding:10px 28px;
+  border:2px solid #ffdd00;
+  border-radius:30px;
+  color:#ffdd00;
+  font-weight:900;
+  background:rgba(120,0,0,.45);
+  box-shadow:0 0 16px rgba(255,221,0,.35);
 }
 
 .card{
-   background: linear-gradient(145deg, var(--card1), #ff1a1a 45%, var(--card2));
-   padding: 30px 24px 25px;
-   border-radius: 24px;
-   box-shadow: 0 18px 45px rgba(0,0,0,.8), 0 0 35px rgba(255,0,0,.55);
-   border: 2px solid var(--white);
-   margin: 0 auto;
-}
-
-.card h2{
-  margin: 0 0 12px 0;
-  font-size: 30px;
-  line-height: 1.12;
-  color:#fff;
-  text-shadow: 3px 3px 0 #8b0000;
-}
-
-.card p{
-  margin: 0 0 18px 0;
-  font-size: 17px;
-  font-weight: 800;
-  color:#fff;
-  line-height:1.35;
-  text-shadow: 1px 1px 0 rgba(0,0,0,.45);
-}
-
-.whatsapp-btn{
-  display:block;
-  text-decoration:none;
-  color:#fff;
-  font-weight:1000;
-  letter-spacing:.4px;
-  border-radius: 40px;
-  padding: 20px 18px;
-  font-size: 23px;
-  background: linear-gradient(90deg, var(--green1), var(--green2));
-  border: 3px solid #fff;
-  position: relative;
-  overflow:hidden;
-  animation: btnPulse 1.2s ease-in-out infinite;
-  box-shadow: 0 0 28px rgba(0,255,90,.85);
-}
-
-.whatsapp-btn::before{
-  content:"";
-  position:absolute;
-  top:-60%;
-  left:-30%;
-  width:40%;
-  height:220%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
-  transform: rotate(20deg);
-  animation: shine 1.8s linear infinite;
-  pointer-events:none;
-}
-
-.small{
-  margin-top: 12px;
-  font-size: 13px;
-  font-weight: 900;
-  color:#fff;
-}
-
-@keyframes floaty{
-  0%,100%{ transform: translateY(0); }
-  50%{ transform: translateY(-7px); }
-}
-
-@keyframes btnPulse{
-  0%,100%{ transform: scale(1); }
-  50%{ transform: scale(1.045); }
-}
-
-@keyframes shine{
-  0%{ left:-45%; opacity:0; }
-  20%{ opacity:.7; }
-  60%{ opacity:.55; }
-  100%{ left:120%; opacity:0; }
-}
-</style>
-</head>
-
-<body>
-<div class="container">
-
-<img src="Activos/logo.png" class="logo" alt="Tío Rico VIP">
-
-  <div class="vip-btn">INGRESO DIRECTO</div>
-
-  <div class="card">
-    <h2>🔥 JUGÁ HOY EN TÍO RICO</h2>
-
-    <p>
-      Atención inmediata por WhatsApp<br>
-      Cargas rápidas y retiros en el día
-    </p>
-
-    <a
-      class="whatsapp-btn"
-      href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
-      onclick="fbq('track', 'Lead'); fbq('trackCustom', 'WhatsAppClick');"
-    >
-      ENTRAR AHORA
-    </a>
-
-    <div class="small">ACTIVACIÓN EN MINUTOS ⚡</div>
-  </div>
-
-</div>
-</body>
-</html>
