@@ -12,7 +12,8 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)}
+(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '901147982849876');
@@ -20,20 +21,25 @@ fbq('track', 'PageView');
 </script>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(255,215,0,.18), transparent 32%),
-    radial-gradient(circle at bottom, rgba(255,0,0,.35), transparent 45%),
-    linear-gradient(180deg,#170000,#000);
-  color:white;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
+  color:white;
+
+  background:
+  radial-gradient(circle at bottom,
+  rgba(255,0,80,.45),
+  transparent 35%),
+  linear-gradient(180deg,#170000,#000000);
 }
 
 .container{
@@ -42,23 +48,138 @@ body{
 }
 
 .logo{
-  width:360px;
+  width:340px;
   max-width:96%;
   display:block;
-  margin:0 auto 18px auto;
-  filter:drop-shadow(0 0 20px rgba(255,0,0,.9));
+  margin:0 auto 10px auto;
+  filter:drop-shadow(0 0 18px rgba(255,0,0,.8));
 }
 
 .vip-btn{
   display:inline-block;
-  margin:0 auto 18px;
+  margin-bottom:18px;
   padding:10px 28px;
-  border:2px solid #ffdd00;
   border-radius:30px;
-  color:#ffdd00;
+  border:2px solid #ffcc00;
+  color:#ffcc00;
   font-weight:900;
-  background:rgba(120,0,0,.45);
-  box-shadow:0 0 16px rgba(255,221,0,.35);
+  background:rgba(0,0,0,.35);
 }
 
 .card{
+  background:
+  linear-gradient(
+  145deg,
+  #d40000 0%,
+  #ff2a2a 55%,
+  #ffcc00 100%
+  );
+
+  border:2px solid white;
+  border-radius:24px;
+  padding:30px 22px;
+  box-shadow:
+  0 0 35px rgba(255,0,0,.55);
+}
+
+.card h2{
+  margin:0 0 15px;
+  font-size:32px;
+  line-height:1.1;
+  text-shadow:2px 2px 0 #7a0000;
+}
+
+.card p{
+  margin:0 0 22px;
+  font-size:17px;
+  line-height:1.35;
+  font-weight:700;
+}
+
+.whatsapp-btn{
+  display:block;
+  text-decoration:none;
+  color:white;
+  font-size:24px;
+  font-weight:1000;
+
+  padding:21px 18px;
+
+  border-radius:40px;
+
+  border:3px solid white;
+
+  background:
+  linear-gradient(
+  90deg,
+  #00ff5a,
+  #00b83f
+  );
+
+  box-shadow:
+  0 0 28px rgba(0,255,90,.85);
+
+  animation:pulse 1.2s infinite;
+}
+
+.small{
+  margin-top:14px;
+  font-size:13px;
+  font-weight:900;
+}
+
+@keyframes pulse{
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.04);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img
+src="Activos/logo.png"
+class="logo"
+alt="Tío Rico VIP"
+>
+
+<div class="vip-btn">
+INGRESO DIRECTO
+</div>
+
+<div class="card">
+
+<h2>
+🔥 JUGÁ HOY EN TÍO RICO
+</h2>
+
+<p>
+Atención inmediata por WhatsApp<br>
+Cargas rápidas y retiros en el día
+</p>
+
+<a
+class="whatsapp-btn"
+href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
+onclick="fbq('track', 'Lead');"
+>
+ENTRAR AHORA
+</a>
+
+<div class="small">
+ACTIVACIÓN EN MINUTOS ⚡
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
