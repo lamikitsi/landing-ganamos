@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tío Rico VIP</title>
+<title>Ganamos VIP</title>
 
+<!-- Pixel Meta -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -12,8 +13,7 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}
-(window, document,'script',
+s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '901147982849876');
@@ -21,189 +21,178 @@ fbq('track', 'PageView');
 </script>
 
 <style>
-
-*{
-  box-sizing:border-box;
+:root{
+  --bg1:#2a0050;
+  --bg2:#12001f;
+  --card1:#5a1bd1;
+  --card2:#2b0b6b;
+  --orange:#ff9900;
+  --green1:#2ecc71;
+  --green2:#27ae60;
 }
 
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at center, var(--bg1) 0%, var(--bg2) 72%);
+  color:#fff;
   min-height:100vh;
   display:flex;
-  justify-content:center;
   align-items:center;
-  color:white;
-
-  background:
-  linear-gradient(180deg,#140000,#000000);
+  justify-content:center;
 }
 
+/* TODO MÁS JUNTO */
 .container{
-  width:min(390px,92vw);
   text-align:center;
+  width:min(360px, 92vw);
+  padding: 0px 0;
 }
 
 .logo{
-  width:340px;
-  max-width:96%;
-  display:block;
-  margin:0 auto 14px auto;
-
-  filter:
-  drop-shadow(0 0 20px rgba(255,0,0,.9));
+  width: 350px;
+  display: block;
+  margin: 0 auto -60px auto;   /* más negativo */
+  position: relative;
+  top: 18px;                  /* baja el logo hacia el perro */
 }
 
+
+.dog{
+  width: 190px;   /* más chico */
+  display: block;
+  margin: -10px auto 10px auto;
+}
+
+
+
 .vip-btn{
-  display:inline-block;
-
-  margin-bottom:18px;
-
-  padding:10px 28px;
-
-  border-radius:30px;
-
-  border:2px solid #ffcc00;
-
-  color:#ffcc00;
-
-  font-weight:900;
-
-  background:rgba(0,0,0,.35);
-
-  box-shadow:
-  0 0 16px rgba(255,180,0,.35);
+  display: inline-block;
+  margin: 8px auto 18px auto;
+  padding: 8px 22px;
+  border-radius: 25px;
+  border: 2px solid #f9a825;
+  color: #f9a825;
+  font-weight: bold;
+}
+}
+.vip-btn:hover{
+  background: var(--orange);
+  color: #140022;
+  box-shadow: 0 0 16px rgba(255,153,0,.8);
 }
 
 .card{
-
-  background:#ff0000;
-
-  border:2px solid white;
-
-  border-radius:24px;
-
-  padding:30px 22px;
-
-  box-shadow:
-  0 0 45px rgba(255,0,0,.95);
+   background: linear-gradient(180deg, var(--card1), var(--card2));
+   padding: 30px 25px 25px;   /* MÁS grande */
+   border-radius: 22px;
+   box-shadow: 0 18px 40px rgba(0,0,0,.75);
+   max-width: 450px;         /* más ancha */
+   margin: 0 auto;
+}
 }
 
 .card h2{
-  margin:0 0 15px;
-
-  font-size:31px;
-
-  line-height:1.08;
-
-  text-shadow:
-  2px 2px 0 #7a0000;
+  margin: 0 0 12px 0;
+  font-size: 28px;
+  line-height: 1.12;
 }
 
 .card p{
-  margin:0 0 22px;
-
-  font-size:17px;
-
-  line-height:1.35;
-
-  font-weight:700;
+  margin: 0 0 18px 0; /* más junto */
+  font-size: 16px;
+  opacity: .95;
 }
 
+/* BOTÓN WHATSAPP CON EFECTOS + MOVIMIENTO */
 .whatsapp-btn{
-
   display:block;
-
   text-decoration:none;
+  color:#fff;
+  font-weight:900;
+  letter-spacing:.4px;
+  border-radius: 30px;
+  padding: 14px 14px;
+  background: linear-gradient(90deg, var(--green1), var(--green2));
+  position: relative;
+  overflow:hidden;
+  will-change: transform, box-shadow, filter;
+  animation: floaty 2.3s ease-in-out infinite, pulseGlow 1.2s ease-in-out infinite;
+  box-shadow: 0 0 18px rgba(46,204,113,.55);
+}
 
-  color:white;
+/* Shine que pasa por arriba */
+.whatsapp-btn::before{
+  content:"";
+  position:absolute;
+  top:-60%;
+  left:-30%;
+  width:40%;
+  height:220%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
+  transform: rotate(20deg);
+  animation: shine 1.8s linear infinite;
+  pointer-events:none;
+}
 
-  font-size:24px;
+.whatsapp-btn:hover{
+  transform: translateY(-2px) scale(1.05);
+  filter: brightness(1.06);
+}
 
-  font-weight:1000;
+@keyframes floaty{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}
 
-  padding:21px 18px;
+@keyframes pulseGlow{
+  0%{ box-shadow: 0 0 14px rgba(46,204,113,.45), 0 0 0 rgba(46,204,113,0); }
+  100%{ box-shadow: 0 0 28px rgba(46,204,113,.95), 0 0 40px rgba(46,204,113,.25); }
+}
 
-  border-radius:40px;
-
-  border:3px solid white;
-
-  background:
-  linear-gradient(
-  90deg,
-  #00ff4c,
-  #00d63f
-  );
-
-  box-shadow:
-  0 0 35px rgba(0,255,80,.95);
-
-  animation:pulse 1.1s infinite;
+@keyframes shine{
+  0%{ left:-45%; opacity:.0; }
+  20%{ opacity:.6; }
+  60%{ opacity:.55; }
+  100%{ left:120%; opacity:0; }
 }
 
 .small{
-
-  margin-top:14px;
-
-  font-size:13px;
-
-  font-weight:900;
+  margin-top: 8px; /* más junto */
+  font-size: 12px;
+  opacity: .9;
 }
-
-@keyframes pulse{
-
-  0%,100%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.05);
-  }
-}
-
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-<img
-src="assets/logo.png"
-class="logo"
-alt="Tío Rico VIP"
->
+<img src="https://raw.githubusercontent.com/lamikitsi/landing-ganamos/main/assets/logo.png" class="logo" alt="Ganamos.net">
 
-<div class="vip-btn">
-INGRESO DIRECTO
-</div>
+<img src="https://raw.githubusercontent.com/lamikitsi/landing-ganamos/main/assets/dog.png" class="dog" alt="Ganamos VIP">
 
-<div class="card">
+  <div class="vip-btn">INGRESO DIRECTO</div>
 
-<h2>
-🔥 SUPER BONUS DE<br>
-BIENVENIDA 🔥
-</h2>
-
-<p>
-Atención inmediata por WhatsApp<br>
-Cargas rápidas y retiros en el día
+  <div class="card">
+    <h2>🔥JUGÁ HOY EN GANAMOS </h2>
+    <p style="margin-top:-8px; margin-bottom:10px; line-height:1.3;">
+  Atención inmediata por WhatsApp<br>
+  Cargas rápidas y retiros en el día
 </p>
 
-<a
-class="whatsapp-btn"
-href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
-onclick="fbq('track', 'Lead'); fbq('trackCustom', 'WhatsAppClick');"
->
-👉 QUIERO MI 20% AHORA 👈
-</a>
+    <a
+      class="whatsapp-btn"
+      href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
+      onclick="fbq('track', 'Lead');"
+    >
+       ENTRAR AHORA
+    </a>
 
-<div class="small">
-ACTIVACIÓN EN MINUTOS ⚡
-</div>
+    <div class="small">ACTIVACIÓN EN MINUTOS⚡</div>
+  </div>
 
 </div>
-</div>
-
 </body>
 </html>
