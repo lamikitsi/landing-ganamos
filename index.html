@@ -21,7 +21,6 @@ fbq('track','PageView');
 </script>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -35,7 +34,7 @@ html,body{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  color:white;
+  color:#fff;
   background:
     radial-gradient(circle at 50% 25%,
     #45116d 0%,
@@ -47,137 +46,95 @@ body{
   width:min(440px,94vw);
   min-height:100vh;
   margin:auto;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-
   text-align:center;
   padding:10px 12px 25px;
 }
 
-
-/* LOGO GANAMOS */
+/* LOGO */
 
 .logo{
   display:block;
   width:min(410px,96vw);
   height:auto;
-
   margin:-55px auto -75px;
-
   position:relative;
   z-index:3;
-
-  filter:
-    drop-shadow(0 0 12px rgba(180,70,255,.35));
+  filter:drop-shadow(0 0 12px rgba(180,70,255,.35));
 }
 
-
-/* PERRO */
+/* PERRO NUEVO TRANSPARENTE */
 
 .dog-wrap{
   width:215px;
   height:215px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
-  overflow:hidden;
-
   margin:0 auto 3px;
-
   position:relative;
   z-index:2;
 }
 
 .dog{
   display:block;
-
   width:215px;
   height:215px;
-
   object-fit:contain;
 
-  /* ayuda a integrar el fondo del archivo */
-  mix-blend-mode:screen;
-
   filter:
-    contrast(1.08)
-    saturate(1.10)
-    drop-shadow(0 0 15px rgba(177,54,255,.45));
+    drop-shadow(0 0 15px rgba(177,54,255,.50))
+    drop-shadow(0 10px 20px rgba(0,0,0,.35));
 }
 
-
-/* TITULO */
+/* TÍTULO */
 
 .title{
   margin:0;
-
   font-size:30px;
   font-weight:900;
   line-height:1.05;
-
   letter-spacing:-.5px;
 }
 
 .title span{
   display:block;
-
   margin-top:5px;
-
   color:#c45cff;
-
-  text-shadow:
-    0 0 12px rgba(190,70,255,.30);
+  text-shadow:0 0 12px rgba(190,70,255,.30);
 }
-
-
-/* SUBTITULO */
 
 .subtitle{
   margin:12px 0 18px;
-
   font-size:16px;
   font-weight:500;
-
   color:#eee;
 }
 
-
-/* BOTON WHATSAPP */
+/* WHATSAPP */
 
 .whatsapp-btn{
   width:100%;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   position:relative;
-
   padding:18px 45px 18px 18px;
-
   border-radius:50px;
-
   text-decoration:none;
-
-  color:white;
-
+  color:#fff;
   font-size:21px;
   font-weight:900;
-
-  background:
-    linear-gradient(180deg,#35eb70,#0dbd49);
+  background:linear-gradient(180deg,#35eb70,#0dbd49);
 
   box-shadow:
     0 0 20px rgba(37,231,102,.65),
     0 8px 25px rgba(0,0,0,.40);
 
   animation:pulse 1.5s ease-in-out infinite;
-
   -webkit-tap-highlight-color:transparent;
 }
 
@@ -188,22 +145,16 @@ body{
 
 .arrow{
   position:absolute;
-
   right:20px;
   top:50%;
-
   transform:translateY(-52%);
-
   font-size:32px;
   font-weight:bold;
 }
 
-
 @keyframes pulse{
-
   0%,100%{
     transform:scale(1);
-
     box-shadow:
       0 0 16px rgba(37,231,102,.55),
       0 8px 25px rgba(0,0,0,.40);
@@ -211,62 +162,46 @@ body{
 
   50%{
     transform:scale(1.025);
-
     box-shadow:
       0 0 30px rgba(37,231,102,.95),
       0 8px 28px rgba(0,0,0,.45);
   }
 }
 
-
-/* TEXTO ABAJO DEL BOTON */
+/* TEXTO DEBAJO */
 
 .help{
   margin:14px 0 19px;
-
   font-size:14px;
-
   color:#ddd;
 }
 
 .online{
   display:inline-block;
-
   width:9px;
   height:9px;
-
   margin-right:6px;
-
   border-radius:50%;
-
   background:#25d366;
-
   box-shadow:0 0 9px #25d366;
 }
-
 
 /* BENEFICIOS */
 
 .features{
   width:100%;
-
   display:grid;
   grid-template-columns:repeat(3,1fr);
-
   padding:17px 0;
-
   border-top:1px solid rgba(190,80,255,.30);
   border-bottom:1px solid rgba(190,80,255,.30);
 }
 
 .feature{
   padding:0 8px;
-
   font-size:12px;
   font-weight:600;
-
   line-height:1.25;
-
   color:#eee;
 }
 
@@ -276,38 +211,28 @@ body{
 
 .feature-icon{
   display:block;
-
   margin-bottom:7px;
-
   font-size:24px;
 }
-
 
 /* PIE */
 
 .footer{
   margin-top:17px;
-
   font-size:11px;
-
   letter-spacing:2px;
-
   color:#c17be9;
 }
 
 .responsible{
   margin-top:9px;
-
   font-size:11px;
-
   color:#aaa;
 }
 
-
-/* CELULARES BAJITOS */
+/* PANTALLAS MÁS BAJAS */
 
 @media(max-height:720px){
-
   .container{
     justify-content:flex-start;
     padding-top:5px;
@@ -340,134 +265,79 @@ body{
   .whatsapp-btn{
     padding-top:15px;
     padding-bottom:15px;
-
     font-size:19px;
   }
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-  <!-- LOGO GANAMOS -->
   <img
     class="logo"
     src="https://raw.githubusercontent.com/lamikitsi/landing-ganamos/main/assets/logo.png"
     alt="Ganamos"
   >
 
-
-  <!-- PERRO -->
   <div class="dog-wrap">
-
     <img
       class="dog"
       src="https://raw.githubusercontent.com/lamikitsi/landing-ganamos/main/assets/dog.png"
       alt="Ganamos"
     >
-
   </div>
-
-
-  <!-- MENSAJE PRINCIPAL -->
 
   <div class="title">
-
     ¿QUERÉS EMPEZAR?
-
-    <span>
-      HABLÁ CON NOSOTROS
-    </span>
-
+    <span>HABLÁ CON NOSOTROS</span>
   </div>
-
 
   <div class="subtitle">
-
     Atención inmediata por WhatsApp
-
   </div>
-
-
-  <!-- WHATSAPP -->
 
   <a
     class="whatsapp-btn"
-
     href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
-
     onclick="const eid='lead_'+Date.now()+'_'+Math.random().toString(36).slice(2); fbq('track','Lead',{}, {eventID:eid}); navigator.sendBeacon('/api/capi?event_id='+encodeURIComponent(eid));"
   >
-
     <span class="wa-icon">◉</span>
-
     HABLAR POR WHATSAPP
-
     <span class="arrow">›</span>
-
   </a>
 
-
   <div class="help">
-
     <span class="online"></span>
-
     Tocá el botón para iniciar la conversación
-
   </div>
-
-
-  <!-- BENEFICIOS -->
 
   <div class="features">
 
     <div class="feature">
-
       <span class="feature-icon">⚡</span>
-
-      RESPUESTA<br>
-      RÁPIDA
-
+      RESPUESTA<br>RÁPIDA
     </div>
 
-
     <div class="feature">
-
       <span class="feature-icon">🛡️</span>
-
-      ATENCIÓN<br>
-      SEGURA
-
+      ATENCIÓN<br>SEGURA
     </div>
 
-
     <div class="feature">
-
       <span class="feature-icon">💬</span>
-
-      ATENCIÓN POR<br>
-      WHATSAPP
-
+      ATENCIÓN POR<br>WHATSAPP
     </div>
 
   </div>
-
 
   <div class="footer">
-
     GANAMOS • TU LUGAR DE SIEMPRE
-
   </div>
 
-
   <div class="responsible">
-
     +18 · Jugá responsablemente
-
   </div>
 
 </div>
