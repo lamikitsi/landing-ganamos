@@ -6,15 +6,18 @@ module.exports = async function handler(req, res) {
   const PIXEL_ID = '2047092762678031';
   const ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
 
+  const eventId = req.query.event_id || '';
+
   const event = {
     data: [
       {
-        event_name: "Contact",
+        event_name: "Lead",
         event_time: Math.floor(Date.now() / 1000),
+        event_id: eventId,
         action_source: "website",
         event_source_url: req.headers.referer || "",
         user_data: {
-          client_ip_address: req.headers['x-forwarded-for'] || "",
+          client_ip_address: (req.headers['x-forwarded-for'] || '').split(',')[0].trim(),
           client_user_agent: req.headers['user-agent'] || ""
         }
       }
@@ -34,6 +37,11 @@ module.exports = async function handler(req, res) {
     );
 
     const data = await response.json();
+
+    if (!response.ok) {
+      return res.status(response.status).json(data);
+    }
+
     return res.status(200).json(data);
 
   } catch (error) {
