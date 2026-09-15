@@ -18,7 +18,9 @@ export default async function handler(req, res) {
           client_user_agent: req.headers['user-agent'] || ""
         }
       }
-    ]
+    ],
+    test_event_code: "TEST85729"
+};
   };
 
   try {
