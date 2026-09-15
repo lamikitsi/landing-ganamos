@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const PIXEL_ID = '901147982849876'; // 👈 PONÉ TU PIXEL ID
+ const PIXEL_ID = '2047092762678031'; // 👈 PONÉ TU PIXEL ID
  const ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
 
   const event = {
