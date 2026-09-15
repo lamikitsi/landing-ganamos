@@ -21,7 +21,8 @@ module.exports = async function handler(req, res) {
           client_user_agent: req.headers['user-agent'] || ""
         }
       }
-    ]
+    ],
+    test_event_code: "TEST85729"
   };
 
   try {
@@ -38,15 +39,11 @@ module.exports = async function handler(req, res) {
 
     const data = await response.json();
 
-    if (!response.ok) {
-      return res.status(response.status).json(data);
-    }
+    console.log("META RESPONSE:", data);
 
     return res.status(200).json(data);
-
   } catch (error) {
-    return res.status(500).json({
-      error: error.message
-    });
+    console.error("META ERROR:", error);
+    return res.status(500).json({ error: error.message });
   }
 };
