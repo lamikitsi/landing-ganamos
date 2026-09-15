@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">  
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganamos VIP</title>
+<title>Ganamos</title>
 
-<!-- Pixel Meta -->
+<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -21,178 +21,330 @@ fbq('track', 'PageView');
 </script>
 
 <style>
-:root{
-  --bg1:#2a0050;
-  --bg2:#12001f;
-  --card1:#5a1bd1;
-  --card2:#2b0b6b;
-  --orange:#ff9900;
-  --green1:#2ecc71;
-  --green2:#27ae60;
+
+*{
+  box-sizing:border-box;
 }
 
-*{box-sizing:border-box}
-body{
+html,body{
   margin:0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at center, var(--bg1) 0%, var(--bg2) 72%);
+  padding:0;
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
   color:#fff;
+  background:
+    radial-gradient(circle at 50% 15%, #471075 0%, #210039 35%, #0e0019 72%);
+}
+
+/* CONTENEDOR */
+
+.container{
+  width:min(430px,94vw);
   min-height:100vh;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:18px 10px 25px;
+}
+
+/* LOGO */
+
+.logo{
+  display:block;
+  width:min(350px,88vw);
+  height:auto;
+  margin:-20px auto -55px;
+  position:relative;
+  z-index:2;
+}
+
+/* PERRO */
+
+.dog{
+  display:block;
+  width:min(205px,52vw);
+  height:auto;
+  margin:0 auto 0;
+  position:relative;
+  z-index:1;
+
+  filter:
+    drop-shadow(0 0 12px rgba(173,55,255,.40))
+    drop-shadow(0 8px 20px rgba(0,0,0,.45));
+}
+
+/* TEXTO PRINCIPAL */
+
+.title{
+  margin:5px 0 2px;
+  font-size:30px;
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:-.6px;
+}
+
+.title span{
+  display:block;
+  margin-top:5px;
+  color:#c05cff;
+}
+
+.subtitle{
+  margin:12px 0 18px;
+  font-size:16px;
+  line-height:1.35;
+  color:#eee;
+}
+
+/* BOTÓN */
+
+.whatsapp-btn{
+  width:100%;
   display:flex;
   align-items:center;
   justify-content:center;
-}
+  gap:10px;
 
-/* TODO MÁS JUNTO */
-.container{
-  text-align:center;
-  width:min(360px, 92vw);
-  padding: 0px 0;
-}
+  padding:18px 15px;
 
-.logo{
-  width: 350px;
-  display: block;
-  margin: 0 auto -60px auto;   /* más negativo */
-  position: relative;
-  top: 18px;                  /* baja el logo hacia el perro */
-}
-
-
-.dog{
-  width: 190px;   /* más chico */
-  display: block;
-  margin: -10px auto 10px auto;
-}
-
-
-
-.vip-btn{
-  display: inline-block;
-  margin: 8px auto 18px auto;
-  padding: 8px 22px;
-  border-radius: 25px;
-  border: 2px solid #f9a825;
-  color: #f9a825;
-  font-weight: bold;
-}
-}
-.vip-btn:hover{
-  background: var(--orange);
-  color: #140022;
-  box-shadow: 0 0 16px rgba(255,153,0,.8);
-}
-
-.card{
-   background: linear-gradient(180deg, var(--card1), var(--card2));
-   padding: 30px 25px 25px;   /* MÁS grande */
-   border-radius: 22px;
-   box-shadow: 0 18px 40px rgba(0,0,0,.75);
-   max-width: 450px;         /* más ancha */
-   margin: 0 auto;
-}
-}
-
-.card h2{
-  margin: 0 0 12px 0;
-  font-size: 28px;
-  line-height: 1.12;
-}
-
-.card p{
-  margin: 0 0 18px 0; /* más junto */
-  font-size: 16px;
-  opacity: .95;
-}
-
-/* BOTÓN WHATSAPP CON EFECTOS + MOVIMIENTO */
-.whatsapp-btn{
-  display:block;
   text-decoration:none;
-  color:#fff;
+  color:white;
+
+  font-size:21px;
   font-weight:900;
-  letter-spacing:.4px;
-  border-radius: 30px;
-  padding: 14px 14px;
-  background: linear-gradient(90deg, var(--green1), var(--green2));
-  position: relative;
-  overflow:hidden;
-  will-change: transform, box-shadow, filter;
-  animation: floaty 2.3s ease-in-out infinite, pulseGlow 1.2s ease-in-out infinite;
-  box-shadow: 0 0 18px rgba(46,204,113,.55);
+
+  border-radius:50px;
+
+  background:
+    linear-gradient(180deg,#25e766,#08b941);
+
+  box-shadow:
+    0 0 18px rgba(37,231,102,.65),
+    0 8px 25px rgba(0,0,0,.35);
+
+  position:relative;
+
+  animation:pulse 1.6s ease-in-out infinite;
+
+  -webkit-tap-highlight-color:transparent;
 }
 
-/* Shine que pasa por arriba */
-.whatsapp-btn::before{
-  content:"";
+.whatsapp-icon{
+  width:33px;
+  height:33px;
+  border:3px solid white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+.arrow{
   position:absolute;
-  top:-60%;
-  left:-30%;
-  width:40%;
-  height:220%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
-  transform: rotate(20deg);
-  animation: shine 1.8s linear infinite;
-  pointer-events:none;
+  right:20px;
+  font-size:30px;
+  line-height:1;
 }
 
-.whatsapp-btn:hover{
-  transform: translateY(-2px) scale(1.05);
-  filter: brightness(1.06);
+@keyframes pulse{
+
+  0%,100%{
+    transform:scale(1);
+    box-shadow:
+      0 0 15px rgba(37,231,102,.50),
+      0 8px 25px rgba(0,0,0,.35);
+  }
+
+  50%{
+    transform:scale(1.025);
+    box-shadow:
+      0 0 28px rgba(37,231,102,.90),
+      0 8px 28px rgba(0,0,0,.40);
+  }
 }
 
-@keyframes floaty{
-  0%,100%{ transform: translateY(0); }
-  50%{ transform: translateY(-6px); }
+/* TEXTO DEBAJO */
+
+.help{
+  margin:14px 0 18px;
+  font-size:14px;
+  color:#ddd;
 }
 
-@keyframes pulseGlow{
-  0%{ box-shadow: 0 0 14px rgba(46,204,113,.45), 0 0 0 rgba(46,204,113,0); }
-  100%{ box-shadow: 0 0 28px rgba(46,204,113,.95), 0 0 40px rgba(46,204,113,.25); }
+.online{
+  display:inline-block;
+  width:9px;
+  height:9px;
+  background:#25d366;
+  border-radius:50%;
+  margin-right:6px;
+  box-shadow:0 0 8px #25d366;
 }
 
-@keyframes shine{
-  0%{ left:-45%; opacity:.0; }
-  20%{ opacity:.6; }
-  60%{ opacity:.55; }
-  100%{ left:120%; opacity:0; }
+/* BENEFICIOS */
+
+.features{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:5px;
+
+  padding:17px 5px;
+
+  border-top:1px solid rgba(190,80,255,.25);
+  border-bottom:1px solid rgba(190,80,255,.25);
 }
 
-.small{
-  margin-top: 8px; /* más junto */
-  font-size: 12px;
-  opacity: .9;
+.feature{
+  padding:0 7px;
+  font-size:12px;
+  line-height:1.25;
+  color:#eee;
 }
+
+.feature:not(:last-child){
+  border-right:1px solid rgba(190,80,255,.25);
+}
+
+.feature-icon{
+  display:block;
+  font-size:24px;
+  margin-bottom:7px;
+}
+
+/* FINAL */
+
+.footer{
+  margin-top:17px;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#b979df;
+}
+
+.responsible{
+  margin-top:10px;
+  font-size:11px;
+  color:#aaa;
+}
+
+@media(max-height:700px){
+
+  .container{
+    justify-content:flex-start;
+    padding-top:5px;
+  }
+
+  .logo{
+    width:300px;
+    margin-top:-30px;
+    margin-bottom:-60px;
+  }
+
+  .dog{
+    width:165px;
+  }
+
+  .title{
+    font-size:26px;
+  }
+
+  .subtitle{
+    margin:8px 0 13px;
+  }
+
+  .whatsapp-btn{
+    padding:15px 12px;
+    font-size:19px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
-<img src="https://raw.githubusercontent.com/lamikitsi/landing-ganamos/main/assets/logo.png" class="logo" alt="Ganamos.net">
+  <!-- TU LOGO GANAMOS -->
+  <img
+    src="https://raw.githubusercontent.com/lamikitsi/landing-ganamos/main/assets/logo.png"
+    class="logo"
+    alt="Ganamos"
+  >
 
-<img src="https://raw.githubusercontent.com/lamikitsi/landing-ganamos/main/assets/dog.png" class="dog" alt="Ganamos VIP">
+  <!-- TU PERRO -->
+  <img
+    src="https://raw.githubusercontent.com/lamikitsi/landing-ganamos/main/assets/dog.png"
+    class="dog"
+    alt="Ganamos"
+  >
 
-  <div class="vip-btn">INGRESO DIRECTO</div>
+  <div class="title">
+    ¿QUERÉS EMPEZAR?
+    <span>HABLÁ CON NOSOTROS</span>
+  </div>
 
-  <div class="card">
-    <h2>🔥TU MOMENTO ES AHORA🔥 </h2>
-    <p style="margin-top:-8px; margin-bottom:10px; line-height:1.3;">
-  Atención inmediata por WhatsApp<br>
-  Cargas rápidas y retiros en el día
-</p>
+  <div class="subtitle">
+    Atención inmediata por WhatsApp
+  </div>
 
-    <a
-      class="whatsapp-btn"
-      href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
- onclick="const eid='lead_'+Date.now()+'_'+Math.random().toString(36).slice(2); fbq('track','Lead',{}, {eventID:eid}); navigator.sendBeacon('/api/capi?event_id='+encodeURIComponent(eid));"
-    >
-       🎁QUIERO MI BONO DE BIENVENIDA🎁
-    </a>
+  <!-- WHATSAPP + PIXEL + CAPI -->
+  <a
+    class="whatsapp-btn"
+    href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
+    onclick="const eid='lead_'+Date.now()+'_'+Math.random().toString(36).slice(2); fbq('track','Lead',{}, {eventID:eid}); navigator.sendBeacon('/api/capi?event_id='+encodeURIComponent(eid));"
+  >
 
-    <div class="small">ACTIVACIÓN EN MINUTOS⚡</div>
+    <span class="whatsapp-icon">☎</span>
+
+    HABLAR POR WHATSAPP
+
+    <span class="arrow">›</span>
+
+  </a>
+
+  <div class="help">
+    <span class="online"></span>
+    Tocá el botón para iniciar la conversación
+  </div>
+
+  <div class="features">
+
+    <div class="feature">
+      <span class="feature-icon">⚡</span>
+      RESPUESTA<br>RÁPIDA
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">🛡️</span>
+      ATENCIÓN<br>SEGURA
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">💬</span>
+      ATENCIÓN POR<br>WHATSAPP
+    </div>
+
+  </div>
+
+  <div class="footer">
+    GANAMOS • TU LUGAR DE SIEMPRE
+  </div>
+
+  <div class="responsible">
+    +18 · Jugá responsablemente
   </div>
 
 </div>
+
 </body>
 </html>
