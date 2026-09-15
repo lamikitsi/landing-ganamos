@@ -18,8 +18,7 @@ module.exports = async function handler(req, res) {
           client_user_agent: req.headers['user-agent'] || ""
         }
       }
-    ],
-    test_event_code: "TEST85729"
+    ]
   };
 
   try {
@@ -27,14 +26,19 @@ module.exports = async function handler(req, res) {
       `https://graph.facebook.com/v18.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(event)
       }
     );
 
     const data = await response.json();
     return res.status(200).json(data);
+
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res.status(500).json({
+      error: error.message
+    });
   }
 };
