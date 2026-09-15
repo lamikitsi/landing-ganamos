@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   }
 
   const PIXEL_ID = '901147982849876'; // 👈 PONÉ TU PIXEL ID
-  const ACCESS_TOKEN = 'EAAcstSz6uP8BQhgqw1MvBmSlUUSUCIEfqZA3CNbQpVZB3uKuAqCCAalbfiAAbPX2AZA0heWulvmAoKiQJ6TW6UDZBrGgrRWxeF6YuEeS1YPu3Kf9zKg56rXFhPsA1adRzra3CPfcpvOgxidcuh29ga4LJVZALsqkJLxaNAOaGIPMYp7gZB2nGP8C28N53TszdnfgZDZD'; // 👈 PONÉ TU TOKEN
+ const ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
 
   const event = {
     data: [
