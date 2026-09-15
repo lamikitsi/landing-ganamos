@@ -3,8 +3,8 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
- const PIXEL_ID = '2047092762678031'; // 👈 PONÉ TU PIXEL ID
- const ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
+  const PIXEL_ID = '2047092762678031';
+  const ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
 
   const event = {
     data: [
@@ -20,7 +20,6 @@ module.exports = async function handler(req, res) {
       }
     ],
     test_event_code: "TEST85729"
-};
   };
 
   try {
@@ -38,4 +37,4 @@ module.exports = async function handler(req, res) {
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
-}
+};
