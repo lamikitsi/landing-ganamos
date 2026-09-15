@@ -185,7 +185,7 @@ body{
     <a
       class="whatsapp-btn"
       href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
- onclick="fbq('track','Lead'); navigator.sendBeacon('/api/capi');"
+ onclick="const eid='lead_'+Date.now()+'_'+Math.random().toString(36).slice(2); fbq('track','Lead',{}, {eventID:eid}); navigator.sendBeacon('/api/capi?event_id='+encodeURIComponent(eid));"
     >
        👉QUIERO MI 30% AHORA👈
     </a>
