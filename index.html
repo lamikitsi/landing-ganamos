@@ -18,12 +18,41 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
 
 fbq('init','2047092762678031');
 fbq('track','PageView');
+
+function getCookie(name){
+  const match = document.cookie.match(
+    new RegExp('(^|;\\s*)' + name + '=([^;]*)')
+  );
+  return match ? decodeURIComponent(match[2]) : '';
+}
+
+function sendLead(){
+  const eid =
+    'lead_' +
+    Date.now() +
+    '_' +
+    Math.random().toString(36).slice(2);
+
+  // Evento navegador
+  fbq('track', 'Lead', {}, {eventID: eid});
+
+  // Identificadores de Meta disponibles en el navegador
+  const fbp = getCookie('_fbp');
+  const fbc = getCookie('_fbc');
+
+  const params = new URLSearchParams();
+  params.set('event_id', eid);
+
+  if (fbp) params.set('fbp', fbp);
+  if (fbc) params.set('fbc', fbc);
+
+  // Mismo event_id para deduplicación Pixel + CAPI
+  navigator.sendBeacon('/api/capi?' + params.toString());
+}
 </script>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 html,body{
   margin:0;
@@ -54,8 +83,6 @@ body{
   padding:10px 12px 25px;
 }
 
-/* LOGO */
-
 .logo{
   display:block;
   width:min(410px,96vw);
@@ -65,8 +92,6 @@ body{
   z-index:3;
   filter:drop-shadow(0 0 12px rgba(180,70,255,.35));
 }
-
-/* PERRO NUEVO TRANSPARENTE */
 
 .dog-wrap{
   width:215px;
@@ -84,13 +109,10 @@ body{
   width:215px;
   height:215px;
   object-fit:contain;
-
   filter:
     drop-shadow(0 0 15px rgba(177,54,255,.50))
     drop-shadow(0 10px 20px rgba(0,0,0,.35));
 }
-
-/* TÍTULO */
 
 .title{
   margin:0;
@@ -114,8 +136,6 @@ body{
   color:#eee;
 }
 
-/* WHATSAPP */
-
 .whatsapp-btn{
   width:100%;
   display:flex;
@@ -129,11 +149,9 @@ body{
   font-size:21px;
   font-weight:900;
   background:linear-gradient(180deg,#35eb70,#0dbd49);
-
   box-shadow:
     0 0 20px rgba(37,231,102,.65),
     0 8px 25px rgba(0,0,0,.40);
-
   animation:pulse 1.5s ease-in-out infinite;
   -webkit-tap-highlight-color:transparent;
 }
@@ -168,8 +186,6 @@ body{
   }
 }
 
-/* TEXTO DEBAJO */
-
 .help{
   margin:14px 0 19px;
   font-size:14px;
@@ -185,8 +201,6 @@ body{
   background:#25d366;
   box-shadow:0 0 9px #25d366;
 }
-
-/* BENEFICIOS */
 
 .features{
   width:100%;
@@ -215,8 +229,6 @@ body{
   font-size:24px;
 }
 
-/* PIE */
-
 .footer{
   margin-top:17px;
   font-size:11px;
@@ -229,8 +241,6 @@ body{
   font-size:11px;
   color:#aaa;
 }
-
-/* PANTALLAS MÁS BAJAS */
 
 @media(max-height:720px){
   .container{
@@ -301,7 +311,7 @@ body{
   <a
     class="whatsapp-btn"
     href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
-    onclick="const eid='lead_'+Date.now()+'_'+Math.random().toString(36).slice(2); fbq('track','Lead',{}, {eventID:eid}); navigator.sendBeacon('/api/capi?event_id='+encodeURIComponent(eid));"
+    onclick="sendLead()"
   >
     <span class="wa-icon">◉</span>
     HABLAR POR WHATSAPP
