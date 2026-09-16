@@ -26,28 +26,46 @@ function getCookie(name){
   return match ? decodeURIComponent(match[2]) : '';
 }
 
-function sendLead(){
+async function goWhatsApp(event){
+  event.preventDefault();
+
+  const linkifyUrl =
+    'https://www.linkify.com.ar/api/soporte?id=gxsbti';
+
   const eid =
     'lead_' +
     Date.now() +
     '_' +
     Math.random().toString(36).slice(2);
 
-  // Evento navegador
-  fbq('track', 'Lead', {}, {eventID: eid});
+  // PIXEL - navegador
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', {}, {eventID: eid});
+  }
 
-  // Identificadores de Meta disponibles en el navegador
-  const fbp = getCookie('_fbp');
-  const fbc = getCookie('_fbc');
-
+  // Datos para CAPI
   const params = new URLSearchParams();
   params.set('event_id', eid);
+
+  const fbp = getCookie('_fbp');
+  const fbc = getCookie('_fbc');
 
   if (fbp) params.set('fbp', fbp);
   if (fbc) params.set('fbc', fbc);
 
-  // Mismo event_id para deduplicación Pixel + CAPI
-  navigator.sendBeacon('/api/capi?' + params.toString());
+  try {
+    // CAPI - servidor
+    await fetch('/api/capi?' + params.toString(), {
+      method: 'GET',
+      cache: 'no-store',
+      credentials: 'same-origin'
+    });
+  } catch (error) {
+    console.log('CAPI error:', error);
+  }
+
+  // Después de enviar el evento abre Linkify
+  window.location.href = linkifyUrl;
 }
 </script>
 
@@ -311,7 +329,7 @@ body{
   <a
     class="whatsapp-btn"
     href="https://www.linkify.com.ar/api/soporte?id=gxsbti"
-    onclick="sendLead()"
+    onclick="goWhatsApp(event)"
   >
     <span class="wa-icon">◉</span>
     HABLAR POR WHATSAPP
