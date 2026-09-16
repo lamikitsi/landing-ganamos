@@ -1,7 +1,5 @@
-const crypto = require('crypto');
-
 module.exports = async function handler(req, res) {
-  if (req.method !== 'POST' && req.method !== 'GET') {
+  if (req.method !== 'GET' && req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
@@ -18,47 +16,35 @@ module.exports = async function handler(req, res) {
     const eventId =
       req.query.event_id ||
       req.body?.event_id ||
-      'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+      'lead_' + Date.now();
 
-    // IP
+    const userAgent = req.headers['user-agent'] || '';
+
     const forwarded = req.headers['x-forwarded-for'];
-    const clientIp = forwarded
+    const ip = forwarded
       ? forwarded.split(',')[0].trim()
-      : req.socket?.remoteAddress;
+      : req.socket?.remoteAddress || '';
 
-    // User Agent
-    const userAgent = req.headers['user-agent'];
-
-    // Leer cookies
+    // Cookies de Meta si están disponibles
     const cookieHeader = req.headers.cookie || '';
 
-    const cookies = {};
-    cookieHeader.split(';').forEach(cookie => {
-      const parts = cookie.trim().split('=');
-      const key = parts.shift();
+    const getCookie = (name) => {
+      const match = cookieHeader.match(
+        new RegExp('(?:^|; )' + name + '=([^;]*)')
+      );
+      return match ? decodeURIComponent(match[1]) : undefined;
+    };
 
-      if (key) {
-        cookies[key] = decodeURIComponent(parts.join('=') || '');
-      }
-    });
+    const fbp = getCookie('_fbp');
+    const fbc = getCookie('_fbc');
 
-    const userData = {};
+    const userData = {
+      client_ip_address: ip,
+      client_user_agent: userAgent
+    };
 
-    if (clientIp) {
-      userData.client_ip_address = clientIp;
-    }
-
-    if (userAgent) {
-      userData.client_user_agent = userAgent;
-    }
-
-    if (cookies._fbp) {
-      userData.fbp = cookies._fbp;
-    }
-
-    if (cookies._fbc) {
-      userData.fbc = cookies._fbc;
-    }
+    if (fbp) userData.fbp = fbp;
+    if (fbc) userData.fbc = fbc;
 
     const payload = {
       data: [
@@ -68,15 +54,19 @@ module.exports = async function handler(req, res) {
           event_id: eventId,
           action_source: 'website',
           event_source_url:
-            req.headers.referer ||
             'https://landing-ganamos-neon.vercel.app/',
           user_data: userData
         }
-      ]
+      ],
+
+      // SOLO PARA PROBAR EVENTOS
+      test_event_code: 'TEST85729'
     };
 
     const response = await fetch(
-      `https://graph.facebook.com/v23.0/${PIXEL_ID}/events?access_token=${encodeURIComponent(ACCESS_TOKEN)}`,
+      `https://graph.facebook.com/v23.0/${PIXEL_ID}/events?access_token=${encodeURIComponent(
+        ACCESS_TOKEN
+      )}`,
       {
         method: 'POST',
         headers: {
@@ -90,20 +80,18 @@ module.exports = async function handler(req, res) {
 
     if (!response.ok) {
       return res.status(response.status).json({
-        success: false,
+        ok: false,
         meta: result
       });
     }
 
     return res.status(200).json({
-      success: true,
-      event_id: eventId,
+      ok: true,
       meta: result
     });
-
   } catch (error) {
     return res.status(500).json({
-      success: false,
+      ok: false,
       error: error.message
     });
   }
