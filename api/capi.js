@@ -1,5 +1,4 @@
 module.exports = async function handler(req, res) {
-  // Aceptamos POST
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
@@ -14,20 +13,16 @@ module.exports = async function handler(req, res) {
   }
 
   const eventId = req.query.event_id || "";
+  const fbp = req.query.fbp || "";
+  const fbc = req.query.fbc || "";
 
-  // Obtener IP real
   const forwardedFor = req.headers["x-forwarded-for"];
+
   const clientIp = forwardedFor
     ? forwardedFor.split(",")[0].trim()
     : req.socket?.remoteAddress || "";
 
-  // User Agent
   const userAgent = req.headers["user-agent"] || "";
-
-  const eventSourceUrl =
-    req.headers.referer ||
-    req.headers.origin ||
-    "https://landing-ganamos-neon.vercel.app/";
 
   const userData = {};
 
@@ -39,6 +34,14 @@ module.exports = async function handler(req, res) {
     userData.client_user_agent = userAgent;
   }
 
+  if (fbp) {
+    userData.fbp = fbp;
+  }
+
+  if (fbc) {
+    userData.fbc = fbc;
+  }
+
   const payload = {
     data: [
       {
@@ -46,15 +49,17 @@ module.exports = async function handler(req, res) {
         event_time: Math.floor(Date.now() / 1000),
         event_id: eventId,
         action_source: "website",
-        event_source_url: eventSourceUrl,
+        event_source_url:
+          req.headers.referer ||
+          "https://landing-ganamos-neon.vercel.app/",
         user_data: userData
       }
     ]
   };
 
   try {
-    console.log("CAPI USER DATA:", userData);
-    console.log("CAPI EVENT ID:", eventId);
+    console.log("EVENT ID:", eventId);
+    console.log("USER DATA:", userData);
 
     const response = await fetch(
       `https://graph.facebook.com/v24.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
