@@ -1,5 +1,5 @@
 module.exports = async function handler(req, res) {
-  if (req.method !== 'GET' && req.method !== 'POST') {
+  if (req.method !== 'POST' && req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
@@ -9,37 +9,42 @@ module.exports = async function handler(req, res) {
 
     if (!ACCESS_TOKEN) {
       return res.status(500).json({
-        error: 'Falta META_ACCESS_TOKEN en Vercel'
+        error: 'Falta META_ACCESS_TOKEN'
       });
     }
 
     const eventId =
       req.query.event_id ||
-      req.body?.event_id ||
-      'lead_' + Date.now();
+      (req.body && req.body.event_id);
 
-    const userAgent = req.headers['user-agent'] || '';
+    if (!eventId) {
+      return res.status(400).json({
+        error: 'Falta event_id'
+      });
+    }
 
     const forwarded = req.headers['x-forwarded-for'];
-    const ip = forwarded
-      ? forwarded.split(',')[0].trim()
-      : req.socket?.remoteAddress || '';
 
-    // Cookies de Meta si están disponibles
-    const cookieHeader = req.headers.cookie || '';
+    const clientIp =
+      typeof forwarded === 'string'
+        ? forwarded.split(',')[0].trim()
+        : req.socket?.remoteAddress;
 
-    const getCookie = (name) => {
-      const match = cookieHeader.match(
-        new RegExp('(?:^|; )' + name + '=([^;]*)')
-      );
-      return match ? decodeURIComponent(match[1]) : undefined;
-    };
+    const userAgent =
+      req.headers['user-agent'] || '';
 
-    const fbp = getCookie('_fbp');
-    const fbc = getCookie('_fbc');
+    const fbp =
+      req.query.fbp ||
+      (req.body && req.body.fbp) ||
+      undefined;
+
+    const fbc =
+      req.query.fbc ||
+      (req.body && req.body.fbc) ||
+      undefined;
 
     const userData = {
-      client_ip_address: ip,
+      client_ip_address: clientIp,
       client_user_agent: userAgent
     };
 
@@ -53,20 +58,14 @@ module.exports = async function handler(req, res) {
           event_time: Math.floor(Date.now() / 1000),
           event_id: eventId,
           action_source: 'website',
-          event_source_url:
-            'https://landing-ganamos-neon.vercel.app/',
+          event_source_url: 'https://landing-ganamos-neon.vercel.app/',
           user_data: userData
         }
-      ],
-
-      // SOLO PARA PROBAR EVENTOS
-      test_event_code: 'TEST85729'
+      ]
     };
 
     const response = await fetch(
-      `https://graph.facebook.com/v23.0/${PIXEL_ID}/events?access_token=${encodeURIComponent(
-        ACCESS_TOKEN
-      )}`,
+      `https://graph.facebook.com/v24.0/${PIXEL_ID}/events?access_token=${encodeURIComponent(ACCESS_TOKEN)}`,
       {
         method: 'POST',
         headers: {
@@ -89,6 +88,7 @@ module.exports = async function handler(req, res) {
       ok: true,
       meta: result
     });
+
   } catch (error) {
     return res.status(500).json({
       ok: false,
